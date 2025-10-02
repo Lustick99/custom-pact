@@ -269,6 +269,8 @@
         }
 
         .hero h1 {
+            top: 70px;
+            position: relative;
             font-size: clamp(2rem, 5vw, 4rem);
             margin-bottom: 1rem;
             font-weight: 900;
@@ -279,6 +281,7 @@
         .hero .tagline {
             font-size: clamp(1.2rem, 3vw, 2rem);
             margin-bottom: 2rem;
+            margin-top: 5rem;
             color: var(--accent-color);
             font-weight: 600;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -390,6 +393,420 @@
             opacity: 0.9;
         }
 
+
+
+        /* Key Dates Section */
+        .key-dates {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .key-dates::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('assets/txtur-bg2.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+        }
+
+        /* Overlay blanc léger */
+        .key-dates::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230099ff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: bottom;
+            opacity: 0.75;
+            backdrop-filter: blur(5px) brightness(0);
+            z-index: 1;
+        }
+
+        #key-dates .section-title,
+        #venues .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #0056b3 0%, #28a745 50%, #ffc107 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 2;
+        }
+
+        #key-dates .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #eaeaea;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .date-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .date-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .date-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .date-card:hover::before {
+            left: 100%;
+        }
+
+        .date-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .date-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .date-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .date-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .date-status {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .status-upcoming {
+            background: rgba(255, 193, 7, 0.2);
+            color: #d68910;
+        }
+
+        .status-open {
+            background: rgba(40, 167, 69, 0.2);
+            color: #1e7e34;
+        }
+
+        .status-deadline {
+            background: rgba(220, 53, 69, 0.2);
+            color: #bd2130;
+        }
+
+        /* Venue Locations Section */
+        .venue-locations {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .venues-wrapper {
+            display: grid;
+            gap: 4rem;
+        }
+
+        .venue-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            /*background: #f8f9fa;*/
+            border-radius: 20px;
+            overflow: hidden;
+            /*box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);*/
+            transition: all 0.3s ease;
+        }
+
+        .venue-card:hover {
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .venue-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .venue-card:nth-child(even)>* {
+            direction: ltr;
+        }
+
+        .venue-map {
+            position: relative;
+            min-height: 400px;
+            background: #e0e0e0;
+            overflow: hidden;
+        }
+
+        .venue-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .venue-info {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .venue-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #0056b3 0%, #28a745 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .venue-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .venue-address {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: start;
+            gap: 0.8rem;
+        }
+
+        .venue-address-icon {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .venue-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .venue-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .venue-detail-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .venue-detail-content {
+            flex: 1;
+        }
+
+        .venue-detail-label {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.2rem;
+        }
+
+        .venue-detail-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .venue-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .venue-btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .venue-btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .venue-btn-primary:hover {
+            background: #003d82;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+        }
+
+        .venue-btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .venue-btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .venue-card {
+                grid-template-columns: 1fr;
+            }
+
+            .venue-card:nth-child(even) {
+                direction: ltr;
+            }
+
+            .venue-map {
+                min-height: 350px;
+            }
+
+            .venue-info {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .key-dates,
+            .venue-locations {
+                padding: 60px 15px;
+            }
+
+            .section-subtitle {
+                margin-bottom: 2rem;
+            }
+
+            .dates-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .date-card {
+                padding: 2rem;
+            }
+
+            .venue-name {
+                font-size: 1.6rem;
+            }
+
+            .venue-address {
+                font-size: 1rem;
+            }
+
+            .venue-map {
+                min-height: 300px;
+            }
+
+            .venue-buttons {
+                flex-direction: column;
+            }
+
+            .venue-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .date-card {
+                padding: 1.5rem;
+            }
+
+            .date-icon {
+                font-size: 2.5rem;
+            }
+
+            .date-title {
+                font-size: 1.3rem;
+            }
+
+            .date-value {
+                font-size: 1.5rem;
+            }
+
+            .venue-info {
+                padding: 1.5rem;
+            }
+
+            .venue-badge {
+                font-size: 0.85rem;
+                padding: 0.4rem 1.2rem;
+            }
+
+            .venue-name {
+                font-size: 1.4rem;
+            }
+        }
+
         /* About Section */
         .about {
             padding: 100px 20px;
@@ -460,6 +877,389 @@
         .about-card p {
             color: #666;
             line-height: 1.8;
+        }
+
+
+        /* Programs Section */
+        .programs {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+
+        #programs .section-title,
+        #speakers .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #0056b3 0%, #28a745 50%, #ffc107 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #programs .section-subtitle,
+        #speakers .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Day Tabs */
+        .program-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .day-tab {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 1.5rem 2.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .day-tab:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .day-tab.active {
+            background: linear-gradient(135deg, #0056b3 0%, #28a745 100%);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .day-tab-date {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.3rem;
+        }
+
+        .day-tab.active .day-tab-date {
+            opacity: 1;
+        }
+
+        .day-tab-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* Program Content */
+        .program-content {
+            display: none;
+        }
+
+        .program-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .program-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .program-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+
+        .program-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .program-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .program-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--accent-color);
+        }
+
+        .program-time {
+            display: inline-block;
+            background: linear-gradient(135deg, #0056b3 0%, #28a745 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .program-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .program-details {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .program-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .program-detail-icon {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        /* Speakers Section */
+        .speakers {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .speaker-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .speaker-image {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--primary-color);
+        }
+
+        .speaker-info {
+            padding: 2rem;
+        }
+
+        .speaker-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .speaker-title {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 0.3rem;
+            line-height: 1.5;
+        }
+
+        .speaker-organization {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .speaker-bio {
+            font-size: 0.9rem;
+            color: #777;
+            line-height: 1.6;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .speaker-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Filter Buttons */
+        .speaker-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+
+            .programs,
+            .speakers {
+                padding: 60px 15px;
+            }
+
+            .program-timeline {
+                padding-left: 2rem;
+            }
+
+            .program-item::before {
+                left: -2rem;
+            }
+
+            .program-item {
+                padding: 1.5rem;
+            }
+
+            .program-title {
+                font-size: 1.2rem;
+            }
+
+            .program-details {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .day-tab {
+                min-width: 150px;
+                padding: 1rem 1.5rem;
+            }
+
+            .speakers-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .speaker-image {
+                height: 280px;
+            }
+
+            .speaker-info {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .program-timeline::before {
+                left: -5px;
+            }
+
+            .program-timeline {
+                padding-left: 1.5rem;
+            }
+
+            .program-item {
+                padding: 1.2rem;
+            }
+
+            .program-item::before {
+                width: 15px;
+                height: 15px;
+                left: -1.8rem;
+            }
+
+            .day-tab {
+                min-width: 130px;
+                padding: 0.8rem 1rem;
+            }
+
+            .day-tab-name {
+                font-size: 1.1rem;
+            }
+
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Partners Section */
@@ -543,8 +1343,371 @@
         /* Logistics Section */
         .logistics {
             padding: 100px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1f2850 0%, #1f2850 100%);
             color: white;
+        }
+
+        /* Logistics Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #logistics .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            -webkit-text-fill-color: white;
+        }
+
+        #logistics .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 4rem;
+        }
+
+        /* Tabs Layout - Vertical */
+        .logistics-tabs-wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Tabs Navigation - Left Side */
+        .logistics-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .tab-button {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid transparent;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .tab-button::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 60%;
+            background: #ffc107;
+            border-radius: 0 4px 4px 0;
+            transition: width 0.3s ease;
+        }
+
+        .tab-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .tab-button.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffc107;
+            color: white;
+        }
+
+        .tab-button.active::before {
+            width: 4px;
+        }
+
+        .tab-button .icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .tab-button-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .tab-button-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .tab-button-subtitle {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Tabs Content - Right Side */
+        .logistics-content {
+            position: relative;
+            min-height: 400px;
+        }
+
+        .tab-panel {
+            display: none;
+            animation: fadeInRight 0.5s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .tab-panel-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tab-panel-header .icon {
+            font-size: 3rem;
+            color: #ffc107;
+        }
+
+        .tab-panel-header h3 {
+            font-size: 2rem;
+            margin: 0;
+            color: white;
+        }
+
+        .tab-panel-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .tab-panel ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .tab-panel li {
+            padding: 1.2rem 1.5rem;
+            padding-left: 3rem;
+            position: relative;
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 3px solid #ffc107;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .tab-panel li:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-panel li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ffc107;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .logistics-tabs-wrapper {
+                grid-template-columns: 240px 1fr;
+                gap: 2rem;
+            }
+
+            .tab-button {
+                padding: 1.2rem 1rem;
+            }
+
+            .tab-button-title {
+                font-size: 0.95rem;
+            }
+
+            .tab-panel {
+                padding: 2rem;
+            }
+
+            .tab-panel-header h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logistics {
+                padding: 60px 15px;
+            }
+
+            .section-subtitle {
+                margin-bottom: 2rem;
+            }
+
+            .logistics-tabs-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .logistics-tabs {
+                position: static;
+                flex-direction: row;
+                overflow-x: auto;
+                gap: 0.8rem;
+                padding-bottom: 1rem;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+            }
+
+            .logistics-tabs::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            .logistics-tabs::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+            }
+
+            .logistics-tabs::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 10px;
+            }
+
+            .tab-button {
+                min-width: 200px;
+                padding: 1rem;
+                flex-shrink: 0;
+            }
+
+            .tab-button::before {
+                top: auto;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60%;
+                height: 0;
+            }
+
+            .tab-button.active::before {
+                height: 4px;
+                width: 60%;
+            }
+
+            .tab-button-subtitle {
+                display: none;
+            }
+
+            .tab-panel {
+                padding: 2rem 1.5rem;
+            }
+
+            .tab-panel-header {
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .tab-panel-header h3 {
+                font-size: 1.5rem;
+            }
+
+            .tab-panel-description {
+                font-size: 1rem;
+            }
+
+            .tab-panel ul {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-panel li {
+                font-size: 0.95rem;
+                padding: 1rem;
+                padding-left: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logistics-tabs {
+                gap: 0.5rem;
+            }
+
+            .tab-button {
+                min-width: 160px;
+                padding: 0.9rem 0.8rem;
+            }
+
+            .tab-button .icon {
+                font-size: 1.5rem;
+            }
+
+            .tab-button-title {
+                font-size: 0.9rem;
+            }
+
+            .tab-panel {
+                padding: 1.5rem 1rem;
+            }
+
+            .tab-panel-header .icon {
+                font-size: 2.5rem;
+            }
+
+            .tab-panel-header h3 {
+                font-size: 1.3rem;
+            }
+
+            .tab-panel-description {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .tab-panel li {
+                font-size: 0.9rem;
+                padding: 0.9rem;
+                padding-left: 2.2rem;
+            }
+
+            .tab-panel li::before {
+                font-size: 1.1rem;
+                left: 0.8rem;
+            }
         }
 
         .logistics-grid {
@@ -697,6 +1860,107 @@
             transform: translateY(-3px);
         }
 
+        /* Modal Overlay */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(6px);
+            overflow-y: auto;
+            padding: 50px 20px;
+        }
+
+        /* Modal Container */
+        .modal-content {
+            background: #fff;
+            margin: auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.4s ease;
+            position: relative;
+            overflow: auto;
+        }
+
+        /* Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            color: #999;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close:hover {
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        /* Titles */
+        .modal-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .modal-section {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        /* Form Elements */
+        .modal-content label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .modal-content input,
+        .modal-content select,
+        .modal-content textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 6px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        .modal-content input:focus,
+        .modal-content select:focus,
+        .modal-content textarea:focus {
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
+            outline: none;
+        }
+
+        /* Checkboxes */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .checkbox-group label {
+            font-weight: 400;
+            cursor: pointer;
+        }
 
         /* Modal wider */
         .modal-content {
@@ -785,6 +2049,7 @@
             transform: translateY(-50%);
             font-size: 0.9rem;
             color: #aaa;
+            opacity: 0;
             pointer-events: none;
             transition: 0.3s ease all;
             font-weight: 400;
@@ -799,6 +2064,7 @@
             font-size: 0.75rem;
             color: var(--primary-color);
             background: #fff;
+            opacity: 1;
             padding: 0 4px;
         }
 
@@ -898,6 +2164,755 @@
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* ==========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ========================================== */
+
+        /* Tablettes et petits écrans (max-width: 1024px) */
+        @media (max-width: 1024px) {
+            .container {
+                max-width: 95%;
+                padding: 0 15px;
+            }
+
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.8rem, 4vw, 3rem);
+            }
+
+            .hero .tagline {
+                font-size: clamp(1rem, 2.5vw, 1.5rem);
+            }
+
+            .about-grid,
+            .partners-grid,
+            .logistics-grid,
+            .contact-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+
+            .modal-content {
+                max-width: 90%;
+                padding: 30px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        /* Tablettes portrait (max-width: 768px) */
+        @media (max-width: 768px) {
+
+            /* Navigation Mobile */
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--dark-bg);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu a {
+                color: var(--text-light);
+                padding: 1rem 0;
+                font-size: 1.1rem;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .mobile-menu-toggle span {
+                background: var(--text-dark);
+            }
+
+            nav.scrolled .mobile-menu-toggle span {
+                background: var(--text-dark);
+            }
+
+            .language-switcher {
+                margin-top: 1rem;
+            }
+
+            /* Hero Section */
+            .hero {
+                min-height: 100vh;
+                padding: 80px 15px 30px;
+            }
+
+            .hero h1 {
+                top: auto;
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .hero .tagline {
+                font-size: clamp(1rem, 4vw, 1.3rem);
+                margin-top: 2rem;
+            }
+
+            .event-date {
+                flex-direction: column;
+                gap: 1rem;
+                font-size: 1rem;
+            }
+
+            .event-date span {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Countdown Timer */
+            .countdown {
+                gap: 1rem;
+                margin: 2rem 0;
+            }
+
+            .countdown-item {
+                min-width: 70px;
+                padding: 1rem 0.5rem;
+            }
+
+            .countdown-value {
+                font-size: 1.8rem;
+            }
+
+            .countdown-label {
+                font-size: 0.75rem;
+            }
+
+            /* CTA Buttons */
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.8rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+
+            /* Sound Control */
+            .sound-control {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            /* Sections Padding */
+            .about,
+            .partners,
+            .logistics,
+            .contact {
+                padding: 60px 15px;
+            }
+
+            .section-title {
+                font-size: clamp(1.8rem, 5vw, 2.5rem);
+                margin-bottom: 0.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            /* About Cards */
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .about-card {
+                padding: 2rem;
+            }
+
+            .about-card h3 {
+                font-size: 1.3rem;
+            }
+
+            /* Partners Grid */
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .partner-logo {
+                width: 150px;
+                height: 100px;
+            }
+
+            /* Logistics Grid */
+            .logistics-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .logistics-item {
+                padding: 1.5rem;
+            }
+
+            .logistics-item h3 {
+                font-size: 1.2rem;
+            }
+
+            /* Contact Grid */
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+
+            /* Modal */
+            .modal {
+                padding: 20px 10px;
+            }
+
+            .modal-content {
+                padding: 25px;
+                border-radius: 15px;
+                max-height: 85vh;
+            }
+
+            .modal-header {
+                padding: 1.5rem;
+            }
+
+            .modal-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-section {
+                font-size: 1.1rem;
+            }
+
+            .close-modal {
+                top: 0.8rem;
+                right: 0.8rem;
+                width: 35px;
+                height: 35px;
+                font-size: 1.5rem;
+            }
+
+            .form-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .checkbox-group,
+            .radio-group {
+                gap: 0.6rem;
+            }
+
+            .submit-btn {
+                padding: 0.9rem;
+                font-size: 1rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 2rem 15px 1rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-links a {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        /* Smartphones (max-width: 480px) */
+        @media (max-width: 480px) {
+
+            /* Navigation */
+            .logo img {
+                height: 45px !important;
+            }
+
+            nav {
+                padding: 0.8rem 0;
+            }
+
+            .nav-menu {
+                top: 60px;
+            }
+
+            /* Hero */
+            .hero {
+                min-height: 100vh;
+                padding: 70px 10px 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+                line-height: 1.3;
+                letter-spacing: -0.5px;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .event-date {
+                font-size: 0.9rem;
+            }
+
+            .event-date span {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            /* Countdown */
+            .countdown {
+                gap: 0.6rem;
+                margin: 1.5rem 0;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 0.8rem 0.3rem;
+                border-radius: 15px;
+            }
+
+            .countdown-value {
+                font-size: 1.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.65rem;
+            }
+
+            /* Buttons */
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .sound-control {
+                bottom: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+
+            /* Sections */
+            .about,
+            .partners,
+            .logistics,
+            .contact {
+                padding: 50px 10px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+                padding-bottom: 0.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            /* About Cards */
+            .about-grid {
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            .about-card {
+                padding: 1.5rem;
+                border-radius: 15px;
+            }
+
+            .about-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .about-card p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            /* Partners */
+            .partners-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .partner-logo {
+                width: 140px;
+                height: 90px;
+            }
+
+            /* Logistics */
+            .logistics-item {
+                padding: 1.2rem;
+                border-radius: 12px;
+            }
+
+            .logistics-item h3 {
+                font-size: 1.1rem;
+            }
+
+            .logistics-item li {
+                font-size: 0.9rem;
+                padding: 0.4rem 0;
+                padding-left: 1.2rem;
+            }
+
+            /* Contact */
+            .contact-info {
+                padding: 1.2rem;
+                border-radius: 12px;
+            }
+
+            .contact-info h3 {
+                font-size: 1.1rem;
+            }
+
+            .contact-item {
+                padding: 0.8rem 0;
+                font-size: 0.9rem;
+            }
+
+            .contact-item strong {
+                font-size: 0.95rem;
+            }
+
+            /* Modal */
+            .modal {
+                padding: 10px 5px;
+            }
+
+            .modal-content {
+                padding: 20px;
+                border-radius: 12px;
+                max-height: 90vh;
+            }
+
+            .modal-header {
+                padding: 1.2rem;
+                border-radius: 12px 12px 0 0;
+            }
+
+            .modal-header h2 {
+                font-size: 1.2rem;
+            }
+
+            .modal-header p {
+                font-size: 0.85rem;
+            }
+
+            .modal-body {
+                padding: 1.2rem;
+            }
+
+            .modal-title {
+                font-size: 1.3rem;
+            }
+
+            .modal-section {
+                font-size: 1rem;
+                margin-top: 20px;
+            }
+
+            .close-modal {
+                width: 30px;
+                height: 30px;
+                font-size: 1.3rem;
+                top: 0.6rem;
+                right: 0.6rem;
+            }
+
+            .form-section h3 {
+                font-size: 1rem;
+            }
+
+            .form-group label {
+                font-size: 0.9rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.7rem;
+                font-size: 0.9rem;
+                border-radius: 8px;
+            }
+
+            .checkbox-item,
+            .radio-item {
+                font-size: 0.9rem;
+            }
+
+            .checkbox-item input[type="checkbox"],
+            .radio-item input[type="radio"] {
+                width: 18px;
+                height: 18px;
+            }
+
+            .submit-btn {
+                padding: 0.8rem;
+                font-size: 0.95rem;
+                border-radius: 8px;
+            }
+
+            /* Collapse Buttons */
+            .collapse-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+                border-radius: 8px;
+            }
+
+            .collapse-content {
+                padding: 15px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 1.5rem 10px 0.5rem;
+            }
+
+            .footer-links {
+                font-size: 0.9rem;
+            }
+
+            .footer-content p {
+                font-size: 0.85rem;
+            }
+
+            .social-links a {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Très petits écrans (max-width: 360px) */
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+
+            .countdown-item {
+                min-width: 55px;
+                padding: 0.6rem 0.2rem;
+            }
+
+            .countdown-value {
+                font-size: 1.3rem;
+            }
+
+            .countdown-label {
+                font-size: 0.6rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .about-card,
+            .logistics-item,
+            .contact-info {
+                padding: 1rem;
+            }
+
+            .modal-content {
+                padding: 15px;
+            }
+
+            .modal-header {
+                padding: 1rem;
+            }
+
+            .modal-body {
+                padding: 1rem;
+            }
+        }
+
+        /* Landscape mode pour smartphones */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 60px 10px 30px;
+            }
+
+            .countdown {
+                margin: 1.5rem 0;
+            }
+
+            .modal-content {
+                max-height: 90vh;
+                margin: 10px auto;
+            }
+        }
+
+        /* Améliorations pour les grands écrans (min-width: 1400px) */
+        @media (min-width: 1400px) {
+
+            .container,
+            .nav-container {
+                max-width: 1400px;
+            }
+
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 3.5rem;
+            }
+
+            .about-card,
+            .logistics-item,
+            .contact-info {
+                padding: 3rem;
+            }
+
+            .modal-content {
+                max-width: 1000px;
+                padding: 50px;
+            }
+        }
+
+        /* Optimisation pour tablettes en mode paysage */
+        @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+
+            .about-grid,
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .logistics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* Accessibilité - Réduction des animations */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .floating {
+                animation: none;
+            }
+
+            .loader {
+                animation: none;
+                border-top-color: transparent;
+            }
+        }
+
+        /* Mode impression */
+        @media print {
+
+            nav,
+            .sound-control,
+            .cta-buttons,
+            .mobile-menu-toggle,
+            footer,
+            .modal {
+                display: none !important;
+            }
+
+            .hero-video-wrapper {
+                display: none;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .hero,
+            .about,
+            .partners,
+            .logistics,
+            .contact {
+                page-break-inside: avoid;
+                background: white !important;
+            }
+
+            .section-title {
+                color: black !important;
+                -webkit-text-fill-color: black !important;
+            }
         }
     </style>
 </head>
@@ -1016,6 +3031,572 @@
         </div>
     </section>
 
+
+    <!-- Key Dates Section -->
+    <section class="key-dates reveals" id="key-dates">
+        <div class="container">
+            <h2 class="section-title">Important Dates</h2>
+            <p class="section-subtitle">Mark your calendar for these key milestones</p>
+
+            <div class="dates-grid">
+                <div class="date-card">
+                    <span class="date-icon">📅</span>
+                    <h3 class="date-title">Registration Opens</h3>
+                    <div class="date-value">September 1, 2025</div>
+                    <p class="date-description">
+                        Early bird registration begins. Secure your spot and benefit from discounted rates.
+                    </p>
+                    <span class="date-status status-upcoming">Upcoming</span>
+                </div>
+
+                <div class="date-card">
+                    <span class="date-icon">🎤</span>
+                    <h3 class="date-title">Abstract Submission</h3>
+                    <div class="date-value">October 15, 2025</div>
+                    <p class="date-description">
+                        Deadline for submitting abstracts for panel discussions and presentations.
+                    </p>
+                    <span class="date-status status-open">Open</span>
+                </div>
+
+                <div class="date-card">
+                    <span class="date-icon">💰</span>
+                    <h3 class="date-title">Early Bird Deadline</h3>
+                    <div class="date-value">October 31, 2025</div>
+                    <p class="date-description">
+                        Last day to register at the discounted early bird rate. Save up to 25%!
+                    </p>
+                    <span class="date-status status-open">Open</span>
+                </div>
+
+                <div class="date-card">
+                    <span class="date-icon">⚠️</span>
+                    <h3 class="date-title">Registration Closes</h3>
+                    <div class="date-value">November 7, 2025</div>
+                    <p class="date-description">
+                        Final deadline for event registration. No on-site registration available.
+                    </p>
+                    <span class="date-status status-deadline">Deadline</span>
+                </div>
+
+                <div class="date-card">
+                    <span class="date-icon">🏨</span>
+                    <h3 class="date-title">Hotel Booking</h3>
+                    <div class="date-value">November 10, 2025</div>
+                    <p class="date-description">
+                        Last day to book accommodation at special conference rates.
+                    </p>
+                    <span class="date-status status-open">Open</span>
+                </div>
+
+                <div class="date-card">
+                    <span class="date-icon">🎉</span>
+                    <h3 class="date-title">Event Dates</h3>
+                    <div class="date-value">November 17-19, 2025</div>
+                    <p class="date-description">
+                        Three days of high-level discussions, workshops, and networking in Abuja, Nigeria.
+                    </p>
+                    <span class="date-status status-upcoming">Main Event</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Locations Section -->
+    <section class="venue-locations reveals" id="venues">
+        <div class="container">
+            <h2 class="section-title">Event Venues</h2>
+            <p class="section-subtitle">Two prestigious locations in the heart of Abuja</p>
+
+            <div class="venues-wrapper">
+                <!-- Venue 1: State House -->
+                <div class="venue-card">
+                    <div class="venue-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.883847156928!2d7.488958!3d9.075774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0ba8fb2ac20f%3A0x3c7b33c3f6c7b8c4!2sAso%20Rock%2C%20Abuja!5e0!3m2!1sen!2sng!4v1234567890"
+                            allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="venue-info">
+                        <span class="venue-badge">Day 1 - November 17</span>
+                        <h3 class="venue-name">State House Banquet Hall</h3>
+                        <div class="venue-address">
+                            <span class="venue-address-icon">📍</span>
+                            <span>Aso Rock Presidential Villa, Three Arms Zone, Abuja FCT, Nigeria</span>
+                        </div>
+
+                        <div class="venue-details">
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">🕐</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Sessions</div>
+                                    <div class="venue-detail-value">Opening Ceremony & Plenary Sessions</div>
+                                </div>
+                            </div>
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">👥</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Capacity</div>
+                                    <div class="venue-detail-value">500+ Delegates</div>
+                                </div>
+                            </div>
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">🚗</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Distance from Airport</div>
+                                    <div class="venue-detail-value">25 minutes (15 km)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="venue-buttons">
+                            <a href="https://maps.google.com/?q=Aso+Rock+Presidential+Villa+Abuja" target="_blank"
+                                class="venue-btn venue-btn-primary">
+                                🗺️ Get Directions
+                            </a>
+                            <a href="#logistics" class="venue-btn venue-btn-secondary">
+                                ℹ️ More Info
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue 2: Transcorp Hilton -->
+                <div class="venue-card">
+                    <div class="venue-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.2647895524467!2d7.492873!3d9.057685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0baf7da48d0d%3A0x99a8fe4168c50bc8!2sTranscorp%20Hilton%20Abuja!5e0!3m2!1sen!2sng!4v1234567890"
+                            allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="venue-info">
+                        <span class="venue-badge">Days 2-3 - November 18-19</span>
+                        <h3 class="venue-name">Transcorp Hilton Abuja</h3>
+                        <div class="venue-address">
+                            <span class="venue-address-icon">📍</span>
+                            <span>1 Aguiyi Ironsi Street, Maitama District, Abuja FCT 900001, Nigeria</span>
+                        </div>
+
+                        <div class="venue-details">
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">🕐</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Sessions</div>
+                                    <div class="venue-detail-value">Technical Workshops & Networking</div>
+                                </div>
+                            </div>
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">⭐</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Rating</div>
+                                    <div class="venue-detail-value">5-Star Luxury Hotel</div>
+                                </div>
+                            </div>
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">🚗</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Distance from Airport</div>
+                                    <div class="venue-detail-value">35 minutes (20 km)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="venue-buttons">
+                            <a href="https://maps.google.com/?q=Transcorp+Hilton+Abuja" target="_blank"
+                                class="venue-btn venue-btn-primary">
+                                🗺️ Get Directions
+                            </a>
+                            <a href="#logistics" class="venue-btn venue-btn-secondary">
+                                🏨 Accommodation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Programs Section -->
+    <section class="programs reveal" id="programs">
+        <div class="container">
+            <h2 class="section-title">Event Program</h2>
+            <p class="section-subtitle">
+                Three days of high-level discussions, technical sessions, and networking opportunities
+            </p>
+
+            <!-- Day Tabs -->
+            <div class="program-tabs">
+                <div class="day-tab active" data-day="day1">
+                    <div class="day-tab-date">November 17, 2025</div>
+                    <div class="day-tab-name">Day 1</div>
+                </div>
+                <div class="day-tab" data-day="day2">
+                    <div class="day-tab-date">November 18, 2025</div>
+                    <div class="day-tab-name">Day 2</div>
+                </div>
+                <div class="day-tab" data-day="day3">
+                    <div class="day-tab-date">November 19, 2025</div>
+                    <div class="day-tab-name">Day 3</div>
+                </div>
+            </div>
+
+            <!-- Day 1 Program -->
+            <div class="program-content active" id="day1">
+                <div class="program-timeline">
+                    <div class="program-item">
+                        <span class="program-time">08:00 - 09:00</span>
+                        <h3 class="program-title">Registration & Welcome</h3>
+                        <p class="program-description">
+                            Arrival of delegates, registration, and welcome breakfast
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">📍</span>
+                                <span>State House Banquet Hall</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">09:00 - 10:30</span>
+                        <h3 class="program-title">Opening Ceremony</h3>
+                        <p class="program-description">
+                            Official opening with keynote addresses from Comptroller-General Nigeria Customs Service,
+                            ECOWAS
+                            Commission, AfCFTA Secretariat, and special guests
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">🎤</span>
+                                <span>Keynote Speakers</span>
+                            </div>
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">📍</span>
+                                <span>State House Banquet Hall</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">10:30 - 11:00</span>
+                        <h3 class="program-title">Coffee Break & Networking</h3>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">☕</span>
+                                <span>Light refreshments provided</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">11:00 - 13:00</span>
+                        <h3 class="program-title">Plenary Session 1: Breaking Barriers in African Trade</h3>
+                        <p class="program-description">
+                            High-level panel discussion on eliminating trade barriers, harmonizing customs procedures,
+                            and
+                            implementing AfCFTA provisions across the continent
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">👥</span>
+                                <span>Panel Discussion</span>
+                            </div>
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">🌍</span>
+                                <span>Interpretation: EN, FR, AR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">13:00 - 14:30</span>
+                        <h3 class="program-title">Lunch & Networking</h3>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">🍽️</span>
+                                <span>Buffet lunch provided</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">14:30 - 16:30</span>
+                        <h3 class="program-title">Plenary Session 2: Building Bridges for Cooperation</h3>
+                        <p class="program-description">
+                            Exploring partnership opportunities, capacity building initiatives, and knowledge sharing
+                            mechanisms among African customs administrations
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">👥</span>
+                                <span>Interactive Session</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">19:00 - 21:30</span>
+                        <h3 class="program-title">Welcome Gala Dinner</h3>
+                        <p class="program-description">
+                            Evening reception with cultural performances and networking opportunities
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">🎭</span>
+                                <span>Cultural entertainment</span>
+                            </div>
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">📍</span>
+                                <span>State House Banquet Hall</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 Program -->
+            <div class="program-content" id="day2">
+                <div class="program-timeline">
+                    <div class="program-item">
+                        <span class="program-time">09:00 - 09:30</span>
+                        <h3 class="program-title">Day 2 Opening & Recap</h3>
+                        <p class="program-description">Welcome and summary of Day 1 highlights</p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">📍</span>
+                                <span>Transcorp Hilton Abuja</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">09:30 - 12:00</span>
+                        <h3 class="program-title">Technical Workshops (Parallel Sessions)</h3>
+                        <p class="program-description">
+                            Choose from specialized workshops covering: Digital Customs Systems, Risk Management, Trade
+                            Facilitation, Rules of Origin, and Single Window Implementation
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">💻</span>
+                                <span>5 Parallel Workshops</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">12:00 - 13:30</span>
+                        <h3 class="program-title">Lunch Break</h3>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">13:30 - 16:00</span>
+                        <h3 class="program-title">Capacity Building Sessions</h3>
+                        <p class="program-description">
+                            Hands-on training sessions on customs modernization, best practices, and regional
+                            integration
+                            tools
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">📚</span>
+                                <span>Interactive Training</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">16:00 - 18:00</span>
+                        <h3 class="program-title">B2B / B2G Networking Sessions</h3>
+                        <p class="program-description">
+                            Dedicated networking time for bilateral meetings, partnership discussions, and business
+                            matchmaking
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 Program -->
+            <div class="program-content" id="day3">
+                <div class="program-timeline">
+                    <div class="program-item">
+                        <span class="program-time">09:00 - 09:30</span>
+                        <h3 class="program-title">Day 3 Opening</h3>
+                        <p class="program-description">Welcome and outline of final day activities</p>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">09:30 - 11:30</span>
+                        <h3 class="program-title">Roundtable Discussions</h3>
+                        <p class="program-description">
+                            Thematic roundtables on key issues: Regional Integration Challenges, Technology Adoption,
+                            Capacity Building Needs, and Future Collaboration Framework
+                        </p>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">11:30 - 12:00</span>
+                        <h3 class="program-title">Coffee Break</h3>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">12:00 - 13:30</span>
+                        <h3 class="program-title">Closing Plenary: Way Forward</h3>
+                        <p class="program-description">
+                            Presentation of outcomes, recommendations, and roadmap for future editions of The Customs
+                            PACT
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon">📋</span>
+                                <span>Key Recommendations</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">13:30 - 14:00</span>
+                        <h3 class="program-title">Closing Ceremony</h3>
+                        <p class="program-description">
+                            Official closing remarks and vote of thanks
+                        </p>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">14:00 - 15:00</span>
+                        <h3 class="program-title">Farewell Lunch</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="speakers reveal" id="speakers">
+        <div class="container">
+            <h2 class="section-title">Our Distinguished Speakers</h2>
+            <p class="section-subtitle">
+                Leading experts and decision-makers from across Africa and the global trade community
+            </p>
+
+            <!-- Speaker Filters -->
+            <div class="speaker-filters">
+                <button class="filter-btn active" data-filter="all">All Speakers</button>
+                <button class="filter-btn" data-filter="keynote">Keynote</button>
+                <button class="filter-btn" data-filter="panelist">Panelist</button>
+                <button class="filter-btn" data-filter="moderator">Moderator</button>
+            </div>
+
+            <!-- Speakers Grid -->
+            <div class="speakers-grid">
+                <div class="speaker-card" data-category="keynote">
+                    <div class="speaker-badge">Keynote</div>
+                    <div class="speaker-image">👤</div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Adewale Adeniyi</h3>
+                        <p class="speaker-title">Comptroller-General</p>
+                        <p class="speaker-organization">Nigeria Customs Service</p>
+                        <p class="speaker-bio">
+                            Leading Nigeria's customs modernization and regional trade facilitation initiatives
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="keynote">
+                    <div class="speaker-badge">Keynote</div>
+                    <div class="speaker-image">👤</div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">H.E. Omar Alieu Touray</h3>
+                        <p class="speaker-title">President</p>
+                        <p class="speaker-organization">ECOWAS Commission</p>
+                        <p class="speaker-bio">
+                            Champion of West African economic integration and regional cooperation
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="keynote">
+                    <div class="speaker-badge">Keynote</div>
+                    <div class="speaker-image">👤</div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">H.E. Wamkele Mene</h3>
+                        <p class="speaker-title">Secretary-General</p>
+                        <p class="speaker-organization">AfCFTA Secretariat</p>
+                        <p class="speaker-bio">
+                            Driving the implementation of the African Continental Free Trade Area
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="panelist">
+                    <div class="speaker-badge">Panelist</div>
+                    <div class="speaker-image">👤</div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Benedict Oramah</h3>
+                        <p class="speaker-title">President & Chairman</p>
+                        <p class="speaker-organization">Afreximbank</p>
+                        <p class="speaker-bio">
+                            Expert in trade finance and African economic development
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="panelist">
+                    <div class="speaker-badge">Panelist</div>
+                    <div class="speaker-image">👤</div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Kunio Mikuriya</h3>
+                        <p class="speaker-title">Secretary General</p>
+                        <p class="speaker-organization">World Customs Organization</p>
+                        <p class="speaker-bio">
+                            Leading global customs standards and best practices implementation
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="moderator">
+                    <div class="speaker-badge">Moderator</div>
+                    <div class="speaker-image">👤</div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Prof. Oyebanji Oyelaran-Oyeyinka</h3>
+                        <p class="speaker-title">Senior Advisor</p>
+                        <p class="speaker-organization">African Development Bank</p>
+                        <p class="speaker-bio">
+                            Renowned expert in African industrialization and trade policy
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="panelist">
+                    <div class="speaker-badge">Panelist</div>
+                    <div class="speaker-image">👤</div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Amelia Kinahoi Siamomua</h3>
+                        <p class="speaker-title">Director</p>
+                        <p class="speaker-organization">WTO Trade Facilitation Division</p>
+                        <p class="speaker-bio">
+                            Specialist in trade facilitation and customs modernization
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="panelist">
+                    <div class="speaker-badge">Panelist</div>
+                    <div class="speaker-image">👤</div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Stephen Karingi</h3>
+                        <p class="speaker-title">Director, Regional Integration</p>
+                        <p class="speaker-organization">UNECA</p>
+                        <p class="speaker-bio">
+                            Expert in regional economic integration and trade policy in Africa
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Partners Section -->
     <section class="partners reveal" id="partners">
         <div class="container">
@@ -1034,45 +3615,123 @@
     <!-- Logistics Section -->
     <section class="logistics reveal" id="logistics">
         <div class="container">
-            <h2 class="section-title" style="-webkit-text-fill-color: white;">Event Logistics</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Everything You Need to Know</p>
+            <h2 class="section-title">Event Logistics</h2>
+            <p class="section-subtitle">Everything You Need to Know</p>
 
-            <div class="logistics-grid">
-                <div class="logistics-item">
-                    <h3>🛂 Visa Information</h3>
-                    <ul>
-                        <li>ECOWAS citizens: Visa-free entry</li>
-                        <li>Online visa application available</li>
-                        <li>Yellow fever vaccination required</li>
-                        <li>Invitation letters provided</li>
-                    </ul>
+            <div class="logistics-tabs-wrapper">
+                <!-- Tabs Navigation - Left Side -->
+                <div class="logistics-tabs">
+                    <button class="tab-button active" data-tab="visa">
+                        <span class="icon">🛂</span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">Visa</span>
+                            <span class="tab-button-subtitle">Entry requirements</span>
+                        </div>
+                    </button>
+                    <button class="tab-button" data-tab="travel">
+                        <span class="icon">✈️</span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">Travel</span>
+                            <span class="tab-button-subtitle">Transportation</span>
+                        </div>
+                    </button>
+                    <button class="tab-button" data-tab="accommodation">
+                        <span class="icon">🏨</span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">Accommodation</span>
+                            <span class="tab-button-subtitle">Hotel options</span>
+                        </div>
+                    </button>
+                    <button class="tab-button" data-tab="services">
+                        <span class="icon">🌍</span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">Services</span>
+                            <span class="tab-button-subtitle">Conference facilities</span>
+                        </div>
+                    </button>
                 </div>
-                <div class="logistics-item">
-                    <h3>✈️ Travel</h3>
-                    <ul>
-                        <li>Nnamdi Azikiwe International Airport</li>
-                        <li>Multiple international airlines</li>
-                        <li>Airport transfers provided</li>
-                        <li>Shuttle service to venues</li>
-                    </ul>
-                </div>
-                <div class="logistics-item">
-                    <h3>🏨 Accommodation</h3>
-                    <ul>
-                        <li>Transcorp Hilton Abuja</li>
-                        <li>Abuja Continental Hotel</li>
-                        <li>Fraser Suites Abuja</li>
-                        <li>Special conference rates available</li>
-                    </ul>
-                </div>
-                <div class="logistics-item">
-                    <h3>🌍 Conference Services</h3>
-                    <ul>
-                        <li>English, French & Arabic interpretation</li>
-                        <li>WiFi connectivity</li>
-                        <li>Coffee breaks & lunch included</li>
-                        <li>Medical services on-site</li>
-                    </ul>
+
+                <!-- Tabs Content - Right Side -->
+                <div class="logistics-content">
+                    <!-- Visa Tab -->
+                    <div class="tab-panel active" id="visa">
+                        <div class="tab-panel-header">
+                            <span class="icon">🛂</span>
+                            <h3>Visa Information</h3>
+                        </div>
+                        <p class="tab-panel-description">
+                            We facilitate visa processing for all international delegates. Please review the
+                            requirements below and contact our team for assistance.
+                        </p>
+                        <ul>
+                            <li>ECOWAS citizens: Visa-free entry to Nigeria</li>
+                            <li>Online visa application available at immigration.gov.ng</li>
+                            <li>Yellow fever vaccination certificate required</li>
+                            <li>Invitation letters provided upon registration</li>
+                            <li>Processing time: 5-7 business days</li>
+                            <li>Visa on arrival available for select countries</li>
+                        </ul>
+                    </div>
+
+                    <!-- Travel Tab -->
+                    <div class="tab-panel" id="travel">
+                        <div class="tab-panel-header">
+                            <span class="icon">✈️</span>
+                            <h3>Travel Information</h3>
+                        </div>
+                        <p class="tab-panel-description">
+                            Abuja is well-connected internationally. We provide comprehensive travel support to ensure
+                            your smooth arrival and departure.
+                        </p>
+                        <ul>
+                            <li>Nnamdi Azikiwe International Airport (ABV)</li>
+                            <li>Multiple international airlines serve Abuja daily</li>
+                            <li>Complimentary airport transfers for delegates</li>
+                            <li>Daily shuttle service between venues</li>
+                            <li>30 minutes drive from airport to city center</li>
+                            <li>VIP pickup service available upon request</li>
+                        </ul>
+                    </div>
+
+                    <!-- Accommodation Tab -->
+                    <div class="tab-panel" id="accommodation">
+                        <div class="tab-panel-header">
+                            <span class="icon">🏨</span>
+                            <h3>Accommodation Options</h3>
+                        </div>
+                        <p class="tab-panel-description">
+                            We've partnered with premium hotels to offer exclusive rates for event delegates. Book early
+                            to secure the best prices.
+                        </p>
+                        <ul>
+                            <li>Transcorp Hilton Abuja - Main conference venue</li>
+                            <li>Abuja Continental Hotel - 5-star partner hotel</li>
+                            <li>Fraser Suites Abuja - Premium serviced apartments</li>
+                            <li>Special conference rates with up to 25% discount</li>
+                            <li>Complimentary breakfast included for delegates</li>
+                            <li>Free WiFi and business center access</li>
+                        </ul>
+                    </div>
+
+                    <!-- Services Tab -->
+                    <div class="tab-panel" id="services">
+                        <div class="tab-panel-header">
+                            <span class="icon">🌍</span>
+                            <h3>Conference Services</h3>
+                        </div>
+                        <p class="tab-panel-description">
+                            We provide world-class conference facilities and services to ensure a productive and
+                            comfortable experience for all participants.
+                        </p>
+                        <ul>
+                            <li>Simultaneous interpretation in English, French & Arabic</li>
+                            <li>High-speed WiFi connectivity throughout venues</li>
+                            <li>Daily coffee breaks and gourmet lunch service</li>
+                            <li>On-site medical services with qualified personnel</li>
+                            <li>Networking lounge and business center facilities</li>
+                            <li>Mobile event app for schedules and networking</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1146,37 +3805,37 @@
 
             <form id="registrationForm">
                 <!-- Collapsible Sections -->
-                <div class="collapse">
+                <div class="collapse active">
                     <button type="button" class="collapse-btn">👤 Personal Information</button>
                     <div class="collapse-content">
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="fullname" placeholder="Full Name" required>
+                            <label>Full Name</label>
+                        </div>
                         <div class="form-row">
-                            <div class="form-group">
-                                <i class="fa fa-user"></i>
-                                <input type="text" name="fullname" placeholder="Full Name" required>
-                                <label>Full Name</label>
-                            </div>
                             <div class="form-group">
                                 <i class="fa fa-building"></i>
                                 <input type="text" name="organization" placeholder="Organization / Company" required>
                                 <label>Organization / Company</label>
                             </div>
-                        </div>
-                        <div class="form-row">
                             <div class="form-group">
                                 <i class="fa fa-briefcase"></i>
                                 <input type="text" name="position" placeholder="Position / Title">
                                 <label>Position / Title</label>
                             </div>
+                        </div>
+                        <div class="form-row">
                             <div class="form-group">
                                 <i class="fa fa-map-marker-alt"></i>
                                 <input type="text" name="city" placeholder="City / Location">
                                 <label>City / Location</label>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <i class="fa fa-globe"></i>
-                            <input type="text" name="country" placeholder="Country / Region">
-                            <label>Country / Region</label>
+                            <div class="form-group">
+                                <i class="fa fa-globe"></i>
+                                <input type="text" name="country" placeholder="Country / Region">
+                                <label>Country / Region</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1324,7 +3983,7 @@
 
         // Countdown Timer
         const countdown = () => {
-            const countDate = new Date('October 17, 2025 09:00:00').getTime();
+            const countDate = new Date('November 17, 2025 09:00:00').getTime();
             const now = new Date().getTime();
             const gap = countDate - now;
 
@@ -1372,6 +4031,106 @@
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
         revealOnScroll();
+
+
+        // Scroll reveals animation
+        const revealsElements = document.querySelectorAll('.reveals');
+
+        const revealsOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealsElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initial styling for reveals elements
+        revealsElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+        });
+
+        window.addEventListener('scroll', revealsOnScroll);
+        window.addEventListener('load', revealsOnScroll);
+        revealsOnScroll();
+    </script>
+    <script>
+
+        // Program Tabs
+        const dayTabs = document.querySelectorAll('.day-tab');
+        const programContents = document.querySelectorAll('.program-content');
+
+        dayTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetDay = tab.getAttribute('data-day');
+
+                dayTabs.forEach(t => t.classList.remove('active'));
+                programContents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(targetDay).classList.add('active');
+            });
+        });
+
+        // Speaker Filters
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const speakerCards = document.querySelectorAll('.speaker-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filterValue = btn.getAttribute('data-filter');
+
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                speakerCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Tabs functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+
+                // Remove active class from all buttons and panels
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding panel
+                button.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // Keyboard navigation
+        tabButtons.forEach((button, index) => {
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const nextIndex = (index + 1) % tabButtons.length;
+                    tabButtons[nextIndex].click();
+                    tabButtons[nextIndex].focus();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prevIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+                    tabButtons[prevIndex].click();
+                    tabButtons[prevIndex].focus();
+                }
+            });
+        });
     </script>
     <script>
         // Contrôle du son de la vidéo YouTube
@@ -1410,28 +4169,44 @@
             });
         }
     </script>
-
     <script>
-        // Modal Logic
+        // Sélection des éléments
         const modal = document.getElementById("registrationModal");
-        const btn = document.querySelector("a[href='#registration']");
-        const span = document.getElementById("closeModal");
+        const openBtn = document.getElementById("openRegistration");
+        const closeBtn = document.getElementById("closeModal");
 
-        btn.addEventListener("click", (e) => {
+        // Ouvrir le modal
+        openBtn.addEventListener("click", (e) => {
             e.preventDefault();
             modal.style.display = "block";
+            document.body.style.overflow = "hidden"; // empêche le scroll en arrière-plan
         });
 
-        span.onclick = () => modal.style.display = "none";
-        window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; };
 
-        // Form submission (placeholder)
-        document.getElementById("registrationForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            alert("Thank you for registering! Your information has been submitted.");
+        // Collapse logic
+        document.querySelectorAll('.collapse-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                content.style.display = content.style.display === "block" ? "none" : "block";
+                btn.parentElement.classList.toggle("active");
+            });
+        });
+
+        // Fermer le modal
+        closeBtn.addEventListener("click", () => {
             modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+
+        // Fermer en cliquant en dehors
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
         });
     </script>
+
 </body>
 
 </html>

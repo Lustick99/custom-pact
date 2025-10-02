@@ -1,0 +1,532 @@
+<style>
+    /* Logistics Section */
+    .logistics {
+        padding: 100px 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1rem;
+        -webkit-text-fill-color: white;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 4rem;
+    }
+
+    /* Tabs Layout - Vertical */
+    .logistics-tabs-wrapper {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    /* Tabs Navigation - Left Side */
+    .logistics-tabs {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        position: sticky;
+        top: 100px;
+    }
+
+    .tab-button {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 2px solid transparent;
+        color: rgba(255, 255, 255, 0.8);
+        padding: 1.5rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 12px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .tab-button::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 60%;
+        background: #ffc107;
+        border-radius: 0 4px 4px 0;
+        transition: width 0.3s ease;
+    }
+
+    .tab-button:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+
+    .tab-button.active {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: #ffc107;
+        color: white;
+    }
+
+    .tab-button.active::before {
+        width: 4px;
+    }
+
+    .tab-button .icon {
+        font-size: 1.8rem;
+        flex-shrink: 0;
+    }
+
+    .tab-button-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .tab-button-title {
+        font-size: 1.05rem;
+        font-weight: 600;
+    }
+
+    .tab-button-subtitle {
+        font-size: 0.8rem;
+        opacity: 0.7;
+    }
+
+    /* Tabs Content - Right Side */
+    .logistics-content {
+        position: relative;
+        min-height: 400px;
+    }
+
+    .tab-panel {
+        display: none;
+        animation: fadeInRight 0.5s ease;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 3rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .tab-panel.active {
+        display: block;
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .tab-panel-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .tab-panel-header .icon {
+        font-size: 3rem;
+        color: #ffc107;
+    }
+
+    .tab-panel-header h3 {
+        font-size: 2rem;
+        margin: 0;
+        color: white;
+    }
+
+    .tab-panel-description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .tab-panel ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+    }
+
+    .tab-panel li {
+        padding: 1.2rem 1.5rem;
+        padding-left: 3rem;
+        position: relative;
+        background: rgba(255, 255, 255, 0.08);
+        border-left: 3px solid #ffc107;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .tab-panel li:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .tab-panel li::before {
+        content: '✓';
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ffc107;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .logistics-tabs-wrapper {
+            grid-template-columns: 240px 1fr;
+            gap: 2rem;
+        }
+
+        .tab-button {
+            padding: 1.2rem 1rem;
+        }
+
+        .tab-button-title {
+            font-size: 0.95rem;
+        }
+
+        .tab-panel {
+            padding: 2rem;
+        }
+
+        .tab-panel-header h3 {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .logistics {
+            padding: 60px 15px;
+        }
+
+        .section-subtitle {
+            margin-bottom: 2rem;
+        }
+
+        .logistics-tabs-wrapper {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .logistics-tabs {
+            position: static;
+            flex-direction: row;
+            overflow-x: auto;
+            gap: 0.8rem;
+            padding-bottom: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+        }
+
+        .logistics-tabs::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .logistics-tabs::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .logistics-tabs::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .tab-button {
+            min-width: 200px;
+            padding: 1rem;
+            flex-shrink: 0;
+        }
+
+        .tab-button::before {
+            top: auto;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 0;
+        }
+
+        .tab-button.active::before {
+            height: 4px;
+            width: 60%;
+        }
+
+        .tab-button-subtitle {
+            display: none;
+        }
+
+        .tab-panel {
+            padding: 2rem 1.5rem;
+        }
+
+        .tab-panel-header {
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-panel-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .tab-panel-description {
+            font-size: 1rem;
+        }
+
+        .tab-panel ul {
+            grid-template-columns: 1fr;
+        }
+
+        .tab-panel li {
+            font-size: 0.95rem;
+            padding: 1rem;
+            padding-left: 2.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logistics-tabs {
+            gap: 0.5rem;
+        }
+
+        .tab-button {
+            min-width: 160px;
+            padding: 0.9rem 0.8rem;
+        }
+
+        .tab-button .icon {
+            font-size: 1.5rem;
+        }
+
+        .tab-button-title {
+            font-size: 0.9rem;
+        }
+
+        .tab-panel {
+            padding: 1.5rem 1rem;
+        }
+
+        .tab-panel-header .icon {
+            font-size: 2.5rem;
+        }
+
+        .tab-panel-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .tab-panel-description {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-panel li {
+            font-size: 0.9rem;
+            padding: 0.9rem;
+            padding-left: 2.2rem;
+        }
+
+        .tab-panel li::before {
+            font-size: 1.1rem;
+            left: 0.8rem;
+        }
+    }
+</style>
+
+<!-- Logistics Section -->
+<section class="logistics reveal" id="logistics">
+    <div class="container">
+        <h2 class="section-title">Event Logistics</h2>
+        <p class="section-subtitle">Everything You Need to Know</p>
+
+        <div class="logistics-tabs-wrapper">
+            <!-- Tabs Navigation - Left Side -->
+            <div class="logistics-tabs">
+                <button class="tab-button active" data-tab="visa">
+                    <span class="icon">🛂</span>
+                    <div class="tab-button-text">
+                        <span class="tab-button-title">Visa</span>
+                        <span class="tab-button-subtitle">Entry requirements</span>
+                    </div>
+                </button>
+                <button class="tab-button" data-tab="travel">
+                    <span class="icon">✈️</span>
+                    <div class="tab-button-text">
+                        <span class="tab-button-title">Travel</span>
+                        <span class="tab-button-subtitle">Transportation</span>
+                    </div>
+                </button>
+                <button class="tab-button" data-tab="accommodation">
+                    <span class="icon">🏨</span>
+                    <div class="tab-button-text">
+                        <span class="tab-button-title">Accommodation</span>
+                        <span class="tab-button-subtitle">Hotel options</span>
+                    </div>
+                </button>
+                <button class="tab-button" data-tab="services">
+                    <span class="icon">🌍</span>
+                    <div class="tab-button-text">
+                        <span class="tab-button-title">Services</span>
+                        <span class="tab-button-subtitle">Conference facilities</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Tabs Content - Right Side -->
+            <div class="logistics-content">
+                <!-- Visa Tab -->
+                <div class="tab-panel active" id="visa">
+                    <div class="tab-panel-header">
+                        <span class="icon">🛂</span>
+                        <h3>Visa Information</h3>
+                    </div>
+                    <p class="tab-panel-description">
+                        We facilitate visa processing for all international delegates. Please review the
+                        requirements below and contact our team for assistance.
+                    </p>
+                    <ul>
+                        <li>ECOWAS citizens: Visa-free entry to Nigeria</li>
+                        <li>Online visa application available at immigration.gov.ng</li>
+                        <li>Yellow fever vaccination certificate required</li>
+                        <li>Invitation letters provided upon registration</li>
+                        <li>Processing time: 5-7 business days</li>
+                        <li>Visa on arrival available for select countries</li>
+                    </ul>
+                </div>
+
+                <!-- Travel Tab -->
+                <div class="tab-panel" id="travel">
+                    <div class="tab-panel-header">
+                        <span class="icon">✈️</span>
+                        <h3>Travel Information</h3>
+                    </div>
+                    <p class="tab-panel-description">
+                        Abuja is well-connected internationally. We provide comprehensive travel support to ensure
+                        your smooth arrival and departure.
+                    </p>
+                    <ul>
+                        <li>Nnamdi Azikiwe International Airport (ABV)</li>
+                        <li>Multiple international airlines serve Abuja daily</li>
+                        <li>Complimentary airport transfers for delegates</li>
+                        <li>Daily shuttle service between venues</li>
+                        <li>30 minutes drive from airport to city center</li>
+                        <li>VIP pickup service available upon request</li>
+                    </ul>
+                </div>
+
+                <!-- Accommodation Tab -->
+                <div class="tab-panel" id="accommodation">
+                    <div class="tab-panel-header">
+                        <span class="icon">🏨</span>
+                        <h3>Accommodation Options</h3>
+                    </div>
+                    <p class="tab-panel-description">
+                        We've partnered with premium hotels to offer exclusive rates for event delegates. Book early
+                        to secure the best prices.
+                    </p>
+                    <ul>
+                        <li>Transcorp Hilton Abuja - Main conference venue</li>
+                        <li>Abuja Continental Hotel - 5-star partner hotel</li>
+                        <li>Fraser Suites Abuja - Premium serviced apartments</li>
+                        <li>Special conference rates with up to 25% discount</li>
+                        <li>Complimentary breakfast included for delegates</li>
+                        <li>Free WiFi and business center access</li>
+                    </ul>
+                </div>
+
+                <!-- Services Tab -->
+                <div class="tab-panel" id="services">
+                    <div class="tab-panel-header">
+                        <span class="icon">🌍</span>
+                        <h3>Conference Services</h3>
+                    </div>
+                    <p class="tab-panel-description">
+                        We provide world-class conference facilities and services to ensure a productive and
+                        comfortable experience for all participants.
+                    </p>
+                    <ul>
+                        <li>Simultaneous interpretation in English, French & Arabic</li>
+                        <li>High-speed WiFi connectivity throughout venues</li>
+                        <li>Daily coffee breaks and gourmet lunch service</li>
+                        <li>On-site medical services with qualified personnel</li>
+                        <li>Networking lounge and business center facilities</li>
+                        <li>Mobile event app for schedules and networking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Tabs functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+
+            // Remove active class from all buttons and panels
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanels.forEach(panel => panel.classList.remove('active'));
+
+            // Add active class to clicked button and corresponding panel
+            button.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+
+    // Keyboard navigation
+    tabButtons.forEach((button, index) => {
+        button.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                const nextIndex = (index + 1) % tabButtons.length;
+                tabButtons[nextIndex].click();
+                tabButtons[nextIndex].focus();
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                const prevIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+                tabButtons[prevIndex].click();
+                tabButtons[prevIndex].focus();
+            }
+        });
+    });
+</script>

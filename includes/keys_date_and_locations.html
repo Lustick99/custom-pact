@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Dates & Venue Locations</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #28a745;
+            --accent-color: #ffc107;
+            --text-dark: #222222;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Key Dates Section */
+        .key-dates {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .key-dates::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230099ff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: bottom;
+            opacity: 0.5;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #0056b3 0%, #28a745 50%, #ffc107 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .date-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .date-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .date-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .date-card:hover::before {
+            left: 100%;
+        }
+
+        .date-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .date-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .date-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .date-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .date-status {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .status-upcoming {
+            background: rgba(255, 193, 7, 0.2);
+            color: #d68910;
+        }
+
+        .status-open {
+            background: rgba(40, 167, 69, 0.2);
+            color: #1e7e34;
+        }
+
+        .status-deadline {
+            background: rgba(220, 53, 69, 0.2);
+            color: #bd2130;
+        }
+
+        /* Venue Locations Section */
+        .venue-locations {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .venues-wrapper {
+            display: grid;
+            gap: 4rem;
+        }
+
+        .venue-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: #f8f9fa;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .venue-card:hover {
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .venue-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .venue-card:nth-child(even)>* {
+            direction: ltr;
+        }
+
+        .venue-map {
+            position: relative;
+            min-height: 400px;
+            background: #e0e0e0;
+            overflow: hidden;
+        }
+
+        .venue-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .venue-info {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .venue-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #0056b3 0%, #28a745 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .venue-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .venue-address {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: start;
+            gap: 0.8rem;
+        }
+
+        .venue-address-icon {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .venue-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .venue-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .venue-detail-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .venue-detail-content {
+            flex: 1;
+        }
+
+        .venue-detail-label {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.2rem;
+        }
+
+        .venue-detail-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .venue-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .venue-btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .venue-btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .venue-btn-primary:hover {
+            background: #003d82;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+        }
+
+        .venue-btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .venue-btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .venue-card {
+                grid-template-columns: 1fr;
+            }
+
+            .venue-card:nth-child(even) {
+                direction: ltr;
+            }
+
+            .venue-map {
+                min-height: 350px;
+            }
+
+            .venue-info {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .key-dates,
+            .venue-locations {
+                padding: 60px 15px;
+            }
+
+            .section-subtitle {
+                margin-bottom: 2rem;
+            }
+
+            .dates-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .date-card {
+                padding: 2rem;
+            }
+
+            .venue-name {
+                font-size: 1.6rem;
+            }
+
+            .venue-address {
+                font-size: 1rem;
+            }
+
+            .venue-map {
+                min-height: 300px;
+            }
+
+            .venue-buttons {
+                flex-direction: column;
+            }
+
+            .venue-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .date-card {
+                padding: 1.5rem;
+            }
+
+            .date-icon {
+                font-size: 2.5rem;
+            }
+
+            .date-title {
+                font-size: 1.3rem;
+            }
+
+            .date-value {
+                font-size: 1.5rem;
+            }
+
+            .venue-info {
+                padding: 1.5rem;
+            }
+
+            .venue-badge {
+                font-size: 0.85rem;
+                padding: 0.4rem 1.2rem;
+            }
+
+            .venue-name {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Key Dates Section -->
+    <section class="key-dates reveal" id="key-dates">
+        <div class="container">
+            <h2 class="section-title">Important Dates</h2>
+            <p class="section-subtitle">Mark your calendar for these key milestones</p>
+
+            <div class="dates-grid">
+                <div class="date-card">
+                    <span class="date-icon">📅</span>
+                    <h3 class="date-title">Registration Opens</h3>
+                    <div class="date-value">September 1, 2025</div>
+                    <p class="date-description">
+                        Early bird registration begins. Secure your spot and benefit from discounted rates.
+                    </p>
+                    <span class="date-status status-upcoming">Upcoming</span>
+                </div>
+
+                <div class="date-card">
+                    <span class="date-icon">🎤</span>
+                    <h3 class="date-title">Abstract Submission</h3>
+                    <div class="date-value">October 15, 2025</div>
+                    <p class="date-description">
+                        Deadline for submitting abstracts for panel discussions and presentations.
+                    </p>
+                    <span class="date-status status-open">Open</span>
+                </div>
+
+                <div class="date-card">
+                    <span class="date-icon">💰</span>
+                    <h3 class="date-title">Early Bird Deadline</h3>
+                    <div class="date-value">October 31, 2025</div>
+                    <p class="date-description">
+                        Last day to register at the discounted early bird rate. Save up to 25%!
+                    </p>
+                    <span class="date-status status-open">Open</span>
+                </div>
+
+                <div class="date-card">
+                    <span class="date-icon">⚠️</span>
+                    <h3 class="date-title">Registration Closes</h3>
+                    <div class="date-value">November 7, 2025</div>
+                    <p class="date-description">
+                        Final deadline for event registration. No on-site registration available.
+                    </p>
+                    <span class="date-status status-deadline">Deadline</span>
+                </div>
+
+                <div class="date-card">
+                    <span class="date-icon">🏨</span>
+                    <h3 class="date-title">Hotel Booking</h3>
+                    <div class="date-value">November 10, 2025</div>
+                    <p class="date-description">
+                        Last day to book accommodation at special conference rates.
+                    </p>
+                    <span class="date-status status-open">Open</span>
+                </div>
+
+                <div class="date-card">
+                    <span class="date-icon">🎉</span>
+                    <h3 class="date-title">Event Dates</h3>
+                    <div class="date-value">November 17-19, 2025</div>
+                    <p class="date-description">
+                        Three days of high-level discussions, workshops, and networking in Abuja, Nigeria.
+                    </p>
+                    <span class="date-status status-upcoming">Main Event</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Locations Section -->
+    <section class="venue-locations reveal" id="venues">
+        <div class="container">
+            <h2 class="section-title">Event Venues</h2>
+            <p class="section-subtitle">Two prestigious locations in the heart of Abuja</p>
+
+            <div class="venues-wrapper">
+                <!-- Venue 1: State House -->
+                <div class="venue-card">
+                    <div class="venue-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.883847156928!2d7.488958!3d9.075774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0ba8fb2ac20f%3A0x3c7b33c3f6c7b8c4!2sAso%20Rock%2C%20Abuja!5e0!3m2!1sen!2sng!4v1234567890"
+                            allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="venue-info">
+                        <span class="venue-badge">Day 1 - November 17</span>
+                        <h3 class="venue-name">State House Banquet Hall</h3>
+                        <div class="venue-address">
+                            <span class="venue-address-icon">📍</span>
+                            <span>Aso Rock Presidential Villa, Three Arms Zone, Abuja FCT, Nigeria</span>
+                        </div>
+
+                        <div class="venue-details">
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">🕐</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Sessions</div>
+                                    <div class="venue-detail-value">Opening Ceremony & Plenary Sessions</div>
+                                </div>
+                            </div>
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">👥</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Capacity</div>
+                                    <div class="venue-detail-value">500+ Delegates</div>
+                                </div>
+                            </div>
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">🚗</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Distance from Airport</div>
+                                    <div class="venue-detail-value">25 minutes (15 km)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="venue-buttons">
+                            <a href="https://maps.google.com/?q=Aso+Rock+Presidential+Villa+Abuja" target="_blank"
+                                class="venue-btn venue-btn-primary">
+                                🗺️ Get Directions
+                            </a>
+                            <a href="#logistics" class="venue-btn venue-btn-secondary">
+                                ℹ️ More Info
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue 2: Transcorp Hilton -->
+                <div class="venue-card">
+                    <div class="venue-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.2647895524467!2d7.492873!3d9.057685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0baf7da48d0d%3A0x99a8fe4168c50bc8!2sTranscorp%20Hilton%20Abuja!5e0!3m2!1sen!2sng!4v1234567890"
+                            allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="venue-info">
+                        <span class="venue-badge">Days 2-3 - November 18-19</span>
+                        <h3 class="venue-name">Transcorp Hilton Abuja</h3>
+                        <div class="venue-address">
+                            <span class="venue-address-icon">📍</span>
+                            <span>1 Aguiyi Ironsi Street, Maitama District, Abuja FCT 900001, Nigeria</span>
+                        </div>
+
+                        <div class="venue-details">
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">🕐</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Sessions</div>
+                                    <div class="venue-detail-value">Technical Workshops & Networking</div>
+                                </div>
+                            </div>
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">⭐</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Rating</div>
+                                    <div class="venue-detail-value">5-Star Luxury Hotel</div>
+                                </div>
+                            </div>
+                            <div class="venue-detail-item">
+                                <span class="venue-detail-icon">🚗</span>
+                                <div class="venue-detail-content">
+                                    <div class="venue-detail-label">Distance from Airport</div>
+                                    <div class="venue-detail-value">35 minutes (20 km)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="venue-buttons">
+                            <a href="https://maps.google.com/?q=Transcorp+Hilton+Abuja" target="_blank"
+                                class="venue-btn venue-btn-primary">
+                                🗺️ Get Directions
+                            </a>
+                            <a href="#logistics" class="venue-btn venue-btn-secondary">
+                                🏨 Accommodation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initial styling for reveal elements
+        revealElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+        });
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+
+</html>
