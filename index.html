@@ -698,106 +698,113 @@
         }
 
 
-        /* Modal Overlay */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(6px);
-            overflow-y: auto;
-            padding: 50px 20px;
-        }
-
-        /* Modal Container */
+        /* Modal wider */
         .modal-content {
-            background: #fff;
-            margin: auto;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 700px;
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-            animation: fadeIn 0.4s ease;
-            position: relative;
+            max-width: 900px;
+            font-family: inherit;
         }
 
-        /* Close Button */
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 28px;
-            color: #999;
+        /* Collapse styles */
+        .collapse {
+            margin-bottom: 15px;
+        }
+
+        .collapse-btn {
+            width: 100%;
+            text-align: left;
+            background: var(--gradient-hero);
+            color: #fff;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
             cursor: pointer;
+            font-weight: 500;
             transition: 0.3s;
         }
 
-        .close:hover {
-            color: var(--primary-color);
-            transform: scale(1.2);
+        .collapse-btn:hover {
+            opacity: 0.9;
         }
 
-        /* Titles */
-        .modal-title {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            font-weight: 700;
-            background: var(--gradient-hero);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .collapse-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 0 0 12px 12px;
+            background: #fafafa;
+            margin-top: 5px;
         }
 
-        .modal-section {
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            border-left: 4px solid var(--accent-color);
-            padding-left: 10px;
-        }
-
-        /* Form Elements */
-        .modal-content label {
-            display: block;
-            margin-top: 15px;
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .modal-content input,
-        .modal-content select,
-        .modal-content textarea {
-            width: 100%;
-            padding: 12px 15px;
-            margin-top: 6px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            font-size: 1rem;
-            transition: border 0.3s, box-shadow 0.3s;
-        }
-
-        .modal-content input:focus,
-        .modal-content select:focus,
-        .modal-content textarea:focus {
-            border: 1px solid var(--accent-color);
-            box-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
-            outline: none;
-        }
-
-        /* Checkboxes */
-        .checkbox-group {
+        /* Form rows (2 columns) */
+        .form-row {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 10px;
+            gap: 15px;
         }
 
-        .checkbox-group label {
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* Form group with icons */
+        .form-group {
+            position: relative;
+            margin-top: 15px;
+        }
+
+        .form-group i {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px 12px 40px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background: #fff;
+            transition: 0.3s;
             font-weight: 400;
-            cursor: pointer;
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+        }
+
+        /* Floating labels */
+        .form-group label {
+            position: absolute;
+            top: 50%;
+            left: 40px;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+            color: #aaa;
+            pointer-events: none;
+            transition: 0.3s ease all;
+            font-weight: 400;
+        }
+
+        .form-group input:focus+label,
+        .form-group input:not(:placeholder-shown)+label,
+        .form-group textarea:focus+label,
+        .form-group textarea:not(:placeholder-shown)+label {
+            top: -8px;
+            left: 35px;
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            background: #fff;
+            padding: 0 4px;
+        }
+
+        /* Animation open collapse */
+        .collapse.active .collapse-content {
+            display: block;
         }
 
         /* Animation */
@@ -905,7 +912,7 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="assets/1logo.png" alt="Logo" style="height:60px;">
+                <img src="assets/1logo.png" alt="Logo" style="height:100px;">
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home">Home</a></li>
@@ -969,7 +976,7 @@
                 </div>
             </div>
             <div class="cta-buttons">
-                <a href="#registration" class="btn btn-primary">Register Now</a>
+                <a href="#" id="openRegistration" class="btn btn-primary">Register Now</a>
                 <a href="#about" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
@@ -1136,68 +1143,120 @@
         <div class="modal-content">
             <span class="close" id="closeModal">&times;</span>
             <h2 class="modal-title">Register for The Customs PACT</h2>
+
             <form id="registrationForm">
-                <!-- Personal Information -->
-                <h3 class="modal-section">Personal Information</h3>
-                <label>Full Name:</label>
-                <input type="text" name="fullname" required>
-
-                <label>Organization / Company:</label>
-                <input type="text" name="organization" required>
-
-                <label>Position / Title:</label>
-                <input type="text" name="position" required>
-
-                <label>City / Location:</label>
-                <input type="text" name="city">
-
-                <label>Country / Region:</label>
-                <input type="text" name="country">
-
-                <!-- Contact Details -->
-                <h3 class="modal-section">Contact Details</h3>
-                <label>Email Address:</label>
-                <input type="email" name="email" required>
-
-                <label>Phone Number:</label>
-                <input type="tel" name="phone" required>
-
-                <!-- Participation Details -->
-                <h3 class="modal-section">Participation Details</h3>
-                <label>Arrival Date:</label>
-                <input type="date" name="arrival">
-
-                <label>Departure Date:</label>
-                <input type="date" name="departure">
-
-                <label>Assistance with travel, visa or accommodation?</label>
-                <select name="assistance">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-
-                <!-- Networking -->
-                <h3 class="modal-section">Networking & Engagement</h3>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="engagement" value="Panel"> Panel / Roundtable
-                        Discussions</label>
-                    <label><input type="checkbox" name="engagement" value="Capacity"> Capacity Building Sessions</label>
-                    <label><input type="checkbox" name="engagement" value="Networking"> Networking Sessions (B2B / B2G /
-                        BtoCustoms)</label>
+                <!-- Collapsible Sections -->
+                <div class="collapse">
+                    <button type="button" class="collapse-btn">👤 Personal Information</button>
+                    <div class="collapse-content">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <i class="fa fa-user"></i>
+                                <input type="text" name="fullname" placeholder="Full Name" required>
+                                <label>Full Name</label>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-building"></i>
+                                <input type="text" name="organization" placeholder="Organization / Company" required>
+                                <label>Organization / Company</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <i class="fa fa-briefcase"></i>
+                                <input type="text" name="position" placeholder="Position / Title">
+                                <label>Position / Title</label>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-map-marker-alt"></i>
+                                <input type="text" name="city" placeholder="City / Location">
+                                <label>City / Location</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-globe"></i>
+                            <input type="text" name="country" placeholder="Country / Region">
+                            <label>Country / Region</label>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Additional Information -->
-                <h3 class="modal-section">Additional Information</h3>
-                <label>Dietary Restrictions / Special Needs:</label>
-                <textarea name="dietary"></textarea>
+                <div class="collapse">
+                    <button type="button" class="collapse-btn">📞 Contact Details</button>
+                    <div class="collapse-content">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" name="email" placeholder="Email Address" required>
+                                <label>Email Address</label>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-phone"></i>
+                                <input type="tel" name="phone" placeholder="Phone Number" required>
+                                <label>Phone Number</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <label>Receive updates about future editions?</label>
-                <select name="updates">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+                <div class="collapse">
+                    <button type="button" class="collapse-btn">🛫 Participation Details</button>
+                    <div class="collapse-content">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <i class="fa fa-plane-arrival"></i>
+                                <input type="date" name="arrival" placeholder="Arrival Date">
+                                <label>Arrival Date</label>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-plane-departure"></i>
+                                <input type="date" name="departure" placeholder="Departure Date">
+                                <label>Departure Date</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-passport"></i>
+                            <select name="assistance">
+                                <option value="">Need assistance with visa/travel?</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-                <div style="text-align:center; margin-top:25px;">
+                <div class="collapse">
+                    <button type="button" class="collapse-btn">🤝 Networking & Engagement</button>
+                    <div class="collapse-content">
+                        <label><input type="checkbox" name="engagement" value="Panel"> Panel / Roundtable
+                            Discussions</label>
+                        <label><input type="checkbox" name="engagement" value="Capacity"> Capacity Building
+                            Sessions</label>
+                        <label><input type="checkbox" name="engagement" value="Networking"> Networking Sessions (B2B /
+                            B2G / BtoCustoms)</label>
+                    </div>
+                </div>
+
+                <div class="collapse">
+                    <button type="button" class="collapse-btn">📋 Additional Information</button>
+                    <div class="collapse-content">
+                        <div class="form-group">
+                            <i class="fa fa-utensils"></i>
+                            <textarea name="dietary" placeholder="Dietary Restrictions / Special Needs"></textarea>
+                            <label>Dietary Restrictions</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-bell"></i>
+                            <select name="updates">
+                                <option value="">Receive updates about future editions?</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin-top:30px;">
                     <button type="submit" class="btn btn-primary">Submit Registration</button>
                 </div>
             </form>
