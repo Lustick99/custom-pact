@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Customs PACT 2025 | Breaking Barriers, Building Bridges</title>
+    <link rel="icon" href="assets/1logo.png" type="image/png">
+
+    <meta name="description"
+        content="Join us for The Customs PACT 2025 in Abuja, Nigeria. A premier event fostering African trade cooperation. Register now!">
+    <meta name="keywords"
+        content="Customs PACT, African Trade, Abuja, Nigeria, Trade Cooperation, Customs Cooperation, Economic Growth, Trade Facilitation">
+    <meta name="author" content="Ulrich CODJIA">
+    <meta property="og:title" content="The Customs PACT 2025 | Breaking Barriers, Building Bridges">
+    <meta property="og:description"
+        content="Join us for The Customs PACT 2025 in Abuja, Nigeria. A premier event fostering African trade cooperation. Register now!">
+    <meta property="og:image" content="assets/1logo.png">
+    <meta property="og:type" content="website">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Bootstrap CSS (cdn) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="assets/LOGO_TCP.png" alt="Logo" style="height:100px; padding:10px;">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <!-- Program avec sous-menu -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Program</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#speakers">Speakers</a></li>
+                        <li><a href="#programs">Program </a></li>
+                        <li><a href="#become-partner">Become a partner</a></li>
+                    </ul>
+                </li>
+                <!-- PARTNERS avec sous-menu -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Partners</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#partners">Discover our partners</a></li>
+                        <li><a href="#become-partner">Become a partner</a></li>
+                    </ul>
+                </li>
+                <!-- SPEAKERS avec sous-menu -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Speakers</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="become-speaker">Become speaker</a></li>
+                        <li><a href="#speakers">2025 speaker</a></li>
+                    </ul>
+                </li>
+                <li><a href="#logistics">Logistics</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="register">
+                <a href="#" id="openRegistration1" class="btn btn-primary"
+                    style="padding: 10px 20px; font-size: 0.8rem; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease;">
+                    Register Now
+                </a>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="changeLanguage('fr')">FR</button>
+            </div>
+            <div class="mobile-menu-toggle" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Video Background -->
+        <div class="hero-video-wrapper">
+        </div>
+
+        <div class="col-md-12 hero-content">
+            <div class="row">
+                <div class="section1 col-md-6 col-sm-12">
+                    <h1 class="floating">JOIN US</h1>
+                    <br><br>
+                    <h2 class="">IN SHAPING THE FUTURE OF CUSTOMS <br> COOPERATION ACROSS AFRICA</h2>
+                    <p class="tagline">Breaking Barriers, Building Bridges</p>
+                    <p style="font-size: 1.2rem; margin-bottom: 1rem;">Partnership for African Cooperation in Trade</p>
+                </div>
+
+                <div class="section2 col-md-6 col-sm-12">
+                    <div class="event-date">
+                        <span><i class="far fa-calendar"></i> 17-19 November 2025</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</span>
+                    </div>
+                    <!-- Countdown Timer -->
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 cta-buttons">
+                    <a href="#programs" class="col-md-6 btn btn-secondary">
+                        discover program
+                    </a>
+                    <a href="#" id="openRegistration" class="col-md-6 btn btn-primary">
+                        Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Controler Message -->
+    <section class="comptroller-message-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About the Custom PACT</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="message-content">
+                <div class="comptroller-photo">
+                    <div class="photo-wrapper">
+                        <img src="assets/Phd1.jpg" alt="Bashir Adewale Adeniyi">
+                    </div>
+                    <div class="photo-frame"></div>
+                </div>
+
+                <div class="message-text">
+
+                    <p>Welcome to the official platform of Custom PACT, a transformative initiative powered by Nigeria
+                        Customs Service (NCS) in collaboration with the African Continental Free Trade Area (AfCFTA) and
+                        supported by the African Export-Import Bank (AFREXIMBANK).</p>
+
+                    <p>This visionary project exemplifies our unwavering commitment to revolutionize customs operations,
+                        promote intra-african trade, and position Africa as a formidable force in global trade. Inspired
+                        by a bold vision to create a unified, efficient, and secure trade environment, Custom PACT aims
+                        to set a new standard for cross-border cooperation and trade facilitation.</p>
+
+                    <p>Our mission is unequivocally to establish a strong, transparent, and agile customs framework that
+                        promotes lawful trade, enhances security, and drives sustainable economic growth. We are
+                        determined to lead this monumental transformation, harnessing technology, collaboration, and
+                        strategic vision.</p>
+
+                    <p>Together, we are forging a future in transforming customs collaboration, trade facilitation
+                        across Africa and building a prosperous future for our nations.</p>
+
+                    <p><strong>Join us in this historic journey.</strong></p>
+
+                    <div class="signature">
+                        <div class="name">Bashir Adewale Adeniyi (MFR), PhD</div>
+                        <div class="title">Comptroller General</div>
+                        <div class="organization">Nigeria Customs Service</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Dates Section -->
+    <section class="key-dates reveals" id="key-dates">
+        <div class="container">
+            <h2 class="section-title">The Customs PACT 2025 At a Glance</h2>
+            <p class="section-subtitle">Mark your calendar for these key informations</p>
+
+            <div class="dates-grid">
+                <div class="date-card">
+                    <h3 class="date-title" style="justify-content: center;">
+                        <span class="date-icon">
+                            <i class="fa-solid fa-hashtag"></i>
+                        </span>
+                        Participating countries
+                    </h3>
+                    <div class="date-value" style="text-align: center; font-size:5rem"> 12 </div>
+                </div>
+
+                <div class="date-card">
+                    <h3 class="date-title" style="justify-content: center;">
+                        <span class="date-icon">
+                            <i class="fa-solid fa-hashtag"></i>
+                        </span>
+                        Participants
+                    </h3>
+                    <div class="date-value" style="text-align: center; font-size:5rem"> 211 </div>
+                </div>
+
+
+                <div class="date-card">
+                    <h3 class="date-title" style="justify-content: center;">
+                        <span class="date-icon">
+                            <i class="fa-solid fa-hashtag"></i>
+                        </span>
+                        Speakers
+                    </h3>
+                    <div class="date-value" style="text-align: center; font-size:5rem"> 32 </div>
+                </div>
+
+                <div class="date-card">
+                    <h3 class="date-title">
+                        <span class="date-icon"><i class="far fa-calendar"></i></span>
+                        Event Dates
+                    </h3>
+                    <div class="date-value">November 17-19, 2025</div>
+                    <p class="date-description">
+                        Three days of high-level discussions, workshops, and networking in Abuja, Nigeria.
+                    </p>
+                </div>
+
+                <div class="date-card">
+                    <h3 class="date-title">
+                        <span class="date-icon"><i class="far fa-building"></i></span>
+                        Venues
+                    </h3>
+                    <p class="date-description">
+                        2 Prestigious Locations
+                    </p>
+                    <div class="date-value" style="font-size: larger;">
+                        - State House Banquet Hall (Day 1)<br>
+                        - Transcorp Hilton Abuja (Days 2-3)<br>
+                    </div>
+                </div>
+
+                <div class="date-card">
+                    <h3 class="date-title">
+                        <span class="date-icon"><i class="fas fa-circle-exclamation"></i></span>
+                        Sessions
+                    </h3>
+                    <div class="date-value">23 sessions in total</div>
+                    <p class="date-description">
+                        Including plenary, workshops, and networking sessions <br>
+                        Consult the full program in the Program section to discover all the details.
+                    </p>
+                    <span class="date-status status-open">
+                        <a href="#programs">
+                            View Program
+                        </a>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="speakers reveal" id="speakers">
+        <div class="container">
+            <h2 class="section-title">Our Distinguished Speakers</h2>
+            <p class="section-subtitle">
+                Leading experts and decision-makers from across Africa and the global trade community
+            </p>
+
+            <!-- Speaker Filters -->
+            <div class="speaker-filters">
+                <button class="filter-btn active" data-filter="all">All Speakers</button>
+                <button class="filter-btn" data-filter="keynote">Keynote</button>
+                <button class="filter-btn" data-filter="panelist">Panelist</button>
+                <button class="filter-btn" data-filter="moderator">Moderator</button>
+            </div>
+
+            <!-- Speakers Grid -->
+            <div class="speakers-grid">
+                <div class="speaker-card" data-category="keynote">
+                    <div class="speaker-badge">Keynote</div>
+                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Adewale Adeniyi</h3>
+                        <p class="speaker-title">Comptroller-General</p>
+                        <p class="speaker-organization">Nigeria Customs Service</p>
+                        <p class="speaker-bio">
+                            Leading Nigeria's customs modernization and regional trade facilitation initiatives
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="keynote">
+                    <div class="speaker-badge">Keynote</div>
+                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">H.E. Omar Alieu Touray</h3>
+                        <p class="speaker-title">President</p>
+                        <p class="speaker-organization">ECOWAS Commission</p>
+                        <p class="speaker-bio">
+                            Champion of West African economic integration and regional cooperation
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="keynote">
+                    <div class="speaker-badge">Keynote</div>
+                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">H.E. Wamkele Mene</h3>
+                        <p class="speaker-title">Secretary-General</p>
+                        <p class="speaker-organization">AfCFTA Secretariat</p>
+                        <p class="speaker-bio">
+                            Driving the implementation of the African Continental Free Trade Area
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="panelist">
+                    <div class="speaker-badge">Panelist</div>
+                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Benedict Oramah</h3>
+                        <p class="speaker-title">President & Chairman</p>
+                        <p class="speaker-organization">Afreximbank</p>
+                        <p class="speaker-bio">
+                            Expert in trade finance and African economic development
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="panelist">
+                    <div class="speaker-badge">Panelist</div>
+                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Kunio Mikuriya</h3>
+                        <p class="speaker-title">Secretary General</p>
+                        <p class="speaker-organization">World Customs Organization</p>
+                        <p class="speaker-bio">
+                            Leading global customs standards and best practices implementation
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="moderator">
+                    <div class="speaker-badge">Moderator</div>
+                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Prof. Oyebanji Oyelaran-Oyeyinka</h3>
+                        <p class="speaker-title">Senior Advisor</p>
+                        <p class="speaker-organization">African Development Bank</p>
+                        <p class="speaker-bio">
+                            Renowned expert in African industrialization and trade policy
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="panelist">
+                    <div class="speaker-badge">Panelist</div>
+                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Amelia Kinahoi Siamomua</h3>
+                        <p class="speaker-title">Director</p>
+                        <p class="speaker-organization">WTO Trade Facilitation Division</p>
+                        <p class="speaker-bio">
+                            Specialist in trade facilitation and customs modernization
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card" data-category="panelist">
+                    <div class="speaker-badge">Panelist</div>
+                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Stephen Karingi</h3>
+                        <p class="speaker-title">Director, Regional Integration</p>
+                        <p class="speaker-organization">UNECA</p>
+                        <p class="speaker-bio">
+                            Expert in regional economic integration and trade policy in Africa
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs reveal" id="programs">
+        <div class="container">
+            <h2 class="section-title">Event Program</h2>
+            <p class="section-subtitle">
+                Three days of high-level discussions, technical sessions, and networking opportunities
+            </p>
+
+            <!-- Day Tabs -->
+            <div class="program-tabs">
+                <div class="day-tab active" data-day="day1">
+                    <div class="day-tab-date">November 17, 2025</div>
+                    <div class="day-tab-name">Day 1</div>
+                </div>
+                <div class="day-tab" data-day="day2">
+                    <div class="day-tab-date">November 18, 2025</div>
+                    <div class="day-tab-name">Day 2</div>
+                </div>
+                <div class="day-tab" data-day="day3">
+                    <div class="day-tab-date">November 19, 2025</div>
+                    <div class="day-tab-name">Day 3</div>
+                </div>
+            </div>
+
+            <!-- Day 1 Program -->
+            <div class="program-content active" id="day1">
+                <div class="program-timeline">
+                    <div class="program-item">
+                        <span class="program-time">08:00 - 09:00</span>
+                        <h3 class="program-title">Registration & Welcome</h3>
+                        <p class="program-description">
+                            Arrival of delegates, registration, and welcome breakfast
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-location-dot"></i></span>
+                                <span>State House Banquet Hall</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">09:00 - 10:30</span>
+                        <h3 class="program-title">Opening Ceremony</h3>
+                        <p class="program-description">
+                            Official opening with keynote addresses from Comptroller-General Nigeria Customs Service,
+                            ECOWAS Commission, AfCFTA Secretariat, and special guests
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-microphone"></i></span>
+                                <span>Keynote Speakers</span>
+                            </div>
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-location-dot"></i></span>
+                                <span>State House Banquet Hall</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">10:30 - 11:00</span>
+                        <h3 class="program-title">Coffee Break & Networking</h3>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-mug-hot"></i></span>
+                                <span>Light refreshments provided</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">11:00 - 13:00</span>
+                        <h3 class="program-title">Plenary Session 1: Breaking Barriers in African Trade</h3>
+                        <p class="program-description">
+                            High-level panel discussion on eliminating trade barriers, harmonizing customs procedures,
+                            and implementing AfCFTA provisions across the continent
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-users"></i></span>
+                                <span>Panel Discussion</span>
+                            </div>
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-globe"></i></span>
+                                <span>Interpretation: EN, FR, AR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">13:00 - 14:30</span>
+                        <h3 class="program-title">Lunch & Networking</h3>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-utensils"></i></span>
+                                <span>Buffet lunch provided</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">14:30 - 16:30</span>
+                        <h3 class="program-title">Plenary Session 2: Building Bridges for Cooperation</h3>
+                        <p class="program-description">
+                            Exploring partnership opportunities, capacity building initiatives, and knowledge sharing
+                            mechanisms among African customs administrations
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-users"></i></span>
+                                <span>Interactive Session</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">19:00 - 21:30</span>
+                        <h3 class="program-title">Welcome Gala Dinner</h3>
+                        <p class="program-description">
+                            Evening reception with cultural performances and networking opportunities
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-masks-theater"></i></span>
+                                <span>Cultural entertainment</span>
+                            </div>
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-location-dot"></i></span>
+                                <span>State House Banquet Hall</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 Program -->
+            <div class="program-content" id="day2">
+                <div class="program-timeline">
+                    <div class="program-item">
+                        <span class="program-time">09:00 - 09:30</span>
+                        <h3 class="program-title">Day 2 Opening & Recap</h3>
+                        <p class="program-description">Welcome and summary of Day 1 highlights</p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-location-dot"></i></span>
+                                <span>Transcorp Hilton Abuja</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">09:30 - 12:00</span>
+                        <h3 class="program-title">Technical Workshops (Parallel Sessions)</h3>
+                        <p class="program-description">
+                            Choose from specialized workshops covering: Digital Customs Systems, Risk Management, Trade
+                            Facilitation, Rules of Origin, and Single Window Implementation
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-laptop"></i></span>
+                                <span>5 Parallel Workshops</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">12:00 - 13:30</span>
+                        <h3 class="program-title">Lunch Break</h3>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">13:30 - 16:00</span>
+                        <h3 class="program-title">Capacity Building Sessions</h3>
+                        <p class="program-description">
+                            Hands-on training sessions on customs modernization, best practices, and regional
+                            integration tools
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-graduation-cap"></i></span>
+                                <span>Interactive Training</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">16:00 - 18:00</span>
+                        <h3 class="program-title">B2B / B2G Networking Sessions</h3>
+                        <p class="program-description">
+                            Dedicated networking time for bilateral meetings, partnership discussions, and business
+                            matchmaking
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 Program -->
+            <div class="program-content" id="day3">
+                <div class="program-timeline">
+                    <div class="program-item">
+                        <span class="program-time">09:00 - 09:30</span>
+                        <h3 class="program-title">Day 3 Opening</h3>
+                        <p class="program-description">Welcome and outline of final day activities</p>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">09:30 - 11:30</span>
+                        <h3 class="program-title">Roundtable Discussions</h3>
+                        <p class="program-description">
+                            Thematic roundtables on key issues: Regional Integration Challenges, Technology Adoption,
+                            Capacity Building Needs, and Future Collaboration Framework
+                        </p>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">11:30 - 12:00</span>
+                        <h3 class="program-title">Coffee Break</h3>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">12:00 - 13:30</span>
+                        <h3 class="program-title">Closing Plenary: Way Forward</h3>
+                        <p class="program-description">
+                            Presentation of outcomes, recommendations, and roadmap for future editions of The Customs
+                            PACT
+                        </p>
+                        <div class="program-details">
+                            <div class="program-detail-item">
+                                <span class="program-detail-icon"><i class="fas fa-clipboard-list"></i></span>
+                                <span>Key Recommendations</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">13:30 - 14:00</span>
+                        <h3 class="program-title">Closing Ceremony</h3>
+                        <p class="program-description">
+                            Official closing remarks and vote of thanks
+                        </p>
+                    </div>
+
+                    <div class="program-item">
+                        <span class="program-time">14:00 - 15:00</span>
+                        <h3 class="program-title">Farewell Lunch</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners reveal" id="partners">
+        <div class="container">
+            <h2 class="section-title">Powered Organization</h2>
+            <p class="section-subtitle">We are powered by</p>
+            <div class="partners-grid">
+                <div class="partner-logo" style="background-image: url(assets/NCS-LOGO.svg); transform:scale(3)"> </div>
+            </div>
+
+            <br><br>
+            <br><br>
+
+            <h2 class="section-title">Our Partners</h2>
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <p class="section-subtitle">In collaboration with </p>
+                    <div class="partners-grid">
+                        <div class="partner-logo" style="background-image: url(assets/AfCFTA-Logo-1.svg);"> </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <p class="section-subtitle">Supported by </p>
+                    <div class="partners-grid">
+                        <div class="partner-logo"
+                            style="background-image: url(assets/Afreximbank_Logo_RGB.png); transform:scale(1.2)">
+                        </div>
+                        <div class="partner-logo"
+                            style="background-image: url(assets/wco_new_logo.png); transform:scale(1.8)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logistics Section -->
+    <section class="logistics reveal" id="logistics">
+        <div class="container">
+            <h2 class="section-title">Event Logistics</h2>
+            <p class="section-subtitle">Everything You Need to Know</p>
+
+            <div class="logistics-tabs-wrapper">
+                <!-- Tabs Navigation - Left Side -->
+                <div class="logistics-tabs">
+                    <button class="tab-button active" data-tab="venue">
+                        <span class="icon">
+                            <i class="fas fa-conference"></i>
+                        </span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">
+                                Venue
+                            </span>
+                            <span class="tab-button-subtitle">
+                                Event Venues
+                            </span>
+                        </div>
+                    </button>
+                    <button class="tab-button" data-tab="accommodation">
+                        <span class="icon">
+                            <i class="fas fa-hotel"></i>
+                        </span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">Accommodation</span>
+                            <span class="tab-button-subtitle">Hotel options</span>
+                        </div>
+                    </button>
+                    <button class="tab-button" data-tab="travel">
+                        <span class="icon">
+                            <i class="fas fa-plane"></i>
+                        </span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">Airlines</span>
+                            <span class="tab-button-subtitle">Transportation</span>
+                        </div>
+                    </button>
+                    <button class="tab-button" data-tab="visa">
+                        <span class="icon">
+                            <i class="fas fa-passport"></i>
+                        </span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">Visa</span>
+                            <span class="tab-button-subtitle">Entry requirements</span>
+                        </div>
+                    </button>
+                    <button class="tab-button" data-tab="transport">
+                        <span class="icon">
+                            <i class="fas fa-transport"></i>
+                        </span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">Transport</span>
+                            <span class="tab-button-subtitle">
+                                Arrival and transfer
+                            </span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Tabs Content - Right Side -->
+                <div class="logistics-content">
+                    <!-- Visa Tab -->
+                    <div class="tab-panel" id="visa">
+                        <div class="tab-panel-header">
+                            <span class="icon">
+                                <i class="fas fa-passport"></i>
+                            </span>
+                            <h3>Visa Information</h3>
+                        </div>
+                        <p class="tab-panel-description">
+                            We facilitate visa processing for all international delegates. Please review the
+                            requirements below and contact our team for assistance.
+                        </p>
+                        <ul>
+                            <li>ECOWAS citizens: Visa-free entry to Nigeria</li>
+                            <li>Online visa application available at immigration.gov.ng</li>
+                            <li>Yellow fever vaccination certificate required</li>
+                            <li>Invitation letters provided upon registration</li>
+                            <li>Processing time: 5-7 business days</li>
+                            <li>Visa on arrival available for select countries</li>
+                        </ul>
+                    </div>
+
+                    <!-- Visa Tab -->
+                    <div class="tab-panel" id="transport">
+                        <div class="tab-panel-header">
+                            <span class="icon">
+                                <i class="fas fa-transport"></i>
+                            </span>
+                            <h3>Arrival and transfer</h3>
+                        </div>
+                        <p class="tab-panel-description">
+                            We facilitate visa processing for all international delegates. Please review the
+                            requirements below and contact our team for assistance.
+                        </p>
+                        <ul>
+                            <li>
+                                The organizing committee will welcome participants at Nnamdi Azikiwe International
+                                Airport in Abuja and ensure their transfer to hotels
+                            </li>
+                            <li>
+                                The organizing committee will only provide transportation for delegates from the hotels
+                                to the meeting venue and vice versa
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Travel Tab -->
+                    <div class="tab-panel" id="travel">
+                        <div class="tab-panel-header">
+                            <span class="icon">
+                                <i class="fas fa-plane"></i>
+                            </span>
+                            <h3>Travel Information</h3>
+                        </div>
+                        <p class="tab-panel-description">
+                            Abuja is well-connected internationally. We provide comprehensive travel support to ensure
+                            your smooth arrival and departure.
+                        </p>
+                        <ul>
+                            <li>Nnamdi Azikiwe International Airport (ABV)</li>
+                            <li>Multiple international airlines serve Abuja daily</li>
+                            <li>Complimentary airport transfers for delegates</li>
+                            <li>Daily shuttle service between venues</li>
+                            <li>30 minutes drive from airport to city center</li>
+                            <li>VIP pickup service available upon request</li>
+                        </ul>
+                    </div>
+
+                    <!-- Accommodation Tab -->
+                    <div class="tab-panel" id="accommodation">
+                        <div class="tab-panel-header">
+                            <span class="icon">
+                                <i class="fas fa-hotel"></i>
+                            </span>
+                            <h3>Accommodation Options</h3>
+                        </div>
+                        <p class="tab-panel-description">
+                            We've partnered with premium hotels to offer exclusive rates for event delegates. All rates
+                            include taxes and breakfast. Book early to secure the best prices.
+                        </p>
+
+                        <div class="hotels-grid">
+                            <!-- Transcorp Hilton Abuja -->
+                            <div class="hotel-card">
+                                <div class="hotel-image">
+                                    <div class="hotel-stars">
+                                        <i class="fas fa-star"></i>
+                                        5★
+                                    </div>
+                                </div>
+                                <div class="hotel-content">
+                                    <h4 class="hotel-name">TRANSCORP HILTON ABUJA</h4>
+                                    <p class="hotel-description">
+                                        Main conference venue. 5-star luxury hotel in the heart of Abuja with
+                                        world-class facilities, spa, multiple restaurants, and premium business
+                                        services.
+                                    </p>
+                                    <div class="hotel-rooms">
+                                        <div class="rooms-title">Room Types & Rates</div>
+                                        <div class="room-item">
+                                            <div class="room-name">
+                                                <i class="fas fa-bed"></i>
+                                                Hilton Guest Room
+                                            </div>
+                                            <div class="room-price">₦ 372,500</div>
+                                        </div>
+                                        <div class="room-item">
+                                            <div class="room-name">
+                                                <i class="fas fa-bed"></i>
+                                                Twin Guest Room
+                                            </div>
+                                            <div class="room-price">₦ 372,500</div>
+                                        </div>
+                                        <div class="room-item">
+                                            <div class="room-name">
+                                                <i class="fas fa-briefcase"></i>
+                                                Business Suite
+                                            </div>
+                                            <div class="room-price">₦ 615,500</div>
+                                        </div>
+                                        <div class="room-item">
+                                            <div class="room-name">
+                                                <i class="fas fa-crown"></i>
+                                                Royal Room
+                                            </div>
+                                            <div class="room-price">₦ 558,750</div>
+                                        </div>
+                                        <div class="room-item">
+                                            <div class="room-name">
+                                                <i class="fas fa-gem"></i>
+                                                Ambassadorial Suite
+                                            </div>
+                                            <div class="room-price">₦ 925,650</div>
+                                        </div>
+                                    </div>
+                                    <div class="hotel-features">
+                                        <span class="feature">
+                                            <i class="fas fa-check"></i>
+                                            Breakfast
+                                        </span>
+                                        <span class="feature">
+                                            <i class="fas fa-wifi"></i>
+                                            Free WiFi
+                                        </span>
+                                        <span class="feature">
+                                            <i class="fas fa-swimming-pool"></i>
+                                            Pool
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Abuja Continental Hotel -->
+                            <div class="hotel-card">
+                                <div class="hotel-image">
+                                    <div class="hotel-stars">
+                                        <i class="fas fa-star"></i>
+                                        5★
+                                    </div>
+                                </div>
+                                <div class="hotel-content">
+                                    <h4 class="hotel-name">ABUJA CONTINENTAL HOTEL</h4>
+                                    <p class="hotel-description">
+                                        5-star partner hotel offering luxury accommodations, excellent dining options,
+                                        spa facilities, and convenient access to the conference venue.
+                                    </p>
+                                    <div class="hotel-rooms">
+                                        <div class="rooms-title">Room Types & Rates</div>
+                                        <div class="room-item">
+                                            <div class="room-name">
+                                                <i class="fas fa-bed"></i>
+                                                Premium Room
+                                            </div>
+                                            <div class="room-price">₦ 247,500</div>
+                                        </div>
+                                    </div>
+                                    <div class="hotel-features">
+                                        <span class="feature">
+                                            <i class="fas fa-check"></i>
+                                            Breakfast
+                                        </span>
+                                        <span class="feature">
+                                            <i class="fas fa-wifi"></i>
+                                            Free WiFi
+                                        </span>
+                                        <span class="feature">
+                                            <i class="fas fa-concierge-bell"></i>
+                                            Business Center
+                                        </span>
+                                        <span class="feature">
+                                            <i class="fas fa-percent"></i>
+                                            Best Value
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fraser Suites Abuja -->
+                            <div class="hotel-card">
+                                <div class="hotel-image">
+                                    <div class="hotel-stars">
+                                        <i class="fas fa-star"></i>
+                                        5★
+                                    </div>
+                                </div>
+                                <div class="hotel-content">
+                                    <h4 class="hotel-name">FRASER SUITES ABUJA</h4>
+                                    <p class="hotel-description">
+                                        Premium serviced apartments with modern amenities, fully equipped kitchenettes,
+                                        spacious living areas, and ideal for extended stays.
+                                    </p>
+                                    <div class="hotel-rooms">
+                                        <div class="rooms-title">Room Types & Rates</div>
+                                        <div class="room-item">
+                                            <div class="room-name">
+                                                <i class="fas fa-home"></i>
+                                                Studio Room
+                                            </div>
+                                            <div class="room-price">₦ 350,000</div>
+                                        </div>
+                                        <div class="room-item">
+                                            <div class="room-name">
+                                                <i class="fas fa-home"></i>
+                                                One Bedroom
+                                            </div>
+                                            <div class="room-price">₦ 500,000</div>
+                                        </div>
+                                    </div>
+                                    <div class="hotel-features">
+                                        <span class="feature">
+                                            <i class="fas fa-check"></i>
+                                            Breakfast
+                                        </span>
+                                        <span class="feature">
+                                            <i class="fas fa-wifi"></i>
+                                            Free WiFi
+                                        </span>
+                                        <span class="feature">
+                                            <i class="fas fa-utensils"></i>
+                                            Kitchenette
+                                        </span>
+                                        <span class="feature">
+                                            <i class="fas fa-dumbbell"></i>
+                                            Gym
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Important Notice -->
+                        <div class="important-notice">
+                            <div class="notice-title">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Important Information
+                            </div>
+                            <div class="notice-item">
+                                <i class="fas fa-wallet"></i>
+                                <div class="notice-text">
+                                    <strong>Payment:</strong> Accommodation costs are borne by participants. All rates
+                                    include taxes and breakfast.
+                                </div>
+                            </div>
+                            <div class="notice-item deadline">
+                                <i class="fas fa-calendar-exclamation"></i>
+                                <div class="notice-text">
+                                    <strong>Registration Deadline:</strong> Participants are strongly advised to send
+                                    their registration forms and copies of their passports no later than November 07,
+                                    2025.
+                                </div>
+                            </div>
+                            <div class="notice-item">
+                                <i class="fas fa-percent"></i>
+                                <div class="notice-text">
+                                    <strong>Special Rates:</strong> Conference rates with up to 25% discount available
+                                    for registered delegates.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Venue Tab -->
+                    <div class="tab-panel active" id="venue">
+                        <div class="tab-panel-header">
+                            <span class="icon">
+                                <i class="fas fa-conference"></i>
+                            </span>
+                            <h3> Events Venues </h3>
+                        </div>
+
+                        <div class="venues-wrapper">
+                            <!-- <p class="tab-panel-description">
+                                Two prestigious locations in the heart of Abuja
+                            </p> -->
+                            <!-- Venue 1: State House -->
+                            <div class="venue-card">
+                                <div class="venue-map">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.883847156928!2d7.488958!3d9.075774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0ba8fb2ac20f%3A0x3c7b33c3f6c7b8c4!2sAso%20Rock%2C%20Abuja!5e0!3m2!1sen!2sng!4v1234567890"
+                                        allowfullscreen="" loading="lazy">
+                                    </iframe>
+                                </div>
+                                <div class="venue-info">
+                                    <span class="venue-badge">Day 1 - November 17</span>
+                                    <h3 class="venue-name">State House Banquet Hall</h3>
+                                    <div class="venue-address">
+                                        <span class="venue-address-icon"><i class="fas fa-location-dot"></i></span>
+                                        <span>Aso Rock Presidential Villa, Three Arms Zone, Abuja FCT, Nigeria</span>
+                                    </div>
+
+                                    <div class="venue-details">
+                                        <div class="venue-detail-item">
+                                            <span class="venue-detail-icon"><i class="far fa-clock"></i></span>
+                                            <div class="venue-detail-content">
+                                                <div class="venue-detail-label">Sessions</div>
+                                                <div class="venue-detail-value">Opening Ceremony & Plenary Sessions
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="venue-detail-item">
+                                            <span class="venue-detail-icon"><i class="fas fa-users"></i></span>
+                                            <div class="venue-detail-content">
+                                                <div class="venue-detail-label">Capacity</div>
+                                                <div class="venue-detail-value">500+ Delegates</div>
+                                            </div>
+                                        </div>
+                                        <div class="venue-detail-item">
+                                            <span class="venue-detail-icon"><i class="fas fa-car"></i></span>
+                                            <div class="venue-detail-content">
+                                                <div class="venue-detail-label">Distance from Airport</div>
+                                                <div class="venue-detail-value">25 minutes (15 km)</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="venue-buttons">
+                                        <a href="https://maps.google.com/?q=Aso+Rock+Presidential+Villa+Abuja"
+                                            target="_blank" class="venue-btn venue-btn-primary">
+                                            <i class="far fa-map"></i> Get Directions
+                                        </a>
+                                        <a href="#logistics" class="venue-btn venue-btn-secondary">
+                                            <i class="fas fa-circle-info"></i> More Info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Venue 2: Transcorp Hilton -->
+                            <div class="venue-card">
+                                <div class="venue-map">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8844465304765!2d7.492405975691544!3d9.07429068827697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104dd42594163dd1%3A0x2b97d2308e5f8ee1!2sTranscorp%20Hilton%20Abuja!5e0!3m2!1sfr!2stg!4v1759504389144!5m2!1sfr!2stg"
+                                        allowfullscreen="" loading="lazy">
+                                    </iframe>
+                                </div>
+                                <div class="venue-info">
+                                    <span class="venue-badge">Days 2-3 - November 18-19</span>
+                                    <h3 class="venue-name">Transcorp Hilton Abuja</h3>
+                                    <div class="venue-address">
+                                        <span class="venue-address-icon"><i class="fas fa-location-dot"></i></span>
+                                        <span>1 Aguiyi Ironsi Street, Maitama District, Abuja FCT 900001, Nigeria</span>
+                                    </div>
+
+                                    <div class="venue-details">
+                                        <div class="venue-detail-item">
+                                            <span class="venue-detail-icon"><i class="fas fa-clock"></i></span>
+                                            <div class="venue-detail-content">
+                                                <div class="venue-detail-label">Sessions</div>
+                                                <div class="venue-detail-value">Technical Workshops & Networking</div>
+                                            </div>
+                                        </div>
+                                        <div class="venue-detail-item">
+                                            <span class="venue-detail-icon"><i class="far fa-star"></i></span>
+                                            <div class="venue-detail-content">
+                                                <div class="venue-detail-label">Rating</div>
+                                                <div class="venue-detail-value">5-Star Luxury Hotel</div>
+                                            </div>
+                                        </div>
+                                        <div class="venue-detail-item">
+                                            <span class="venue-detail-icon"><i class="fas fa-car"></i></span>
+                                            <div class="venue-detail-content">
+                                                <div class="venue-detail-label">Distance from Airport</div>
+                                                <div class="venue-detail-value">35 minutes (20 km)</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="venue-buttons">
+                                        <a href="https://maps.google.com/?q=Transcorp+Hilton+Abuja" target="_blank"
+                                            class="venue-btn venue-btn-primary">
+                                            <i class="far fa-map"></i> Get Directions
+                                        </a>
+                                        <a href="#logistics" class="venue-btn venue-btn-secondary">
+                                            <i class="far fa-building"></i> Accommodation
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact reveal" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Information</h2>
+            <p class="section-subtitle">Get in Touch with Our Team</p>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Nigeria Customs Service</h3>
+                    <div class="contact-item">
+                        <strong>Deputy Comptroller EO IBOK</strong>
+                        <span>Special Assistant to the Comptroller-General</span><br>
+                        <a href="mailto:etim.ibok@customs.gov.ng">etim.ibok@customs.gov.ng</a><br>
+                        <span>+234 803 447 5983</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Deputy Comptroller ZA LAMORDE</strong>
+                        <span>Organizing Committee Secretariat</span><br>
+                        <a href="mailto:zayyad.lamorde@customs.gov.ng">zayyad.lamorde@customs.gov.ng</a><br>
+                        <span>+234 803 599 6745</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Chief Superintendent of Customs IN ESSIEN</strong>
+                        <span>Organizing Committee Secretariat</span><br>
+                        <a href="mailto:idara.essien@customs.gov.ng">idara.essien@customs.gov.ng</a><br>
+                        <!-- <span>+234 803 599 6745</span> -->
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Partner Organizations</h3>
+                    <div class="contact-item">
+                        <strong>AfCFTA Secretariat</strong>
+                        <span>Contact details coming soon</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Afreximbank</strong>
+                        <span>Contact details coming soon</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>World Customs Organization</strong>
+                        <span>Contact details coming soon</span>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Important Information</h3>
+                    <div class="contact-item">
+                        <strong>Registration Deadline</strong>
+                        <span>November 7, 2025</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Currency</strong>
+                        <span>Nigerian Naira (₦)</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Weather</strong>
+                        <span>31°C day / 22°C night</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2><br></h2>
+                <div class="underline"></div>
+                <p>
+                    Have questions about Custom PACT? We're here to help. Reach out to us and we'll respond as soon as
+                    possible.
+                </p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Address</h4>
+                            <p>Nigeria Customs Service Headquarters<br>Abuja, Nigeria</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>info@custompact.org<br>support@custompact.org</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p>+234 (0) 123 456 7890<br>+234 (0) 987 654 3210</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="contact-form-container">
+                    <div class="success-message" id="successMessage">
+                        ✓ Thank you for your message! We'll get back to you soon.
+                    </div>
+
+                    <form id="contactForm" onsubmit="return handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="John">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+234 123 456 7890">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">Organization</label>
+                            <input type="text" id="organization" name="organization"
+                                placeholder="Your organization name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="registration">Event Registration</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="sponsorship">Sponsorship</option>
+                                <option value="media">Media & Press</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required
+                                placeholder="Please share your questions or comments..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function handleSubmit(e) {
+                e.preventDefault();
+
+                // Récupération des valeurs du formulaire
+                const formData = {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    organization: document.getElementById('organization').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Simulation d'envoi (à remplacer par votre logique backend)
+                console.log('Form data:', formData);
+
+                // Afficher le message de succès
+                const successMessage = document.getElementById('successMessage');
+                successMessage.classList.add('show');
+
+                // Réinitialiser le formulaire
+                document.getElementById('contactForm').reset();
+
+                // Cacher le message après 5 secondes
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+
+                // Faire défiler vers le message de succès
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                return false;
+            }
+
+            // Animation au défilement
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.form-group').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        </script>
+    </section>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 class="modal-title">Register for The Customs PACT</h2>
+
+            <form id="registrationForm">
+                <!-- Collapsible Sections -->
+                <div class="colapse active">
+                    <button type="button" class="collapse-btn">
+                        <i class="fas fa-user-tie"></i>
+                        Personal Information
+                    </button>
+                    <div class="collapse-content">
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" name="fullname" placeholder="Full Name" required>
+                            <label>Full Name</label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <i class="fa fa-building"></i>
+                                <input type="text" name="organization" placeholder="Organization / Company" required>
+                                <label>Organization / Company</label>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-briefcase"></i>
+                                <input type="text" name="position" placeholder="Position / Title">
+                                <label>Position / Title</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <i class="fa fa-map-marker-alt"></i>
+                                <input type="text" name="city" placeholder="City / Location">
+                                <label>City / Location</label>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-globe"></i>
+                                <input type="text" name="country" placeholder="Country / Region">
+                                <label>Country / Region</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="colapse">
+                    <button type="button" class="collapse-btn">
+                        <i class="fas fa-address-book"></i>
+                        Contact Details
+                    </button>
+                    <div class="collapse-content">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" name="email" placeholder="Email Address" required>
+                                <label>Email Address</label>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-phone"></i>
+                                <input type="tel" name="phone" placeholder="Phone Number" required>
+                                <label>Phone Number</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="colapse">
+                    <button type="button" class="collapse-btn">
+                        <i class="fas fa-plane"></i>
+                        Participation Details
+                    </button>
+                    <div class="collapse-content">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <i class="fa fa-plane-arrival"></i>
+                                <input type="date" name="arrival" placeholder="Arrival Date">
+                                <label>Arrival Date</label>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-plane-departure"></i>
+                                <input type="date" name="departure" placeholder="Departure Date">
+                                <label>Departure Date</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-passport"></i>
+                            <select name="assistance">
+                                <option value="">Need assistance with visa/travel?</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="colapse">
+                    <button type="button" class="collapse-btn">
+                        <i class="fas fa-handshake"></i>
+                        Networking & Engagement
+                    </button>
+                    <div class="collapse-content">
+                        <label>
+                            <span>
+                                <i class="fa fa-comments"></i>
+                                Panel / Roundtable Discussions
+                            </span>
+                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement" value="Panel">
+                        </label>
+                        <label>
+                            <span>
+                                <i class="fa fa-chalkboard-teacher"></i>
+                                Capacity Building Sessions
+                            </span>
+                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement" value="Capacity">
+                        </label>
+                        <label>
+                            <span>
+                                <i class="fa fa-network-wired"></i>
+                                Networking Sessions (B2B / B2G / BtoCustoms)
+                            </span>
+                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement" value="Networking">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="colapse">
+                    <button type="button" class="collapse-btn">
+                        <i class="fas fa-info-circle"></i>
+                        Additional Information
+                    </button>
+                    <div class="collapse-content">
+                        <div class="form-group">
+                            <i class="fa fa-utensils"></i>
+                            <textarea name="dietary" placeholder="Dietary Restrictions / Special Needs"></textarea>
+                            <label>Dietary Restrictions</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-bell"></i>
+                            <select name="updates">
+                                <option value="">Receive updates about future editions?</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin-top:30px;">
+                    <button type="submit" class="btn btn-primary">Submit Registration</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle (JS + Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Press Kit</a>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.8;">© 2025 The Customs PACT. All rights reserved.</p>
+            <p style="margin-top: 1rem; margin-bottom:0; opacity: 0.6;">Partnership for African Cooperation in Trade</p>
+            <p style="margin: 0rem; opacity: 0.1; right:0; font-size:12px; color:rgb(122, 122, 122); text-align:end">
+                Powered by
+                <a href="wa.me/22899005006">Lustick Services</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+
+        // Gestion dropdown sur mobile
+        document.querySelectorAll(".dropdown-toggle").forEach(item => {
+            item.addEventListener("click", e => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdown = item.nextElementSibling;
+                    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Countdown Timer
+        const countdown = () => {
+            const countDate = new Date('November 17, 2025 09:00:00').getTime();
+            const now = new Date().getTime();
+            const gap = countDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const days = Math.floor(gap / day);
+            const hours = Math.floor((gap % day) / hour);
+            const minutes = Math.floor((gap % hour) / minute);
+            const seconds = Math.floor((gap % minute) / second);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+
+            if (gap < 0) {
+                document.getElementById('countdown').innerHTML = "<h2>The event has started!</h2>";
+            }
+        };
+        setInterval(countdown, 1000);
+        countdown();
+
+        // Language Switcher (Placeholder functionality)
+        function changeLanguage(lang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            alert('Language switched to ' + lang.toUpperCase() + '. (Functionality to be implemented)');
+        }
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        revealOnScroll();
+
+
+        // Scroll reveals animation
+        const revealsElements = document.querySelectorAll('.reveals');
+
+        const revealsOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealsElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initial styling for reveals elements
+        revealsElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+        });
+
+        window.addEventListener('scroll', revealsOnScroll);
+        window.addEventListener('load', revealsOnScroll);
+        revealsOnScroll();
+    </script>
+
+    <script>
+
+        // Program Tabs
+        const dayTabs = document.querySelectorAll('.day-tab');
+        const programContents = document.querySelectorAll('.program-content');
+
+        dayTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetDay = tab.getAttribute('data-day');
+
+                dayTabs.forEach(t => t.classList.remove('active'));
+                programContents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(targetDay).classList.add('active');
+            });
+        });
+
+        // Speaker Filters
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const speakerCards = document.querySelectorAll('.speaker-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filterValue = btn.getAttribute('data-filter');
+
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                speakerCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Tabs functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+
+                // Remove active class from all buttons and panels
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding panel
+                button.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // Keyboard navigation
+        tabButtons.forEach((button, index) => {
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const nextIndex = (index + 1) % tabButtons.length;
+                    tabButtons[nextIndex].click();
+                    tabButtons[nextIndex].focus();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prevIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+                    tabButtons[prevIndex].click();
+                    tabButtons[prevIndex].focus();
+                }
+            });
+        });
+
+        // Contrôle du son de la vidéo YouTube
+        let isMuted = true;
+        let player;
+
+        // Charger l'API YouTube
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Initialiser le lecteur YouTube
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('heroVideo', {
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            const soundToggle = document.getElementById('soundToggle');
+            const soundIcon = document.getElementById('soundIcon');
+
+            soundToggle.addEventListener('click', function () {
+                if (isMuted) {
+                    player.unMute();
+                    soundIcon.textContent = '🔊';
+                    isMuted = false;
+                } else {
+                    player.mute();
+                    soundIcon.textContent = '🔇';
+                    isMuted = true;
+                }
+            });
+        }
+
+        // Modal
+        const modal = document.getElementById("registrationModal");
+        const openBtns = [
+            document.getElementById("openRegistration"),
+            document.getElementById("openRegistration1"),
+            document.getElementById("become-speaker")
+        ];
+        const closeBtn = document.getElementById("closeModal");
+
+        // Ouvrir le modal
+        openBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener("click", e => {
+                    e.preventDefault();
+                    modal.style.display = "flex";
+                    document.body.style.overflow = "hidden";
+                });
+            }
+        });
+
+        // Fermer le modal
+        if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            });
+        }
+
+        // Fermer en cliquant à l’extérieur
+        window.addEventListener("click", e => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+
+        // Collapse (corrigé et fluide)
+        document.querySelectorAll('.collapse-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+
+                // Ferme les autres sections
+                document.querySelectorAll('.collapse-content').forEach(c => {
+                    if (c !== content) {
+                        c.style.maxHeight = null;
+                        c.parentElement.classList.remove("active");
+                    }
+                });
+
+                // Toggle la section actuelle
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    btn.parentElement.classList.remove("active");
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    btn.parentElement.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

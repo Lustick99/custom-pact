@@ -53,6 +53,17 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <!-- Program avec sous-menu -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Program</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#speakers">Speakers</a></li>
+                        <li><a href="#" id="become-speaker">Become speaker</a></li>
+                        <li><a href="#speakers">2025 speaker</a></li>
+                        <li><a href="#programs">Program </a></li>
+                        <li><a href="#logistics">Venue</a></li>
+                    </ul>
+                </li>
                 <!-- PARTNERS avec sous-menu -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Partners</a>
@@ -61,14 +72,14 @@
                         <li><a href="#become-partner">Become a partner</a></li>
                     </ul>
                 </li>
-                <!-- SPEAKERS avec sous-menu -->
+                <!-- SPEAKERS avec sous-menu
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Speakers</a>
                     <ul class="dropdown-menu">
                         <li><a href="#" id="become-speaker">Become speaker</a></li>
                         <li><a href="#speakers">2025 speaker</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li><a href="#logistics">Logistics</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -148,7 +159,7 @@
     <section class="comptroller-message-section" id="about">
         <div class="container">
             <div class="section-header">
-                <h2>Message from the Comptroller General</h2>
+                <h2>About the Custom PACT</h2>
                 <div class="underline"></div>
             </div>
 
@@ -195,7 +206,6 @@
     <section class="key-dates reveals" id="key-dates">
         <div class="container">
             <h2 class="section-title">The Customs PACT 2025 At a Glance</h2>
-            <p class="section-subtitle">Mark your calendar for these key informations</p>
 
             <div class="dates-grid">
                 <div class="date-card">
@@ -286,117 +296,135 @@
             <!-- Speaker Filters -->
             <div class="speaker-filters">
                 <button class="filter-btn active" data-filter="all">All Speakers</button>
+                <button class="filter-btn" data-filter="moderator">Moderator</button>
                 <button class="filter-btn" data-filter="keynote">Keynote</button>
                 <button class="filter-btn" data-filter="panelist">Panelist</button>
-                <button class="filter-btn" data-filter="moderator">Moderator</button>
+                <button class="btn btn-primary" id="become-speaker2">Become a Speaker</button>
             </div>
 
-            <!-- Speakers Grid -->
-            <div class="speakers-grid">
-                <div class="speaker-card" data-category="keynote">
-                    <div class="speaker-badge">Keynote</div>
-                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
-                    <div class="speaker-info">
-                        <h3 class="speaker-name">Adewale Adeniyi</h3>
-                        <p class="speaker-title">Comptroller-General</p>
-                        <p class="speaker-organization">Nigeria Customs Service</p>
-                        <p class="speaker-bio">
-                            Leading Nigeria's customs modernization and regional trade facilitation initiatives
-                        </p>
+            <!-- Speakers Carousel -->
+            <div class="carousel-container">
+                <button class="carousel-btn prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="speakers-carousel">
+                    <div class="carousel-track">
+                        <div class="speaker-card" data-category="keynote">
+                            <div class="speaker-badge keynote">Keynote</div>
+                            <div class="speaker-image">
+                                <img src="assets/phds.JPG" alt="Adewale Adeniyi">
+                            </div>
+                            <div class="speaker-info">
+                                <h3 class="speaker-name">Adewale Adeniyi</h3>
+                                <p class="speaker-title">Comptroller-General</p>
+                                <p class="speaker-organization">Nigeria Customs Service</p>
+                                <p class="speaker-bio">
+                                    Leading Nigeria's customs modernization and regional trade facilitation initiatives
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="speaker-card" data-category="keynote">
+                            <div class="speaker-badge keynote">Keynote</div>
+                            <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                            <div class="speaker-info">
+                                <h3 class="speaker-name">H.E. Omar Alieu Touray</h3>
+                                <p class="speaker-title">President</p>
+                                <p class="speaker-organization">ECOWAS Commission</p>
+                                <p class="speaker-bio">
+                                    Champion of West African economic integration and regional cooperation
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="speaker-card" data-category="keynote">
+                            <div class="speaker-badge keynote">Keynote</div>
+                            <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                            <div class="speaker-info">
+                                <h3 class="speaker-name">H.E. Wamkele Mene</h3>
+                                <p class="speaker-title">Secretary-General</p>
+                                <p class="speaker-organization">AfCFTA Secretariat</p>
+                                <p class="speaker-bio">
+                                    Driving the implementation of the African Continental Free Trade Area
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="speaker-card" data-category="panelist">
+                            <div class="speaker-badge panelist">Panelist</div>
+                            <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                            <div class="speaker-info">
+                                <h3 class="speaker-name">Dr. Benedict Oramah</h3>
+                                <p class="speaker-title">President & Chairman</p>
+                                <p class="speaker-organization">Afreximbank</p>
+                                <p class="speaker-bio">
+                                    Expert in trade finance and African economic development
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="speaker-card" data-category="panelist">
+                            <div class="speaker-badge panelist">Panelist</div>
+                            <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                            <div class="speaker-info">
+                                <h3 class="speaker-name">Kunio Mikuriya</h3>
+                                <p class="speaker-title">Secretary General</p>
+                                <p class="speaker-organization">World Customs Organization</p>
+                                <p class="speaker-bio">
+                                    Leading global customs standards and best practices implementation
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="speaker-card" data-category="moderator">
+                            <div class="speaker-badge moderator">Moderator</div>
+                            <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                            <div class="speaker-info">
+                                <h3 class="speaker-name">Prof. Oyebanji Oyelaran-Oyeyinka</h3>
+                                <p class="speaker-title">Senior Advisor</p>
+                                <p class="speaker-organization">African Development Bank</p>
+                                <p class="speaker-bio">
+                                    Renowned expert in African industrialization and trade policy
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="speaker-card" data-category="panelist">
+                            <div class="speaker-badge panelist">Panelist</div>
+                            <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                            <div class="speaker-info">
+                                <h3 class="speaker-name">Amelia Kinahoi Siamomua</h3>
+                                <p class="speaker-title">Director</p>
+                                <p class="speaker-organization">WTO Trade Facilitation Division</p>
+                                <p class="speaker-bio">
+                                    Specialist in trade facilitation and customs modernization
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="speaker-card" data-category="panelist">
+                            <div class="speaker-badge panelist">Panelist</div>
+                            <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                            <div class="speaker-info">
+                                <h3 class="speaker-name">Stephen Karingi</h3>
+                                <p class="speaker-title">Director, Regional Integration</p>
+                                <p class="speaker-organization">UNECA</p>
+                                <p class="speaker-bio">
+                                    Expert in regional economic integration and trade policy in Africa
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="speaker-card" data-category="keynote">
-                    <div class="speaker-badge">Keynote</div>
-                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
-                    <div class="speaker-info">
-                        <h3 class="speaker-name">H.E. Omar Alieu Touray</h3>
-                        <p class="speaker-title">President</p>
-                        <p class="speaker-organization">ECOWAS Commission</p>
-                        <p class="speaker-bio">
-                            Champion of West African economic integration and regional cooperation
-                        </p>
-                    </div>
-                </div>
-
-                <div class="speaker-card" data-category="keynote">
-                    <div class="speaker-badge">Keynote</div>
-                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
-                    <div class="speaker-info">
-                        <h3 class="speaker-name">H.E. Wamkele Mene</h3>
-                        <p class="speaker-title">Secretary-General</p>
-                        <p class="speaker-organization">AfCFTA Secretariat</p>
-                        <p class="speaker-bio">
-                            Driving the implementation of the African Continental Free Trade Area
-                        </p>
-                    </div>
-                </div>
-
-                <div class="speaker-card" data-category="panelist">
-                    <div class="speaker-badge">Panelist</div>
-                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
-                    <div class="speaker-info">
-                        <h3 class="speaker-name">Dr. Benedict Oramah</h3>
-                        <p class="speaker-title">President & Chairman</p>
-                        <p class="speaker-organization">Afreximbank</p>
-                        <p class="speaker-bio">
-                            Expert in trade finance and African economic development
-                        </p>
-                    </div>
-                </div>
-
-                <div class="speaker-card" data-category="panelist">
-                    <div class="speaker-badge">Panelist</div>
-                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
-                    <div class="speaker-info">
-                        <h3 class="speaker-name">Kunio Mikuriya</h3>
-                        <p class="speaker-title">Secretary General</p>
-                        <p class="speaker-organization">World Customs Organization</p>
-                        <p class="speaker-bio">
-                            Leading global customs standards and best practices implementation
-                        </p>
-                    </div>
-                </div>
-
-                <div class="speaker-card" data-category="moderator">
-                    <div class="speaker-badge">Moderator</div>
-                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
-                    <div class="speaker-info">
-                        <h3 class="speaker-name">Prof. Oyebanji Oyelaran-Oyeyinka</h3>
-                        <p class="speaker-title">Senior Advisor</p>
-                        <p class="speaker-organization">African Development Bank</p>
-                        <p class="speaker-bio">
-                            Renowned expert in African industrialization and trade policy
-                        </p>
-                    </div>
-                </div>
-
-                <div class="speaker-card" data-category="panelist">
-                    <div class="speaker-badge">Panelist</div>
-                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
-                    <div class="speaker-info">
-                        <h3 class="speaker-name">Amelia Kinahoi Siamomua</h3>
-                        <p class="speaker-title">Director</p>
-                        <p class="speaker-organization">WTO Trade Facilitation Division</p>
-                        <p class="speaker-bio">
-                            Specialist in trade facilitation and customs modernization
-                        </p>
-                    </div>
-                </div>
-
-                <div class="speaker-card" data-category="panelist">
-                    <div class="speaker-badge">Panelist</div>
-                    <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
-                    <div class="speaker-info">
-                        <h3 class="speaker-name">Stephen Karingi</h3>
-                        <p class="speaker-title">Director, Regional Integration</p>
-                        <p class="speaker-organization">UNECA</p>
-                        <p class="speaker-bio">
-                            Expert in regional economic integration and trade policy in Africa
-                        </p>
-                    </div>
-                </div>
+                <button class="carousel-btn next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
+
+            <!-- Carousel Dots -->
+            <div class="carousel-dots" id="carouselDots"></div>
         </div>
     </section>
 
@@ -696,7 +724,7 @@
             <div class="logistics-tabs-wrapper">
                 <!-- Tabs Navigation - Left Side -->
                 <div class="logistics-tabs">
-                    <button class="tab-button active" data-tab="venue">
+                    <button class="day-tab tab-button active" data-tab="venue">
                         <span class="icon">
                             <i class="fas fa-conference"></i>
                         </span>
@@ -709,15 +737,6 @@
                             </span>
                         </div>
                     </button>
-                    <button class="tab-button" data-tab="accommodation">
-                        <span class="icon">
-                            <i class="fas fa-hotel"></i>
-                        </span>
-                        <div class="tab-button-text">
-                            <span class="tab-button-title">Accommodation</span>
-                            <span class="tab-button-subtitle">Hotel options</span>
-                        </div>
-                    </button>
                     <button class="tab-button" data-tab="travel">
                         <span class="icon">
                             <i class="fas fa-plane"></i>
@@ -727,15 +746,6 @@
                             <span class="tab-button-subtitle">Transportation</span>
                         </div>
                     </button>
-                    <button class="tab-button" data-tab="visa">
-                        <span class="icon">
-                            <i class="fas fa-passport"></i>
-                        </span>
-                        <div class="tab-button-text">
-                            <span class="tab-button-title">Visa</span>
-                            <span class="tab-button-subtitle">Entry requirements</span>
-                        </div>
-                    </button>
                     <button class="tab-button" data-tab="transport">
                         <span class="icon">
                             <i class="fas fa-transport"></i>
@@ -743,8 +753,26 @@
                         <div class="tab-button-text">
                             <span class="tab-button-title">Transport</span>
                             <span class="tab-button-subtitle">
-                                Arrival and transfer
+                                On ground Transport
                             </span>
+                        </div>
+                    </button>
+                    <button class="tab-button" data-tab="accommodation">
+                        <span class="icon">
+                            <i class="fas fa-hotel"></i>
+                        </span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">Accommodation</span>
+                            <span class="tab-button-subtitle">Hotel options</span>
+                        </div>
+                    </button>
+                    <button class="tab-button" data-tab="visa">
+                        <span class="icon">
+                            <i class="fas fa-passport"></i>
+                        </span>
+                        <div class="tab-button-text">
+                            <span class="tab-button-title">Visa</span>
+                            <span class="tab-button-subtitle">Entry requirements</span>
                         </div>
                     </button>
                 </div>
@@ -771,9 +799,23 @@
                             <li>Processing time: 5-7 business days</li>
                             <li>Visa on arrival available for select countries</li>
                         </ul>
+                        <div class="important-notice">
+                            <div class="notice-title">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Important Information
+                            </div>
+                            <div class="notice-item">
+                                <div class="notice-text">
+                                    Nnamdi Azikwe International Airport in Abuja is served by several international
+                                    airlines, including Ethiopia Airlines, British Airways, Egypt Airlines, Qatar
+                                    Airlines, Lufthansa Air, Air France, Turkish Airlines, Uganda Airlines, Royal Air
+                                    Maroc, Asky Airlines, Awa Airlines, Air Algeria and Air Côte d’Ivoire.
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Visa Tab -->
+                    <!-- Transport Tab -->
                     <div class="tab-panel" id="transport">
                         <div class="tab-panel-header">
                             <span class="icon">
@@ -1047,12 +1089,6 @@
                             </p> -->
                             <!-- Venue 1: State House -->
                             <div class="venue-card">
-                                <div class="venue-map">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.883847156928!2d7.488958!3d9.075774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0ba8fb2ac20f%3A0x3c7b33c3f6c7b8c4!2sAso%20Rock%2C%20Abuja!5e0!3m2!1sen!2sng!4v1234567890"
-                                        allowfullscreen="" loading="lazy">
-                                    </iframe>
-                                </div>
                                 <div class="venue-info">
                                     <span class="venue-badge">Day 1 - November 17</span>
                                     <h3 class="venue-name">State House Banquet Hall</h3>
@@ -1100,12 +1136,6 @@
 
                             <!-- Venue 2: Transcorp Hilton -->
                             <div class="venue-card">
-                                <div class="venue-map">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8844465304765!2d7.492405975691544!3d9.07429068827697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104dd42594163dd1%3A0x2b97d2308e5f8ee1!2sTranscorp%20Hilton%20Abuja!5e0!3m2!1sfr!2stg!4v1759504389144!5m2!1sfr!2stg"
-                                        allowfullscreen="" loading="lazy">
-                                    </iframe>
-                                </div>
                                 <div class="venue-info">
                                     <span class="venue-badge">Days 2-3 - November 18-19</span>
                                     <h3 class="venue-name">Transcorp Hilton Abuja</h3>
@@ -1198,22 +1228,6 @@
                     <div class="contact-item">
                         <strong>World Customs Organization</strong>
                         <span>Contact details coming soon</span>
-                    </div>
-                </div>
-
-                <div class="contact-info">
-                    <h3>Important Information</h3>
-                    <div class="contact-item">
-                        <strong>Registration Deadline</strong>
-                        <span>November 7, 2025</span>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Currency</strong>
-                        <span>Nigerian Naira (₦)</span>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Weather</strong>
-                        <span>31°C day / 22°C night</span>
                     </div>
                 </div>
             </div>
@@ -1518,21 +1532,24 @@
                                 <i class="fa fa-comments"></i>
                                 Panel / Roundtable Discussions
                             </span>
-                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement" value="Panel">
+                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement"
+                                value="Panel">
                         </label>
                         <label>
                             <span>
                                 <i class="fa fa-chalkboard-teacher"></i>
                                 Capacity Building Sessions
                             </span>
-                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement" value="Capacity">
+                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement"
+                                value="Capacity">
                         </label>
                         <label>
                             <span>
                                 <i class="fa fa-network-wired"></i>
                                 Networking Sessions (B2B / B2G / BtoCustoms)
                             </span>
-                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement" value="Networking">
+                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement"
+                                value="Networking">
                         </label>
                     </div>
                 </div>
@@ -1567,7 +1584,8 @@
     </div>
 
     <!-- Bootstrap Bundle (JS + Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
 
     <!-- Footer -->
     <footer>
@@ -1748,27 +1766,6 @@
             });
         });
 
-        // Speaker Filters
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const speakerCards = document.querySelectorAll('.speaker-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const filterValue = btn.getAttribute('data-filter');
-
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                speakerCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
         // Tabs functionality
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabPanels = document.querySelectorAll('.tab-panel');
@@ -1845,7 +1842,8 @@
         const openBtns = [
             document.getElementById("openRegistration"),
             document.getElementById("openRegistration1"),
-            document.getElementById("become-speaker")
+            document.getElementById("become-speaker"),
+            document.getElementById("become-speaker2")
         ];
         const closeBtn = document.getElementById("closeModal");
 
@@ -1899,6 +1897,158 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const cards = Array.from(track.children);
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        const dotsContainer = document.getElementById('carouselDots');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        let currentIndex = 0;
+        let cardsPerView = 3;
+        let filteredCards = [...cards];
+
+        function updateCardsPerView() {
+            if (window.innerWidth <= 768) {
+                cardsPerView = 1;
+            } else if (window.innerWidth <= 1024) {
+                cardsPerView = 2;
+            } else {
+                cardsPerView = 3;
+            }
+        }
+
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            const numDots = Math.ceil(filteredCards.length / cardsPerView);
+
+            for (let i = 0; i < numDots; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function moveToSlide() {
+            const cardWidth = cards[0].getBoundingClientRect().width;
+            const gap = 25;
+            const moveAmount = -(currentIndex * cardsPerView * (cardWidth + gap));
+            track.style.transform = `translateX(${moveAmount}px)`;
+            updateDots();
+        }
+
+        function goToSlide(index) {
+            const maxIndex = Math.ceil(filteredCards.length / cardsPerView) - 1;
+            currentIndex = Math.max(0, Math.min(index, maxIndex));
+            moveToSlide();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                moveToSlide();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const maxIndex = Math.ceil(filteredCards.length / cardsPerView) - 1;
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                moveToSlide();
+            }
+        });
+
+        // Filter functionality
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter cards
+                if (filter === 'all') {
+                    filteredCards = [...cards];
+                    cards.forEach(card => card.style.display = 'block');
+                } else {
+                    cards.forEach(card => {
+                        const category = card.dataset.category;
+                        if (category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    filteredCards = cards.filter(card => card.dataset.category === filter);
+                }
+
+                currentIndex = 0;
+                createDots();
+                moveToSlide();
+            });
+        });
+
+        // Responsive handling
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                updateCardsPerView();
+                createDots();
+                currentIndex = 0;
+                moveToSlide();
+            }, 250);
+        });
+
+        // Initialize
+        updateCardsPerView();
+        createDots();
+        moveToSlide();
+
+        // Touch/Swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchStartX - touchEndX > swipeThreshold) {
+                // Swipe left - next
+                const maxIndex = Math.ceil(filteredCards.length / cardsPerView) - 1;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    moveToSlide();
+                }
+            }
+            if (touchEndX - touchStartX > swipeThreshold) {
+                // Swipe right - prev
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    moveToSlide();
+                }
+            }
+        }
     </script>
 
 </body>
