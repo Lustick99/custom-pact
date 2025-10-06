@@ -21,9 +21,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS (cdn) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,8 +36,6 @@
 
     <!-- responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -65,7 +65,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Speakers</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#become-speaker">Become speaker</a></li>
+                        <li><a href="#" id="become-speaker">Become speaker</a></li>
                         <li><a href="#speakers">2025 speaker</a></li>
                     </ul>
                 </li>
@@ -145,7 +145,6 @@
     </section>
 
     <!-- Controler Message -->
-
     <section class="comptroller-message-section" id="about">
         <div class="container">
             <div class="section-header">
@@ -156,7 +155,7 @@
             <div class="message-content">
                 <div class="comptroller-photo">
                     <div class="photo-wrapper">
-                        <img src="assets/Phd.jpg" alt="Bashir Adewale Adeniyi">
+                        <img src="assets/Phd1.jpg" alt="Bashir Adewale Adeniyi">
                     </div>
                     <div class="photo-frame"></div>
                 </div>
@@ -206,8 +205,7 @@
                         </span>
                         Participating countries
                     </h3>
-                    <br>
-                    <div class="date-value" style="text-align: center; font-size:xxx-large"> 12 </div>
+                    <div class="date-value" style="text-align: center; font-size:5rem"> 12 </div>
                 </div>
 
                 <div class="date-card">
@@ -217,8 +215,7 @@
                         </span>
                         Participants
                     </h3>
-                    <br>
-                    <div class="date-value" style="text-align: center; font-size:xxx-large"> 211 </div>
+                    <div class="date-value" style="text-align: center; font-size:5rem"> 211 </div>
                 </div>
 
 
@@ -229,8 +226,7 @@
                         </span>
                         Speakers
                     </h3>
-                    <br>
-                    <div class="date-value" style="text-align: center; font-size:xxx-large"> 32 </div>
+                    <div class="date-value" style="text-align: center; font-size:5rem"> 32 </div>
                 </div>
 
                 <div class="date-card">
@@ -1222,6 +1218,197 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="section-header">
+                <h2><br></h2>
+                <div class="underline"></div>
+                <p>
+                    Have questions about Custom PACT? We're here to help. Reach out to us and we'll respond as soon as
+                    possible.
+                </p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Address</h4>
+                            <p>Nigeria Customs Service Headquarters<br>Abuja, Nigeria</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>info@custompact.org<br>support@custompact.org</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p>+234 (0) 123 456 7890<br>+234 (0) 987 654 3210</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="contact-form-container">
+                    <div class="success-message" id="successMessage">
+                        ✓ Thank you for your message! We'll get back to you soon.
+                    </div>
+
+                    <form id="contactForm" onsubmit="return handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="John">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+234 123 456 7890">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">Organization</label>
+                            <input type="text" id="organization" name="organization"
+                                placeholder="Your organization name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="registration">Event Registration</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="sponsorship">Sponsorship</option>
+                                <option value="media">Media & Press</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required
+                                placeholder="Please share your questions or comments..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function handleSubmit(e) {
+                e.preventDefault();
+
+                // Récupération des valeurs du formulaire
+                const formData = {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    organization: document.getElementById('organization').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Simulation d'envoi (à remplacer par votre logique backend)
+                console.log('Form data:', formData);
+
+                // Afficher le message de succès
+                const successMessage = document.getElementById('successMessage');
+                successMessage.classList.add('show');
+
+                // Réinitialiser le formulaire
+                document.getElementById('contactForm').reset();
+
+                // Cacher le message après 5 secondes
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+
+                // Faire défiler vers le message de succès
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                return false;
+            }
+
+            // Animation au défilement
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.form-group').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        </script>
     </section>
 
     <!-- Registration Modal -->
@@ -1326,12 +1513,27 @@
                         Networking & Engagement
                     </button>
                     <div class="collapse-content">
-                        <label><input type="checkbox" name="engagement" value="Panel"> Panel / Roundtable
-                            Discussions</label>
-                        <label><input type="checkbox" name="engagement" value="Capacity"> Capacity Building
-                            Sessions</label>
-                        <label><input type="checkbox" name="engagement" value="Networking"> Networking Sessions (B2B /
-                            B2G / BtoCustoms)</label>
+                        <label>
+                            <span>
+                                <i class="fa fa-comments"></i>
+                                Panel / Roundtable Discussions
+                            </span>
+                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement" value="Panel">
+                        </label>
+                        <label>
+                            <span>
+                                <i class="fa fa-chalkboard-teacher"></i>
+                                Capacity Building Sessions
+                            </span>
+                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement" value="Capacity">
+                        </label>
+                        <label>
+                            <span>
+                                <i class="fa fa-network-wired"></i>
+                                Networking Sessions (B2B / B2G / BtoCustoms)
+                            </span>
+                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement" value="Networking">
+                        </label>
                     </div>
                 </div>
 
@@ -1363,6 +1565,9 @@
             </form>
         </div>
     </div>
+
+    <!-- Bootstrap Bundle (JS + Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Footer -->
     <footer>
@@ -1635,52 +1840,64 @@
             });
         }
 
-        // Sélection des éléments
+        // Modal
         const modal = document.getElementById("registrationModal");
-        const openBtn = document.getElementById("openRegistration");
-        const openBtnnav = document.getElementById("openRegistration1");
-        const openSpeakersBtn = document.getElementById("become-speaker");
+        const openBtns = [
+            document.getElementById("openRegistration"),
+            document.getElementById("openRegistration1"),
+            document.getElementById("become-speaker")
+        ];
         const closeBtn = document.getElementById("closeModal");
 
         // Ouvrir le modal
-        openBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            modal.style.display = "block";
-            document.body.style.overflow = "hidden"; // empêche le scroll en arrière-plan
-        });
-        openBtnnav.addEventListener("click", (e) => {
-            e.preventDefault();
-            modal.style.display = "block";
-            document.body.style.overflow = "hidden"; // empêche le scroll en arrière-plan
-        });
-        openSpeakersBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            modal.style.display = "block";
-            document.body.style.overflow = "hidden"; // empêche le scroll en arrière-plan
-        });
-
-
-        // Collapse logic
-        document.querySelectorAll('.collapse-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const content = btn.nextElementSibling;
-                content.style.display = content.style.display === "block" ? "none" : "block";
-                btn.parentElement.classList.toggle("active");
-            });
+        openBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener("click", e => {
+                    e.preventDefault();
+                    modal.style.display = "flex";
+                    document.body.style.overflow = "hidden";
+                });
+            }
         });
 
         // Fermer le modal
-        closeBtn.addEventListener("click", () => {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-        });
+        if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            });
+        }
 
-        // Fermer en cliquant en dehors
-        window.addEventListener("click", (e) => {
+        // Fermer en cliquant à l’extérieur
+        window.addEventListener("click", e => {
             if (e.target === modal) {
                 modal.style.display = "none";
                 document.body.style.overflow = "auto";
             }
+        });
+
+        // Collapse (corrigé et fluide)
+        document.querySelectorAll('.collapse-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+
+                // Ferme les autres sections
+                document.querySelectorAll('.collapse-content').forEach(c => {
+                    if (c !== content) {
+                        c.style.maxHeight = null;
+                        c.parentElement.classList.remove("active");
+                    }
+                });
+
+                // Toggle la section actuelle
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    btn.parentElement.classList.remove("active");
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    btn.parentElement.classList.add("active");
+                }
+            });
         });
     </script>
 
