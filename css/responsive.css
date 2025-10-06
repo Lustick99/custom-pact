@@ -2,6 +2,43 @@
    RESPONSIVE DESIGN - MEDIA QUERIES
    ========================================== */
 
+
+/* Desktop : affichage au survol */
+@media (min-width: 769px) {
+    .nav-menu .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Mobile : menu vertical */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 250px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    /* Sous-menu en mobile : inline */
+    .nav-menu .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* Tablettes et petits écrans (max-width: 1320px) */
 @media (max-width: 1320px) {
     .container {
@@ -134,10 +171,6 @@
         background: var(--text-dark);
     }
 
-    .language-switcher {
-        margin-top: 1rem;
-    }
-
     /* Hero Section */
     .hero {
         min-height: 100vh;
@@ -153,10 +186,15 @@
         margin-top: 2rem;
     }
 
+    .section2 {
+        margin-top: 15px;
+    }
+
     .event-date {
         flex-direction: column;
         gap: 1rem;
         font-size: 1rem;
+        margin-bottom: 0;
     }
 
     .event-date span {
@@ -167,7 +205,7 @@
     /* Countdown Timer */
     .countdown {
         gap: 1rem;
-        margin: 2rem 0;
+        margin: 1.5rem 0;
     }
 
     .countdown-item {
@@ -181,13 +219,6 @@
 
     .countdown-label {
         font-size: 0.75rem;
-    }
-
-    /* CTA Buttons */
-    .cta-buttons {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.8rem;
     }
 
     .btn {
@@ -239,13 +270,8 @@
     }
 
     /* Partners Grid */
-    .partners-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
     .partner-logo {
-        width: 150px;
+        width: 120px;
         height: 100px;
     }
 
@@ -355,7 +381,8 @@
 
     /* Navigation */
     .logo img {
-        height: 45px !important;
+        height: 50px !important;
+        padding: 0 !important;
     }
 
     nav {
@@ -370,6 +397,15 @@
     .hero {
         min-height: 100vh;
         padding: 0;
+    }
+
+    .section1,
+    .section2 {
+        margin-top: 10px;
+    }
+
+    .event-date {
+        margin-bottom: 0px;
     }
 
     .hero h1 {
@@ -428,6 +464,21 @@
 
     .countdown-label {
         font-size: 0.65rem;
+    }
+
+    /* CTA Buttons */
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Language switcher */
+    .language-switcher {
+        margin-top: 0;
+        padding: 0 5px;
+        gap: 5px;
     }
 
     /* Buttons */
@@ -490,7 +541,7 @@
     }
 
     .partner-logo {
-        width: 140px;
+        width: 100px;
         height: 90px;
     }
 
@@ -640,6 +691,11 @@
 
 /* Très petits écrans (max-width: 360px) */
 @media (max-width: 360px) {
+
+    .logo img {
+        height: 30px !important;
+    }
+
     .hero h1 {
         font-size: 2.3rem;
     }
@@ -688,7 +744,7 @@
 /* Landscape mode pour smartphones */
 @media (max-height: 600px) and (orientation: landscape) {
     .hero {
-        min-height: auto;
+        min-height: 100vh;
         padding: 60px 10px 30px;
     }
 
@@ -737,8 +793,7 @@
 /* Optimisation pour tablettes en mode paysage */
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
 
-    .about-grid,
-    .partners-grid {
+    .about-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 

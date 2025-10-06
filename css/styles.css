@@ -31,7 +31,9 @@ body {
     overflow-x: hidden;
 }
 
-p {
+p,
+strong,
+span {
     font-size: 1.2rem;
 }
 
@@ -111,6 +113,7 @@ nav.scrolled {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin-bottom: 0;
 }
 
 .nav-menu a {
@@ -135,6 +138,41 @@ nav.scrolled {
 
 .nav-menu a:hover::after {
     width: 100%;
+}
+
+/* Style du dropdown */
+.nav-menu .dropdown {
+    position: relative;
+}
+
+.nav-menu .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.nav-menu .dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.nav-menu .dropdown-menu li a:hover {
+    background: #f0f0f0;
+}
+
+/* Afficher le dropdown au survol */
+.nav-menu .dropdown:hover .dropdown-menu {
+    display: block;
 }
 
 .language-switcher {
@@ -216,7 +254,7 @@ nav.scrolled {
     z-index: 2;
     position: relative;
     animation: fadeInUp 1s ease;
-    max-width: 900px;
+    max-width: 1200px;
     padding: 0 20px;
 }
 
@@ -261,6 +299,14 @@ nav.scrolled {
     transform: scale(0.95);
 }
 
+.section2 {
+    margin-top: 50px;
+    /* top: 70px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -274,7 +320,7 @@ nav.scrolled {
 }
 
 .hero h1 {
-    top: 70px;
+    top: 50px;
     position: relative;
     font-size: clamp(2rem, 5vw, 4rem);
     margin-bottom: 0.1rem;
@@ -305,7 +351,6 @@ nav.scrolled {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
 }
 
 .event-date span {
@@ -324,7 +369,7 @@ nav.scrolled {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .btn {
@@ -382,7 +427,7 @@ nav.scrolled {
     gap: 10px;
     justify-content: center;
     margin: 3rem 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .countdown-item {
@@ -408,10 +453,226 @@ nav.scrolled {
 }
 
 
+/* Controller Message */
+.comptroller-message-section {
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #fcfafcfa 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.comptroller-message-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-header .underline {
+    width: 100px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.message-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+    border-radius: 20px;
+    padding: 50px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.comptroller-photo {
+    position: relative;
+}
+
+.photo-wrapper {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.photo-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.photo-frame {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 3px solid var(--accent-color);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.message-text {
+    color: var(--text-dark);
+}
+
+.message-text h3 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.message-text p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.8;
+    color: #333;
+}
+
+.message-text p:first-of-type::first-letter {
+    font-size: 3.5rem;
+    font-weight: 700;
+    float: left;
+    line-height: 1;
+    margin: 5px 10px 0 0;
+    color: var(--secondary-color);
+}
+
+.signature {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #e0e0e0;
+}
+
+.signature .name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.signature .title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 3px;
+}
+
+.signature .organization {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 968px) {
+    .message-content {
+        grid-template-columns: 1fr;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .message-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .comptroller-photo {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .comptroller-message-section {
+        padding: 50px 15px;
+    }
+
+    .message-content {
+        padding: 25px;
+    }
+
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .message-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .message-text p {
+        font-size: 1rem;
+    }
+}
 
 /* Key Dates Section */
 .key-dates {
-    padding: 100px 20px;
+    padding: 120px 20px;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     position: relative;
     overflow: hidden;
@@ -564,7 +825,7 @@ nav.scrolled {
 
 /* Venue Locations Section */
 .venue-locations {
-    padding: 100px 20px;
+    padding: 120px 20px;
     background: white;
 }
 
@@ -634,13 +895,12 @@ nav.scrolled {
 .venue-name {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin-bottom: 1rem;
 }
 
 .venue-address {
     font-size: 1.1rem;
-    color: #666;
     margin-bottom: 2rem;
     display: flex;
     align-items: start;
@@ -827,7 +1087,7 @@ nav.scrolled {
 
 /* About Section */
 .about {
-    padding: 100px 20px;
+    padding: 120px 20px;
     background: linear-gradient(135deg, #f5f7fa 0%, #fcfafcfa 100%);
 }
 
@@ -900,7 +1160,7 @@ nav.scrolled {
 
 /* Programs Section */
 .programs {
-    padding: 100px 20px;
+    padding: 120px 20px;
     background: #f8f9fa;
 }
 
@@ -1085,7 +1345,7 @@ nav.scrolled {
 
 /* Speakers Section */
 .speakers {
-    padding: 100px 20px;
+    padding: 120px 20px;
     background: white;
 }
 
@@ -1283,7 +1543,7 @@ nav.scrolled {
 
 /* Partners Section */
 .partners {
-    padding: 100px 20px;
+    padding: 120px 20px;
     position: relative;
     overflow: hidden;
     background: white;
@@ -1360,7 +1620,7 @@ nav.scrolled {
 
 /* Logistics Section */
 .logistics {
-    padding: 100px 20px;
+    padding: 120px 20px;
     background: linear-gradient(135deg, #1f2850 0%, #1f2850 100%);
     color: white;
 }
@@ -1523,7 +1783,6 @@ nav.scrolled {
 }
 
 .tab-panel-description {
-    font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2rem;
     color: rgba(255, 255, 255, 0.9);
@@ -1545,7 +1804,7 @@ nav.scrolled {
     border-left: 3px solid #ffc107;
     border-radius: 8px;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.6;
 }
 
@@ -1774,9 +2033,288 @@ nav.scrolled {
     font-weight: bold;
 }
 
+
+.hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.hotel-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.hotel-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hotel-card:nth-child(1) .hotel-image {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.hotel-card:nth-child(2) .hotel-image {
+    background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+}
+
+.hotel-card:nth-child(3) .hotel-image {
+    background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);
+}
+
+.hotel-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="50" opacity="0.1" fill="white">🏨</text></svg>') center/80px no-repeat;
+}
+
+.hotel-stars {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #f39c12;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.hotel-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.hotel-description {
+    font-size: 0.95rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.hotel-rooms {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.rooms-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.room-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #dee2e6;
+}
+
+.room-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.room-name {
+    font-size: 0.9rem;
+    color: #495057;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.room-name i {
+    color: #0066cc;
+    font-size: 0.85rem;
+}
+
+.room-price {
+    font-weight: 700;
+    color: #28a745;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.hotel-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.feature {
+    background: #e7f3ff;
+    color: #0066cc;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.feature i {
+    font-size: 0.75rem;
+}
+
+.important-notice {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #dc3545;
+}
+
+.notice-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #dc3545;
+    margin-bottom: 18px;
+}
+
+.notice-title i {
+    font-size: 1.5rem;
+}
+
+.notice-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.notice-item:last-child {
+    margin-bottom: 0;
+}
+
+.notice-item i {
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.notice-text {
+    color: #495057;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.notice-text strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.deadline {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+}
+
+.deadline i {
+    color: #856404;
+}
+
+.deadline .notice-text {
+    color: #856404;
+}
+
+@media (max-width: 1080px) {
+    .hotels-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hotels-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hotel-image {
+        height: 180px;
+    }
+
+    .hotel-name {
+        font-size: 1.15rem;
+    }
+
+    .room-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .room-price {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hotel-content {
+        padding: 15px;
+    }
+
+    .hotel-rooms {
+        padding: 12px;
+    }
+
+    .important-notice {
+        padding: 18px;
+    }
+
+    .notice-title {
+        font-size: 1.1rem;
+    }
+}
+
 /* Contact Section */
 .contact {
-    padding: 100px 20px;
+    padding: 140px 20px;
     background: #f8f9fa;
 }
 
