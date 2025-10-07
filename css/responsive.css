@@ -93,6 +93,10 @@
         padding: 0 15px;
     }
 
+    .logo img {
+        height: 60px !important;
+    }
+
     .hero h1 {
         top: 70px;
         font-size: clamp(1.8rem, 4vw, 3rem);
@@ -200,6 +204,15 @@
     .event-date span {
         width: 100%;
         justify-content: center;
+    }
+
+    /* CTA Buttons */
+    .cta-buttons {
+        flex-direction: column-reverse;
+        width: 100%;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+        align-items: center;
     }
 
     /* Countdown Timer */
@@ -468,7 +481,7 @@
 
     /* CTA Buttons */
     .cta-buttons {
-        flex-direction: column;
+        flex-direction: column-reverse;
         width: 100%;
         gap: 0.8rem;
         margin-bottom: 1rem;
@@ -501,6 +514,11 @@
     .logistics,
     .contact {
         padding: 50px 10px;
+    }
+
+    .venues-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .section-title {
@@ -745,7 +763,7 @@
 @media (max-height: 600px) and (orientation: landscape) {
     .hero {
         min-height: 100vh;
-        padding: 60px 10px 30px;
+        padding: 10px;
     }
 
     .countdown {
