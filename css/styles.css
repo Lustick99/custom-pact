@@ -1323,7 +1323,8 @@ nav.scrolled {
 }
 
 .program-description {
-    color: #666;
+    color: #333;
+    font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 1rem;
 }
@@ -1342,7 +1343,7 @@ nav.scrolled {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.95rem;
-    color: #555;
+    color: #222;
 }
 
 .program-detail-icon {
@@ -1544,7 +1545,7 @@ nav.scrolled {
 }
 
 .speaker-card {
-    flex: 0 0 calc(33.333% - 17px);
+    flex: 0 0 calc(25% - 17px);
     background: white;
     border-radius: 12px;
     overflow: hidden;
