@@ -2077,7 +2077,7 @@ nav.scrolled {
 }
 
 .logistics-content ul li {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .visa-card {
@@ -2568,11 +2568,12 @@ nav.scrolled {
 
 .notice-item {
     display: flex;
-    gap: 12px;
     margin-bottom: 15px;
     padding: 12px;
-    background: #f8f9fa;
+    height: 100%;
+    background: #3d9eff45;
     border-radius: 6px;
+    align-items: center;
 }
 
 .notice-item:last-child {
@@ -2587,13 +2588,13 @@ nav.scrolled {
 }
 
 .notice-text {
-    color: #495057;
+    color: #333;
     line-height: 1.6;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 .notice-text strong {
-    color: #2c3e50;
+    color: #222;
     font-weight: 600;
 }
 
