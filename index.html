@@ -62,13 +62,23 @@
                         <li><a href="#venues">Venue</a></li>
                     </ul>
                 </li>
-                <li><a href="#logistics">Logistics</a></li>
                 <!-- PARTNERS avec sous-menu -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Partners</a>
                     <ul class="dropdown-menu">
                         <li><a href="#partners">Discover our partners</a></li>
                         <li><a href="#become-partner">Become a partner</a></li>
+                    </ul>
+                </li>
+                <!-- Logistic avec sous-menu -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Logistics</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="ls" href="#logistics" data-logistic="visa">Visa</a></li>
+                        <li><a class="ls" href="#logistics" data-logistic="travel">Travel </a></li>
+                        <li><a class="ls" href="#logistics" data-logistic="transport">On ground Transport</a></li>
+                        <li><a class="ls" href="#logistics" data-logistic="accommodation">Accommodation</a></li>
+                        <li><a class="ls" href="#logistics" data-logistic="informations">Important information</a></li>
                     </ul>
                 </li>
                 <li><a href="#contact">Contact</a></li>
@@ -102,7 +112,7 @@
                 <div class="section1 col-md-6 col-sm-12">
                     <h1 class="floating">JOIN US</h1>
                     <br><br>
-                    <h2 class="">IN SHAPING THE FUTURE OF CUSTOMS <br> COOPERATION ACROSS AFRICA</h2>
+                    <h2 class="">IN SHAPING THE FUTURE OF CUSTOMS AND BUSINESS COOPERATION ACROSS AFRICA</h2>
                     <p class="tagline">Breaking Barriers, Building Bridges</p>
                     <p style="font-size: 1.2rem; margin-bottom: 1rem;">Partnership for African Cooperation in Trade</p>
                     <div class="event-date">
@@ -163,22 +173,31 @@
 
                 <div class="message-text">
 
-                    <p>Welcome to the official platform of Custom PACT, a transformative initiative powered by Nigeria
+                    <p>
+                        Welcome to the official platform of Custom PACT, a transformative initiative powered by Nigeria
                         Customs Service (NCS) in collaboration with the African Continental Free Trade Area (AfCFTA) and
-                        supported by the African Export-Import Bank (AFREXIMBANK).</p>
+                        supported by the African Export-Import Bank (AFREXIMBANK) and the World Customs Organization
+                        (WCO).
+                    </p>
 
-                    <p>This visionary project exemplifies our unwavering commitment to revolutionize customs operations,
-                        promote intra-african trade, and position Africa as a formidable force in global trade. Inspired
-                        by a bold vision to create a unified, efficient, and secure trade environment, Custom PACT aims
-                        to set a new standard for cross-border cooperation and trade facilitation.</p>
+                    <p>
+                        This visionary project exemplifies our commitment to revolutionize customs and business
+                        cooperation, promote intra-african trade, and position Africa as a formidable force in global
+                        trade. Inspired by a bold vision to create a unified, efficient, and secure trade environment,
+                        Custom PACT aims to set a new standard for cross-border cooperation and trade facilitation.
+                    </p>
 
-                    <p>Our mission is unequivocally to establish a strong, transparent, and agile customs framework that
-                        promotes lawful trade, enhances security, and drives sustainable economic growth. We are
+                    <p>
+                        Our mission is unequivocally to establish a strong, transparent, and agile customs framework
+                        that promotes lawful trade, enhances security, and drives sustainable economic growth. We are
                         determined to lead this monumental transformation, harnessing technology, collaboration, and
-                        strategic vision.</p>
+                        strategic vision.
+                    </p>
 
-                    <p>Together, we are forging a future in transforming customs collaboration, trade facilitation
-                        across Africa and building a prosperous future for our nations.</p>
+                    <p>
+                        Together, we are forging a future in transforming customs collaboration, trade facilitation
+                        across Africa and building a prosperous future for our nations.
+                    </p>
 
                     <p><strong>Join us in this historic journey.</strong></p>
 
@@ -279,9 +298,9 @@
     <section class="speakers reveal" id="speakers">
         <div class="container">
             <h2 class="section-title">Our Distinguished Speakers</h2>
-            <p class="section-subtitle">
+            <!-- <p class="section-subtitle">
                 Leading experts and decision-makers from across Africa and the global trade community
-            </p>
+            </p> -->
 
             <!-- Speaker Filters -->
             <div class="speaker-filters">
@@ -289,7 +308,7 @@
                 <button class="filter-btn" data-filter="moderator">Moderator</button>
                 <button class="filter-btn" data-filter="keynote">Keynote</button>
                 <button class="filter-btn" data-filter="panelist">Panelist</button>
-                <button class="btn btn-primary" id="become-speaker2">Become a Speaker</button>
+                <button class="btn btn-primary" id="become-speaker2">Become our Speaker</button>
             </div>
 
             <!-- Speakers Carousel -->
@@ -303,7 +322,7 @@
                         <div class="speaker-card" data-category="keynote">
                             <div class="speaker-badge keynote">Keynote</div>
                             <div class="speaker-image">
-                                <img src="assets/phds.JPG" alt="Adewale Adeniyi">
+                                <img src="assets/Phd-speaker.jpg" alt="Adewale Adeniyi">
                             </div>
                             <div class="speaker-info">
                                 <h3 class="speaker-name">Adewale Adeniyi</h3>
@@ -330,7 +349,9 @@
 
                         <div class="speaker-card" data-category="keynote">
                             <div class="speaker-badge keynote">Keynote</div>
-                            <div class="speaker-image"><i class="fas fa-user-tie"></i></div>
+                            <div class="speaker-image">
+                                <img src="assets/Secretaire_generale.jpeg" alt="H.E. Wamkele Mene">
+                            </div>
                             <div class="speaker-info">
                                 <h3 class="speaker-name">H.E. Wamkele Mene</h3>
                                 <p class="speaker-title">Secretary-General</p>
@@ -421,10 +442,12 @@
     <!-- Programs Section -->
     <section class="programs reveal" id="programs">
         <div class="container">
-            <!-- <h2 class="section-title">Event Program</h2> -->
-            <p class="section-subtitle">
+            <h2 class="section-title">
                 Three days of high-level discussions, technical sessions, and networking opportunities
-            </p>
+            </h2>
+            <!-- <p class="section-subtitle">
+                Three days of high-level discussions, technical sessions, and networking opportunities
+            </p> -->
 
             <!-- Day Tabs -->
             <div class="program-tabs">
@@ -673,8 +696,8 @@
     <!-- Venue Locations Section -->
     <section class="venue-locations reveals" id="venues">
         <div class="container">
-            <!-- <h2 class="section-title">Event Venues</h2> -->
-            <p class="section-subtitle">Let’s meet at</p>
+            <h2 class="section-title">Let’s meet at</h2>
+            <!-- <p class="section-subtitle">Let’s meet at</p> -->
 
             <div class="venues-wrapper">
                 <!-- Venue 1: State House -->
@@ -780,8 +803,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <p class="section-subtitle">We are powered by</p>
                     <div class="partners-grid">
-                        <div class="partner-logo"
-                            style="background-image: url(assets/NCS-LOGO.svg); transform:scale(1.5)"> </div>
+                        <div class="partner-logo" style="background-image: url(assets/NCS.png);"> </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
@@ -795,14 +817,14 @@
                     <div class="partners-grid">
                         <div class="partner-logo" style="background-image: url(assets/Afreximbank_Logo_RGB.png);">
                         </div>
-                        <div class="partner-logo" style="background-image: url(assets/wco_new_logo.png);">
+                        <div class="partner-logo" style="background-image: url(assets/wco.png);">
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-12" style="text-align: center;" id="become-partner">
-                <button class="btn btn-primary" > Become our partner </button>
+                <button class="btn btn-primary"> Become our partner </button>
             </div>
 
         </div>
@@ -811,11 +833,11 @@
     <!-- Logistics Section -->
     <section class="logistics reveal" id="logistics">
         <div class="container">
-            <h2 class="section-title">Event Logistics</h2>
-            <p class="section-subtitle">Everything You Need to Know</p>
+            <h2 class="section-title">Everything You Need to Know</h2>
+            <!-- <p class="section-subtitle">Everything You Need to Know</p> -->
 
             <div class="program-tabs">
-                <button class="day-tab active" data-day="visa">
+                <button class="logistic-tab active" data-logistic="visa" data-onglet="visa">
                     <span class="icon">
                         <i class="fas fa-passport"></i>
                     </span>
@@ -824,7 +846,7 @@
                         <!-- <span class="tab-button-subtitle">Entry requirements</span> -->
                     </div>
                 </button>
-                <button class="day-tab" data-day="travel">
+                <button class="logistic-tab" data-logistic="travel" data-onglet="travel">
                     <span class="icon">
                         <i class="fas fa-plane"></i>
                     </span>
@@ -832,7 +854,7 @@
                         <span class="tab-button-title">Travel</span>
                     </div>
                 </button>
-                <button class="day-tab" data-day="transport">
+                <button class="logistic-tab" data-logistic="transport" data-onglet="transport">
                     <span class="icon">
                         <i class="fas fa-car"></i>
                     </span>
@@ -840,7 +862,7 @@
                         <span class="tab-button-title">On ground Transport</span>
                     </div>
                 </button>
-                <button class="day-tab" data-day="accommodation">
+                <button class="logistic-tab" data-logistic="accommodation" data-onglet="accomodation">
                     <span class="icon">
                         <i class="fas fa-hotel"></i>
                     </span>
@@ -848,7 +870,7 @@
                         <span class="tab-button-title">Accommodation</span>
                     </div>
                 </button>
-                <button class="day-tab" data-day="informations">
+                <button class="logistic-tab" data-logistic="informations" data-onglet="informations">
                     <span class="icon">
                         <i class="fas fa-exclamation-circle"></i>
                     </span>
@@ -860,7 +882,7 @@
 
             <div class="logistics-content">
                 <!-- Visa Tab -->
-                <div class="program-content active" id="visa">
+                <div class="logistic-program-content active" id="visa">
                     <div class="tab-panel-header">
                         <span class="icon">
                             <i class="fas fa-passport"></i>
@@ -879,24 +901,57 @@
                         <li>Processing time: 5-7 business days</li>
                         <li>Visa on arrival available for select countries</li>
                     </ul>
-                    <div class="important-notice">
-                        <div class="notice-title">
-                            <i class="fas fa-exclamation-circle"></i>
-                            Important Information
+                    <div class="visa-card">
+                        <div class="important-notice">
+                            <div class="notice-title">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Important Information
+                            </div>
+                            <div class="notice-item">
+                                <div class="notice-text">
+                                    Nnamdi Azikwe International Airport in Abuja is served by several international
+                                    airlines, including Ethiopia Airlines, British Airways, Egypt Airlines, Qatar
+                                    Airlines, Lufthansa Air, Air France, Turkish Airlines, Uganda Airlines, Royal Air
+                                    Maroc, Asky Airlines, Awa Airlines, Air Algeria and Air Côte d’Ivoire.
+                                </div>
+                            </div>
                         </div>
-                        <div class="notice-item">
-                            <div class="notice-text">
-                                Nnamdi Azikwe International Airport in Abuja is served by several international
-                                airlines, including Ethiopia Airlines, British Airways, Egypt Airlines, Qatar
-                                Airlines, Lufthansa Air, Air France, Turkish Airlines, Uganda Airlines, Royal Air
-                                Maroc, Asky Airlines, Awa Airlines, Air Algeria and Air Côte d’Ivoire.
+                        <div class="important-notice">
+                            <div class="notice-title">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Visa Related Issues
+                            </div>
+                            <div class="notice-item">
+                                <div class="notice-text">
+                                    Name: OG Oloruntoba <br>
+                                    Rank: Deputy Comptroller <br>
+                                    Agency: Nigeria Immigration Service <br>
+                                    Phone: +234 803 470 7038 <br>
+                                    <a href="mailto:olusola.oloruntoba@yahoo.com">olusola.oloruntoba@yahoo.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="important-notice">
+                            <div class="notice-title">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Visa Related Issues
+                            </div>
+                            <div class="notice-item">
+                                <div class="notice-text">
+                                    Name: D Lawal <br>
+                                    Rank: Assistant Comptroller <br>
+                                    Agency: Nigeria Immigration Service <br>
+                                    Phone: +234 806 815 4311 <br>
+                                    <a href="mailto:lawaldabbass@gmail.com">lawaldabbass@gmail.com</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <!-- Transport Tab -->
-                <div class="program-content" id="transport">
+                <div class="logistic-program-content" id="transport">
                     <div class="tab-panel-header">
                         <span class="icon">
                             <i class="fas fa-transport"></i>
@@ -920,7 +975,7 @@
                 </div>
 
                 <!-- Important Information Tab -->
-                <div class="program-content" id="informations">
+                <div class="logistic-program-content" id="informations">
                     <div class="tab-panel-header">
                         <span class="icon">
                             <i class="fas fa-exclamation-circle"></i>
@@ -954,7 +1009,7 @@
                 </div>
 
                 <!-- Travel Tab -->
-                <div class="program-content" id="travel">
+                <div class="logistic-program-content" id="travel">
                     <div class="tab-panel-header">
                         <span class="icon">
                             <i class="fas fa-plane"></i>
@@ -976,7 +1031,7 @@
                 </div>
 
                 <!-- Accommodation Tab -->
-                <div class="program-content" id="accommodation">
+                <div class="logistic-program-content" id="accommodation">
                     <div class="tab-panel-header">
                         <span class="icon">
                             <i class="fas fa-hotel"></i>
@@ -1194,23 +1249,29 @@
     <!-- Contact Section -->
     <section class="contact reveal" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact Information</h2>
-            <p class="section-subtitle">Get in Touch with Our Team</p>
+            <h2 class="section-title">Get in Touch with Our Team</h2>
+            <!-- <p class="section-subtitle">Get in Touch with Our Team</p> -->
 
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Nigeria Customs Service</h3>
                     <div class="contact-item">
-                        <strong>Deputy Comptroller EO IBOK</strong>
-                        <span>Special Assistant to the Comptroller-General</span><br>
-                        <a href="mailto:etim.ibok@customs.gov.ng">etim.ibok@customs.gov.ng</a><br>
-                        <span>+234 803 447 5983</span>
-                    </div>
-                    <div class="contact-item">
                         <strong>Deputy Comptroller ZA LAMORDE</strong>
                         <span>Organizing Committee Secretariat</span><br>
                         <a href="mailto:zayyad.lamorde@customs.gov.ng">zayyad.lamorde@customs.gov.ng</a><br>
                         <span>+234 803 599 6745</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Assistant Comptroller NU Awa</strong>
+                        <span>NCS AEO Lead</span><br>
+                        <a href="mailto:awannenna@customs.gov.ng">awannenna@customs.gov.ng</a><br>
+                        <!-- <span>+234 803 447 5983</span> -->
+                    </div>
+                    <div class="contact-item">
+                        <strong>Assistant Comptroller S OMOFUMA</strong>
+                        <span>NCS Chief Protocol Officer</span><br>
+                        <a href="mailto:omofuma.sam@customs.gov.ng">omofuma.sam@customs.gov.ng</a><br>
+                        <span>+234 703 042 4700</span>
                     </div>
                     <div class="contact-item">
                         <strong>Chief Superintendent of Customs IN ESSIEN</strong>
@@ -1242,75 +1303,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="section-header">
-                <h2><br></h2>
-                <p>
-                    Have questions about Custom PACT? We're here to help. Reach out to us and we'll respond as soon as
-                    possible.
-                </p>
-            </div>
-
             <div class="contact-wrapper">
-                <div class="contact-infos">
-                    <h3>Contact Information</h3>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Address</h4>
-                            <p>Nigeria Customs Service Headquarters<br>Abuja, Nigeria</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Email</h4>
-                            <p>info@custompact.org<br>support@custompact.org</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Phone</h4>
-                            <p>+234 (0) 123 456 7890<br>+234 (0) 987 654 3210</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="info-content">
-                            <h4>Working Hours</h4>
-                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
-                        </div>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-
-                </div>
-
                 <div class="contact-form-container">
                     <div class="success-message" id="successMessage">
                         ✓ Thank you for your message! We'll get back to you soon.
@@ -1694,7 +1687,6 @@
     </script>
 
     <script>
-
         // Program Tabs
         const dayTabs = document.querySelectorAll('.day-tab');
         const programContents = document.querySelectorAll('.program-content');
@@ -1708,6 +1700,44 @@
 
                 tab.classList.add('active');
                 document.getElementById(targetDay).classList.add('active');
+            });
+        });
+
+        // Program Tabs
+        const logisticsTabs = document.querySelectorAll('.logistic-tab');
+        const lsTabs = document.querySelectorAll('.ls');
+        const logisticsProgramContents = document.querySelectorAll('.logistic-program-content');
+
+        // --- Gestion du clic sur les onglets principaux ---
+        logisticsTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetLogistic = tab.getAttribute('data-logistic');
+
+                // Désactiver tous les onglets et contenus
+                logisticsTabs.forEach(t => t.classList.remove('active'));
+                logisticsProgramContents.forEach(c => c.classList.remove('active'));
+
+                // Activer le bon onglet et son contenu
+                tab.classList.add('active');
+                document.getElementById(targetLogistic).classList.add('active');
+            });
+        });
+
+        // --- Gestion du clic sur les liens secondaires (.ls) ---
+        lsTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetLogistic = tab.getAttribute('data-logistic');
+
+                // Désactiver tous les onglets et contenus
+                logisticsTabs.forEach(t => t.classList.remove('active'));
+                logisticsProgramContents.forEach(c => c.classList.remove('active'));
+
+                // Trouver l'onglet principal correspondant au même data-logistic
+                const relatedTab = document.querySelector(`.logistic-tab[data-logistic="${targetLogistic}"]`);
+
+                // Activer le bon onglet et le contenu
+                if (relatedTab) relatedTab.classList.add('active');
+                document.getElementById(targetLogistic).classList.add('active');
             });
         });
 
