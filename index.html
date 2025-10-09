@@ -1684,13 +1684,14 @@
     </footer>
 
     <!-- Registration Modal -->
+
     <div id="registrationModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeModal">&times;</span>
             <h2 class="modal-title">Register for The Customs PACT</h2>
 
             <form id="registrationForm">
-                <!-- Collapsible Sections -->
+                <!-- Personal Information -->
                 <div class="colapse active">
                     <button type="button" class="collapse-btn">
                         <i class="fas fa-user-tie"></i>
@@ -1729,6 +1730,7 @@
                     </div>
                 </div>
 
+                <!-- Contact Details -->
                 <div class="colapse">
                     <button type="button" class="collapse-btn">
                         <i class="fas fa-address-book"></i>
@@ -1750,6 +1752,220 @@
                     </div>
                 </div>
 
+                <!-- Sector & Industry -->
+                <div class="colapse">
+                    <button type="button" class="collapse-btn">
+                        <i class="fas fa-industry"></i>
+                        Sector & Industry
+                    </button>
+                    <div class="collapse-content">
+                        <div class="form-group">
+                            <i class="fa fa-building-columns"></i>
+                            <select name="sector" id="sectorSelect" required>
+                                <option value="">Select sector</option>
+                                <option value="public_sector">Public Sector / Government Services</option>
+                                <option value="public_company">Public company</option>
+                                <option value="private_company">Private company</option>
+                                <option value="ngos">NGOs</option>
+                                <option value="academia">Academia</option>
+                                <option value="media">Media</option>
+                            </select>
+                        </div>
+                        <div class="colapse">
+                            <button type="button" class="collapse-btn">
+                                <i class="fa fa-industry"></i>
+                                Industry (Select all that apply)
+                            </button>
+                            <div class="collapse-content">
+                                <div class="checkbox-group">
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Aerospace & Defense</span>
+                                        <input type="checkbox" name="industry" value="aerospace">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Agroprocessing</span>
+                                        <input type="checkbox" name="industry" value="agroprocessing">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Agriculture</span>
+                                        <input type="checkbox" name="industry" value="agriculture">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Automotive</span>
+                                        <input type="checkbox" name="industry" value="automotive">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Banking/Financing</span>
+                                        <input type="checkbox" name="industry" value="banking">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Clothing & Textiles</span>
+                                        <input type="checkbox" name="industry" value="clothing">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Construction & Real Estate</span>
+                                        <input type="checkbox" name="industry" value="construction">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Consulting</span>
+                                        <input type="checkbox" name="industry" value="consulting">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Consumer Goods</span>
+                                        <input type="checkbox" name="industry" value="consumer_goods">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Energy & Power</span>
+                                        <input type="checkbox" name="industry" value="energy">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>FMCG</span>
+                                        <input type="checkbox" name="industry" value="fmcg">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Health & Pharmaceuticals</span>
+                                        <input type="checkbox" name="industry" value="health">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>ICT</span>
+                                        <input type="checkbox" name="industry" value="ict">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Logistics</span>
+                                        <input type="checkbox" name="industry" value="logistics">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Manufacturing</span>
+                                        <input type="checkbox" name="industry" value="manufacturing">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Mining & Natural Resources</span>
+                                        <input type="checkbox" name="industry" value="mining">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Retail & E-Commerce</span>
+                                        <input type="checkbox" name="industry" value="retail">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Services</span>
+                                        <input type="checkbox" name="industry" value="services">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Telecommunications</span>
+                                        <input type="checkbox" name="industry" value="telecom">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Transport</span>
+                                        <input type="checkbox" name="industry" value="transport">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Details (Conditional) -->
+                <div class="colapse conditional-section" id="companyDetailsSection">
+                    <button type="button" class="collapse-btn">
+                        <i class="fas fa-building"></i>
+                        Company Details
+                    </button>
+                    <div class="collapse-content">
+                        <div class="form-group">
+                            <i class="fa fa-link"></i>
+                            <input type="url" name="company_website" placeholder="Company website">
+                            <label>Company website</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-info-circle"></i>
+                            <textarea name="about_company" placeholder="About your company"></textarea>
+                            <label>About your company</label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <i class="fa fa-users"></i>
+                                <input type="text" name="company_size" placeholder="Size of the company (employees)">
+                                <label>Size of the company (employees)</label>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-dollar-sign"></i>
+                                <input type="text" name="annual_revenue" placeholder="Annual turnover/revenue">
+                                <label>Annual turnover/revenue</label>
+                            </div>
+                        </div>
+                        <div class="colapse">
+                            <button type="button" class="collapse-btn">
+                                <i class="fa fa-map-marked-alt"></i>
+                                Main Geographical Regions of Interest
+                            </button>
+                            <div class="collapse-content">
+                                <div class="checkbox-group">
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Central Africa</span>
+                                        <input type="checkbox" name="region" value="central_africa">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Eastern Africa</span>
+                                        <input type="checkbox" name="region" value="eastern_africa">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Northern Africa</span>
+                                        <input type="checkbox" name="region" value="northern_africa">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Southern Africa</span>
+                                        <input type="checkbox" name="region" value="southern_africa">
+                                    </label>
+                                    <label style="width: 100%; min-height:20px; opacity:1;">
+                                        <span>Western Africa</span>
+                                        <input type="checkbox" name="region" value="western_africa">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-shopping-cart"></i>
+                            <select name="source_outside" id="sourceOutside">
+                                <option value="">Do you source and purchase goods/services outside your business'
+                                    country?</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group conditional-section" id="sourceDetailsSection">
+                            <i class="fa fa-globe-africa"></i>
+                            <select name="source_from">
+                                <option value="">Where do you source these products from?</option>
+                                <option value="african">African Sources</option>
+                                <option value="foreign">Foreign Sources</option>
+                            </select>
+                        </div>
+                        <div class="form-group conditional-section" id="productDetailsSection">
+                            <i class="fa fa-box"></i>
+                            <textarea name="product_details"
+                                placeholder="Please specify product details & country (e.g., Uganda - Coffee, China - Plastics)"></textarea>
+                            <label>Product details & country</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-shipping-fast"></i>
+                            <select name="sell_outside" id="sellOutside">
+                                <option value="">Do you have products you'd like to sell outside your business
+                                    country?
+                                </option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group conditional-section" id="sellProductsSection">
+                            <i class="fa fa-boxes"></i>
+                            <textarea name="sell_products_details"
+                                placeholder="Kindly provide details of your products"></textarea>
+                            <label>Product details</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Participation Details -->
                 <div class="colapse">
                     <button type="button" class="collapse-btn">
                         <i class="fas fa-plane"></i>
@@ -1779,39 +1995,149 @@
                     </div>
                 </div>
 
+                <!-- Networking & Engagement -->
                 <div class="colapse">
                     <button type="button" class="collapse-btn">
                         <i class="fas fa-handshake"></i>
                         Networking & Engagement
                     </button>
                     <div class="collapse-content">
-                        <label>
-                            <span>
-                                <i class="fa fa-comments"></i>
-                                Panel / Roundtable Discussions
-                            </span>
-                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement"
-                                value="Panel">
-                        </label>
-                        <label>
-                            <span>
-                                <i class="fa fa-chalkboard-teacher"></i>
-                                Capacity Building Sessions
-                            </span>
-                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement"
-                                value="Capacity">
-                        </label>
-                        <label>
-                            <span>
-                                <i class="fa fa-network-wired"></i>
-                                Networking Sessions (B2B / B2G / BtoCustoms)
-                            </span>
-                            <input style="width: unset; margin-left:10px;" type="checkbox" name="engagement"
-                                value="Networking">
-                        </label>
+                        <div class="checkbox-group">
+                            <label>
+                                <span>
+                                    <i class="fa fa-comments"></i>
+                                    Panel / Roundtable Discussions
+                                </span>
+                                <input type="checkbox" name="engagement" value="Panel">
+                            </label>
+                            <label>
+                                <span>
+                                    <i class="fa fa-chalkboard-teacher"></i>
+                                    Capacity Building Sessions
+                                </span>
+                                <input type="checkbox" name="engagement" value="Capacity">
+                            </label>
+                            <label>
+                                <span>
+                                    <i class="fa fa-network-wired"></i>
+                                    Networking Sessions (B2B / B2G / BtoCustoms)
+                                </span>
+                                <input type="checkbox" name="engagement" value="Networking" id="networkingCheck">
+                            </label>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Speaker Details (Conditional) -->
+                <div class="colapse conditional-section" id="speakerDetailsSection">
+                    <button type="button" class="collapse-btn">
+                        <i class="fas fa-microphone"></i>
+                        Speaker Information
+                    </button>
+                    <div class="collapse-content">
+                        <div class="colapse">
+                            <button type="button" class="collapse-btn">
+                                <i class="fa fa-comments"></i>
+                                What type of speaking opportunity are you applying for?
+                            </button>
+                            <div class="collapse-content">
+                                <div class="checkbox-group">
+                                    <label>
+                                        <span>Panel Discussion</span>
+                                        <input type="checkbox" name="speaking_type" value="panel">
+                                    </label>
+                                    <label>
+                                        <span>Round Table</span>
+                                        <input type="checkbox" name="speaking_type" value="roundtable">
+                                    </label>
+                                    <label>
+                                        <span>Capacity Building / Training Session</span>
+                                        <input type="checkbox" name="speaking_type" value="training" id="trainingCheck">
+                                    </label>
+                                    <label>
+                                        <span>Keynote Address</span>
+                                        <input type="checkbox" name="speaking_type" value="keynote">
+                                    </label>
+                                    <label>
+                                        <span>Fireside Chat</span>
+                                        <input type="checkbox" name="speaking_type" value="fireside">
+                                    </label>
+                                    <label>
+                                        <span>Moderator Role</span>
+                                        <input type="checkbox" name="speaking_type" value="moderator">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-user-circle"></i>
+                            <textarea name="speaker_bio"
+                                placeholder="Brief Bio (100-200 words) - Include relevant achievements, experience, or past speaking engagements"></textarea>
+                            <label>Brief Bio</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-lightbulb"></i>
+                            <textarea name="speaking_topics"
+                                placeholder="What topic(s) are you interested in speaking about?"></textarea>
+                            <label>Speaking topics</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-briefcase"></i>
+                            <textarea name="professional_experience"
+                                placeholder="Please describe your professional experience relevant to this topic"></textarea>
+                            <label>Professional experience</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-user-check"></i>
+                            <select name="spoken_before" id="spokenBefore">
+                                <option value="">Have you spoken publicly before?</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group conditional-section" id="speakingLinksSection">
+                            <i class="fa fa-link"></i>
+                            <textarea name="speaking_links"
+                                placeholder="Please provide links to videos/slides if available"></textarea>
+                            <label>Links to previous speaking engagements</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session Details (Conditional) -->
+                <div class="colapse conditional-section" id="sessionDetailsSection">
+                    <button type="button" class="collapse-btn">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Session Details (Capacity Building)
+                    </button>
+                    <div class="collapse-content">
+                        <div class="form-group">
+                            <i class="fa fa-heading"></i>
+                            <input type="text" name="session_title" placeholder="Proposed Session Title">
+                            <label>Proposed Session Title</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-align-left"></i>
+                            <textarea name="session_description"
+                                placeholder="Session Description (150-300 words)"></textarea>
+                            <label>Session Description</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-list"></i>
+                            <input type="text" name="session_format"
+                                placeholder="What format will your session take? (e.g., Interactive Workshop, Lecture, Q&A-based)">
+                            <label>Session Format</label>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-tools"></i>
+                            <textarea name="technical_needs"
+                                placeholder="Do you require any specific technical or setup needs?"></textarea>
+                            <label>Technical/Setup Needs</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
                 <div class="colapse">
                     <button type="button" class="collapse-btn">
                         <i class="fas fa-info-circle"></i>
@@ -2191,36 +2517,125 @@
             });
         }
 
-        // Fermer en cliquant à l’extérieur
-        window.addEventListener("click", e => {
-            if (e.target === modal) {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto";
+        // Collapse functionality
+        document.querySelectorAll('.collapse-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Close modal
+        document.getElementById('closeModal').addEventListener('click', function () {
+            document.getElementById('registrationModal').style.display = 'none';
+        });
+
+        // Conditional logic for sector selection
+        const sectorSelect = document.getElementById('sectorSelect');
+        const companyDetailsSection = document.getElementById('companyDetailsSection');
+
+        sectorSelect.addEventListener('change', function () {
+            if (this.value === 'public_company' || this.value === 'private_company') {
+                companyDetailsSection.classList.add('show');
+            } else {
+                companyDetailsSection.classList.remove('show');
             }
         });
 
-        // Collapse (corrigé et fluide)
-        document.querySelectorAll('.collapse-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const content = btn.nextElementSibling;
+        // Conditional logic for sourcing outside
+        const sourceOutside = document.getElementById('sourceOutside');
+        const sourceDetailsSection = document.getElementById('sourceDetailsSection');
+        const productDetailsSection = document.getElementById('productDetailsSection');
 
-                // Ferme les autres sections
-                document.querySelectorAll('.collapse-content').forEach(c => {
-                    if (c !== content) {
-                        c.style.maxHeight = null;
-                        c.parentElement.classList.remove("active");
+        sourceOutside.addEventListener('change', function () {
+            if (this.value === 'yes') {
+                sourceDetailsSection.classList.add('show');
+                productDetailsSection.classList.add('show');
+            } else {
+                sourceDetailsSection.classList.remove('show');
+                productDetailsSection.classList.remove('show');
+            }
+        });
+
+        // Conditional logic for selling outside
+        const sellOutside = document.getElementById('sellOutside');
+        const sellProductsSection = document.getElementById('sellProductsSection');
+
+        sellOutside.addEventListener('change', function () {
+            if (this.value === 'yes') {
+                sellProductsSection.classList.add('show');
+            } else {
+                sellProductsSection.classList.remove('show');
+            }
+        });
+
+        // Conditional logic for speaker engagement
+        const networkingCheck = document.getElementById('networkingCheck');
+        const speakerDetailsSection = document.getElementById('speakerDetailsSection');
+
+        networkingCheck.addEventListener('change', function () {
+            if (this.checked) {
+                speakerDetailsSection.classList.add('show');
+            } else {
+                speakerDetailsSection.classList.remove('show');
+            }
+        });
+
+        // Conditional logic for spoken before
+        const spokenBefore = document.getElementById('spokenBefore');
+        const speakingLinksSection = document.getElementById('speakingLinksSection');
+
+        spokenBefore.addEventListener('change', function () {
+            if (this.value === 'yes') {
+                speakingLinksSection.classList.add('show');
+            } else {
+                speakingLinksSection.classList.remove('show');
+            }
+        });
+
+        // Conditional logic for training session
+        const trainingCheck = document.getElementById('trainingCheck');
+        const sessionDetailsSection = document.getElementById('sessionDetailsSection');
+
+        trainingCheck.addEventListener('change', function () {
+            if (this.checked) {
+                sessionDetailsSection.classList.add('show');
+            } else {
+                sessionDetailsSection.classList.remove('show');
+            }
+        });
+
+        // Form submission
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+
+            // Convert FormData to object
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    // Handle multiple values (checkboxes)
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
                     }
-                });
-
-                // Toggle la section actuelle
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                    btn.parentElement.classList.remove("active");
                 } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    btn.parentElement.classList.add("active");
+                    data[key] = value;
                 }
-            });
+            }
+
+            console.log('Registration Data:', data);
+            alert('Registration submitted successfully! Check console for data.');
+
+            // Here you would typically send the data to your server
+            // fetch('/api/register', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(data)
+            // });
         });
     </script>
 
