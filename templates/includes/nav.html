@@ -1,0 +1,56 @@
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-container">
+        <a href="#home" class="logo">
+            <img src="assets/LOGO_TCP.png" alt="Logo" style="height:100px; padding:10px;">
+        </a>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <!-- Program avec sous-menu -->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Program</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#speakers">Speakers</a></li>
+                    <li><a href="#programs">Program </a></li>
+                    <li><a href="#venues">Venue</a></li>
+                </ul>
+            </li>
+            <!-- PARTNERS avec sous-menu -->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Partners</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#partners">Discover our partners</a></li>
+                    <li><a href="#become-partner">Become a partner</a></li>
+                </ul>
+            </li>
+            <!-- Logistic avec sous-menu -->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Logistics</a>
+                <ul class="dropdown-menu">
+                    <li><a class="ls" href="#logistics" data-logistic="visa">Visa</a></li>
+                    <li><a class="ls" href="#logistics" data-logistic="travel">Travel </a></li>
+                    <li><a class="ls" href="#logistics" data-logistic="transport">On ground Transport</a></li>
+                    <li><a class="ls" href="#logistics" data-logistic="accommodation">Accommodation</a></li>
+                    <li><a class="ls" href="#logistics" data-logistic="informations">Important information</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="register">
+            <a href="#" id="openRegistration1" class="btn btn-primary"
+                style="padding: 10px 20px; font-size: 0.8rem; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease;">
+                Register Now
+            </a>
+        </div>
+        <div class="language-switcher">
+            <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="changeLanguage('fr')">FR</button>
+        </div>
+        <div class="mobile-menu-toggle" id="mobileMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>

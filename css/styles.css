@@ -77,7 +77,6 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    /*background: rgba(26, 26, 46, 0.95); */
     background: #ffffffd6;
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -98,6 +97,7 @@ nav.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -107,6 +107,12 @@ nav.scrolled {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
+    z-index: 1001;
+}
+
+.logo img {
+    height: 80px;
+    padding: 10px;
 }
 
 .nav-menu {
@@ -114,6 +120,7 @@ nav.scrolled {
     list-style: none;
     gap: 2rem;
     margin-bottom: 0;
+    align-items: center;
 }
 
 .nav-menu a {
@@ -123,6 +130,7 @@ nav.scrolled {
     transition: all 0.3s ease;
     position: relative;
     padding: 0.5rem 0;
+    display: block;
 }
 
 .nav-menu a::after {
@@ -140,7 +148,7 @@ nav.scrolled {
     width: 100%;
 }
 
-/* Style du dropdown */
+/* Dropdown */
 .nav-menu .dropdown {
     position: relative;
 }
@@ -157,6 +165,11 @@ nav.scrolled {
     min-width: 200px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    z-index: 1000;
+}
+
+.nav-menu .dropdown-menu li {
+    margin: 0;
 }
 
 .nav-menu .dropdown-menu li a {
@@ -170,14 +183,43 @@ nav.scrolled {
     background: #f0f0f0;
 }
 
-/* Afficher le dropdown au survol */
 .nav-menu .dropdown:hover .dropdown-menu {
     display: block;
 }
 
+.register {
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+}
+
+.register .btn-primary {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    background: var(--gradient-hero);
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 .language-switcher {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
+    z-index: 1001;
 }
 
 .lang-btn {
@@ -188,6 +230,7 @@ nav.scrolled {
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .lang-btn:hover,
@@ -195,6 +238,36 @@ nav.scrolled {
     background: var(--accent-color);
     color: var(--text-dark);
 }
+
+/* Menu hamburger */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+    gap: 5px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 
 /* Hero Section */
 .hero {
@@ -708,8 +781,7 @@ nav.scrolled {
     z-index: 1;
 }
 
-#key-dates .section-title,
-#venues .section-title {
+#key-dates .section-title {
     text-align: center;
     font-size: clamp(2rem, 4vw, 3.5rem);
     margin-bottom: 1rem;
@@ -1167,7 +1239,8 @@ nav.scrolled {
 }
 
 #programs .section-title,
-#speakers .section-title {
+#speakers .section-title,
+#venues .section-title {
     text-align: center;
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 1rem;
@@ -1510,9 +1583,8 @@ nav.scrolled {
 } */
 
 #speakers .btn-primary {
-    background: linear-gradient(135deg, #28a745 0%, #20873a 100%);
-    color: white;
-    border: none;
+    background: transparent;
+    border: 2px solid #e0e0e0;
     padding: 12px 28px;
     border-radius: 25px;
     font-size: 1rem;
@@ -1523,8 +1595,11 @@ nav.scrolled {
 }
 
 #speakers .btn-primary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+    box-shadow: 0 6px 20px rgba(12, 12, 12, 0.3);
+    /* background: var(--gradient-hero); */
 }
 
 .carousel-container {
@@ -1888,7 +1963,7 @@ nav.scrolled {
 }
 
 #become-partner {
-    padding-top: 120px;
+    padding: 120px 0 50px;
 }
 
 .partners::before {
@@ -2083,7 +2158,14 @@ nav.scrolled {
 
 .visa-card {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* --- Travel card --- */
+.travel-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     gap: 10px;
 }
 
@@ -2718,7 +2800,7 @@ nav.scrolled {
 footer {
     background: var(--dark-bg);
     color: var(--text-light);
-    padding: 3rem 20px 1rem;
+    padding: 20px 20px 1rem;
     text-align: center;
 }
 
@@ -2753,7 +2835,7 @@ footer .section-header .underline {
 }
 
 footer .contact-wrapper {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     align-items: start;
     animation: fadeInUp 1s ease-out 0.3s both;
 }
@@ -2839,14 +2921,14 @@ footer .social-link:hover {
 }
 
 .contact-form-container {
-    padding: 50px;
-    max-width: 900px;
+    padding: 25px;
+    max-width: 500px;
     margin: 0 auto;
     border-radius: 20px;
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 footer .form-row {
@@ -2867,10 +2949,10 @@ footer .form-group input,
 footer .form-group select,
 footer .form-group textarea {
     width: 100%;
-    padding: 15px 20px;
+    padding: 5px 20px;
     border: 2px solid #e0e0e0;
     border-radius: 12px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-family: inherit;
     transition: all 0.3s ease;
     background: #f9f9f9;
@@ -2887,7 +2969,7 @@ footer .form-group textarea:focus {
 
 footer .form-group textarea {
     resize: vertical;
-    min-height: 150px;
+    min-height: 100px;
 }
 
 footer .form-group select {
@@ -3358,42 +3440,8 @@ footer .success-message.show {
     }
 }
 
-/* Mobile Menu */
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-}
-
-.mobile-menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background: var(--text-light);
-    transition: all 0.3s ease;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background: var(--dark-bg);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        padding: 2rem 0;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
-    }
 
     .countdown {
         gap: 1rem;
