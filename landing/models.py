@@ -4,10 +4,11 @@ from django.core.validators import RegexValidator
 from django.utils.translation import gettext_lazy as _
 from ckeditor.fields import RichTextField
 from django.utils.text import slugify
+from parler.models import TranslatableModel, TranslatedFields
 
 
 class TimeStampedModel(models.Model):
-    """Modèle abstrait pour ajouter created_at et updated_at"""
+    """Modèle abstrait pour ajouter id UUID, created_at et updated_at"""
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -17,141 +18,177 @@ class TimeStampedModel(models.Model):
         abstract = True
 
 
-class EventConfiguration(TimeStampedModel):
-    """Configuration générale de l'événement"""
+class EventConfiguration(TimeStampedModel, TranslatableModel):
+    """Configuration générale de l'événement - Bilingue"""
 
-    event_name = models.CharField(max_length=255, default="The Customs PACT 2025")
-    tagline = models.CharField(
-        max_length=255, default="Breaking Barriers, Building Bridges"
+    translations = TranslatedFields(
+        event_name=models.CharField(
+            _("Event Name"), max_length=255, default="The Customs PACT 2025"
+        ),
+        tagline=models.CharField(
+            _("Tagline"), max_length=255, default="Breaking Barriers, Building Bridges"
+        ),
+        subtitle=models.CharField(
+            _("Subtitle"),
+            max_length=255,
+            default="Partnership for African Cooperation in Trade",
+        ),
+        meta_description=models.TextField(_("Meta Description"), max_length=160),
+        meta_keywords=models.CharField(_("Meta Keywords"), max_length=255),
     )
-    subtitle = models.CharField(
-        max_length=255, default="Partnership for African Cooperation in Trade"
-    )
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField()
-    location = models.CharField(max_length=255, default="Abuja, Nigeria")
-    registration_deadline = models.DateTimeField()
 
-    # SEO
-    meta_description = models.TextField(max_length=160)
-    meta_keywords = models.CharField(max_length=255)
+    start_date = models.DateTimeField(_("Start Date"))
+    end_date = models.DateTimeField(_("End Date"))
+    location = models.CharField(_("Location"), max_length=255, default="Abuja, Nigeria")
+    registration_deadline = models.DateTimeField(_("Registration Deadline"))
 
     # Assets
-    logo = models.ImageField(upload_to="event/logos/")
-    favicon = models.ImageField(upload_to="event/favicons/")
-    hero_video_url = models.URLField(blank=True, null=True)
+    logo = models.ImageField(_("Logo"), upload_to="event/logos/")
+    favicon = models.ImageField(_("Favicon"), upload_to="event/favicons/")
+    hero_video_url = models.URLField(_("Hero Video URL"), blank=True, null=True)
 
     # Status
-    is_active = models.BooleanField(default=True)
-    registration_open = models.BooleanField(default=True)
+    is_active = models.BooleanField(_("Is Active"), default=True)
+    registration_open = models.BooleanField(_("Registration Open"), default=True)
 
     class Meta:
-        verbose_name = "Event Configuration"
-        verbose_name_plural = "Event Configuration"
+        verbose_name = _("Event Configuration")
+        verbose_name_plural = _("Event Configuration")
 
     def __str__(self):
-        return self.event_name
+        return self.safe_translation_getter("event_name", any_language=True)
 
 
-class AboutSection(TimeStampedModel):
-    """Section À propos / Message du Comptroller"""
+class AboutSection(TimeStampedModel, TranslatableModel):
+    """Section À propos / Message du Comptroller - Bilingue"""
 
-    title = models.CharField(max_length=255, default="About the Customs PACT")
-    comptroller_name = models.CharField(max_length=255)
-    comptroller_title = models.CharField(max_length=255)
-    comptroller_organization = models.CharField(max_length=255)
-    comptroller_photo = models.ImageField(upload_to="about/comptroller/")
+    translations = TranslatedFields(
+        title=models.CharField(
+            _("Title"), max_length=255, default="About the Customs PACT"
+        ),
+        comptroller_title=models.CharField(_("Comptroller Title"), max_length=255),
+        message_paragraph_1=RichTextField(_("Message Paragraph 1")),
+        message_paragraph_2=RichTextField(_("Message Paragraph 2")),
+        message_paragraph_3=RichTextField(_("Message Paragraph 3")),
+        message_paragraph_4=RichTextField(_("Message Paragraph 4")),
+        closing_statement=models.CharField(_("Closing Statement"), max_length=255),
+    )
 
-    message_paragraph_1 = RichTextField()
-    message_paragraph_2 = RichTextField()
-    message_paragraph_3 = RichTextField()
-    message_paragraph_4 = RichTextField()
-    closing_statement = models.CharField(max_length=255)
-
-    is_active = models.BooleanField(default=True)
+    comptroller_name = models.CharField(_("Comptroller Name"), max_length=255)
+    comptroller_organization = models.CharField(
+        _("Comptroller Organization"), max_length=255
+    )
+    comptroller_photo = models.ImageField(
+        _("Comptroller Photo"), upload_to="about/comptroller/"
+    )
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "About Section"
-        verbose_name_plural = "About Section"
+        verbose_name = _("About Section")
+        verbose_name_plural = _("About Section")
 
     def __str__(self):
-        return f"About - {self.comptroller_name}"
+        return f"{self.safe_translation_getter('title', any_language=True)} - {self.comptroller_name}"
 
 
-class Speaker(TimeStampedModel):
-    """Intervenants de l'événement"""
+class Speaker(TimeStampedModel, TranslatableModel):
+    """Intervenants de l'événement - Bilingue"""
 
     SPEAKER_CATEGORIES = [
-        ("keynote", "Keynote Speaker"),
-        ("panelist", "Panelist"),
-        ("moderator", "Moderator"),
+        ("keynote", _("Keynote Speaker")),
+        ("panelist", _("Panelist")),
+        ("moderator", _("Moderator")),
     ]
 
-    full_name = models.CharField(max_length=255)
-    title = models.CharField(max_length=255, help_text="e.g., Secretary General")
-    organization = models.CharField(max_length=255)
-    category = models.CharField(max_length=20, choices=SPEAKER_CATEGORIES)
-    bio = models.TextField()
-    photo = models.ImageField(upload_to="speakers/", blank=True, null=True)
+    translations = TranslatedFields(
+        title=models.CharField(
+            _("Title"), max_length=255, help_text=_("e.g., Secretary General")
+        ),
+        organization=models.CharField(_("Organization"), max_length=255),
+        bio=models.TextField(_("Bio")),
+    )
+
+    full_name = models.CharField(_("Full Name"), max_length=255)
+    category = models.CharField(
+        _("Category"), max_length=20, choices=SPEAKER_CATEGORIES
+    )
+    photo = models.ImageField(_("Photo"), upload_to="speakers/", blank=True, null=True)
 
     # Social Links
-    linkedin_url = models.URLField(blank=True, null=True)
-    twitter_url = models.URLField(blank=True, null=True)
+    linkedin_url = models.URLField(_("LinkedIn URL"), blank=True, null=True)
+    twitter_url = models.URLField(_("Twitter URL"), blank=True, null=True)
 
     # Display order
-    order = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=True)
+    order = models.IntegerField(_("Display Order"), default=0)
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "Speaker"
-        verbose_name_plural = "Speakers"
+        verbose_name = _("Speaker")
+        verbose_name_plural = _("Speakers")
         ordering = ["order", "full_name"]
 
     def __str__(self):
         return f"{self.full_name} - {self.get_category_display()}"
 
 
-class ProgramDay(TimeStampedModel):
-    """Jours du programme"""
+class ProgramDay(TimeStampedModel, TranslatableModel):
+    """Jours du programme - Bilingue"""
 
-    day_number = models.IntegerField(unique=True, help_text="0, 1, 2, 3")
-    date = models.DateField()
-    title = models.CharField(max_length=255, help_text="e.g., Day 1, Day 2")
-    description = models.TextField(blank=True)
-    is_active = models.BooleanField(default=True)
+    translations = TranslatedFields(
+        title=models.CharField(
+            _("Title"), max_length=255, help_text=_("e.g., Day 1, Day 2")
+        ),
+        description=models.TextField(_("Description"), blank=True),
+    )
+
+    day_number = models.IntegerField(
+        _("Day Number"), unique=True, help_text=_("0, 1, 2, 3")
+    )
+    date = models.DateField(_("Date"))
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "Program Day"
-        verbose_name_plural = "Program Days"
+        verbose_name = _("Program Day")
+        verbose_name_plural = _("Program Days")
         ordering = ["day_number"]
 
     def __str__(self):
-        return f"{self.title} - {self.date}"
+        return (
+            f"{self.safe_translation_getter('title', any_language=True)} - {self.date}"
+        )
 
 
-class ProgramSession(TimeStampedModel):
-    """Sessions du programme"""
+class ProgramSession(TimeStampedModel, TranslatableModel):
+    """Sessions du programme - Bilingue"""
 
     SESSION_TYPES = [
-        ("plenary", "Plenary Session"),
-        ("panel", "Panel Discussion"),
-        ("workshop", "Workshop"),
-        ("networking", "Networking"),
-        ("break", "Break"),
-        ("meal", "Meal"),
-        ("ceremony", "Ceremony"),
-        ("other", "Other"),
+        ("plenary", _("Plenary Session")),
+        ("panel", _("Panel Discussion")),
+        ("workshop", _("Workshop")),
+        ("networking", _("Networking")),
+        ("break", _("Break")),
+        ("meal", _("Meal")),
+        ("ceremony", _("Ceremony")),
+        ("other", _("Other")),
     ]
 
-    program_day = models.ForeignKey(
-        ProgramDay, on_delete=models.CASCADE, related_name="sessions"
+    translations = TranslatedFields(
+        title=models.CharField(_("Title"), max_length=255),
+        description=RichTextField(_("Description"), blank=True),
+        venue=models.CharField(_("Venue"), max_length=255, blank=True),
     )
-    title = models.CharField(max_length=255)
-    session_type = models.CharField(max_length=20, choices=SESSION_TYPES)
-    start_time = models.TimeField()
-    end_time = models.TimeField()
-    description = RichTextField(blank=True)
-    venue = models.CharField(max_length=255, blank=True)
+
+    program_day = models.ForeignKey(
+        ProgramDay,
+        on_delete=models.CASCADE,
+        related_name="sessions",
+        verbose_name=_("Program Day"),
+    )
+    session_type = models.CharField(
+        _("Session Type"), max_length=20, choices=SESSION_TYPES
+    )
+    start_time = models.TimeField(_("Start Time"))
+    end_time = models.TimeField(_("End Time"))
 
     # Moderator et Speakers
     moderator = models.ForeignKey(
@@ -160,202 +197,228 @@ class ProgramSession(TimeStampedModel):
         null=True,
         blank=True,
         related_name="moderated_sessions",
+        verbose_name=_("Moderator"),
     )
     speakers = models.ManyToManyField(
-        Speaker, blank=True, related_name="speaking_sessions"
+        Speaker,
+        blank=True,
+        related_name="speaking_sessions",
+        verbose_name=_("Speakers"),
     )
 
     # Additional details
     interpretation_languages = models.CharField(
-        max_length=100, blank=True, help_text="e.g., EN, FR, AR"
+        _("Interpretation Languages"),
+        max_length=100,
+        blank=True,
+        help_text=_("e.g., EN, FR, AR"),
     )
-    capacity = models.IntegerField(null=True, blank=True)
+    capacity = models.IntegerField(_("Capacity"), null=True, blank=True)
 
-    order = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=True)
+    order = models.IntegerField(_("Display Order"), default=0)
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "Program Session"
-        verbose_name_plural = "Program Sessions"
+        verbose_name = _("Program Session")
+        verbose_name_plural = _("Program Sessions")
         ordering = ["program_day__day_number", "start_time", "order"]
 
     def __str__(self):
-        return f"{self.program_day.title} - {self.start_time} - {self.title}"
+        return f"{self.program_day} - {self.start_time} - {self.safe_translation_getter('title', any_language=True)}"
 
 
-class Venue(TimeStampedModel):
-    """Lieux de l'événement"""
+class Venue(TimeStampedModel, TranslatableModel):
+    """Lieux de l'événement - Bilingue"""
 
-    name = models.CharField(max_length=255)
-    address = models.TextField()
-    description = RichTextField()
-
-    # Day badge
-    day_badge = models.CharField(max_length=100, help_text="e.g., Day 1 - November 17")
-
-    # Details
-    sessions_info = models.CharField(max_length=255)
-    capacity = models.CharField(max_length=100)
-    distance_from_airport = models.CharField(max_length=100)
-
-    # Rating (for hotels)
-    rating = models.CharField(max_length=50, blank=True)
+    translations = TranslatedFields(
+        name=models.CharField(_("Name"), max_length=255),
+        address=models.TextField(_("Address")),
+        description=RichTextField(_("Description")),
+        day_badge=models.CharField(
+            _("Day Badge"), max_length=100, help_text=_("e.g., Day 1 - November 17")
+        ),
+        sessions_info=models.CharField(_("Sessions Info"), max_length=255),
+        capacity=models.CharField(_("Capacity"), max_length=100),
+        distance_from_airport=models.CharField(
+            _("Distance from Airport"), max_length=100
+        ),
+        rating=models.CharField(_("Rating"), max_length=50, blank=True),
+    )
 
     # Links
-    google_maps_url = models.URLField()
-    website_url = models.URLField(blank=True, null=True)
+    google_maps_url = models.URLField(_("Google Maps URL"))
+    website_url = models.URLField(_("Website URL"), blank=True, null=True)
 
     # Image
-    image = models.ImageField(upload_to="venues/", blank=True, null=True)
+    image = models.ImageField(_("Image"), upload_to="venues/", blank=True, null=True)
 
-    order = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=True)
+    order = models.IntegerField(_("Display Order"), default=0)
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "Venue"
-        verbose_name_plural = "Venues"
+        verbose_name = _("Venue")
+        verbose_name_plural = _("Venues")
         ordering = ["order"]
 
     def __str__(self):
-        return self.name
+        return self.safe_translation_getter("name", any_language=True)
 
 
-class Partner(TimeStampedModel):
-    """Partenaires de l'événement"""
+class Partner(TimeStampedModel, TranslatableModel):
+    """Partenaires de l'événement - Bilingue"""
 
     PARTNER_TYPES = [
-        ("powered", "Powered By"),
-        ("collaboration", "In Collaboration With"),
-        ("supported", "Supported By"),
-        ("sponsor", "Sponsor"),
+        ("powered", _("Powered By")),
+        ("collaboration", _("In Collaboration With")),
+        ("supported", _("Supported By")),
+        ("sponsor", _("Sponsor")),
     ]
 
-    name = models.CharField(max_length=255)
-    partner_type = models.CharField(max_length=20, choices=PARTNER_TYPES)
-    logo = models.ImageField(upload_to="partners/")
-    website_url = models.URLField(blank=True, null=True)
-    description = models.TextField(blank=True)
+    translations = TranslatedFields(
+        description=models.TextField(_("Description"), blank=True),
+    )
 
-    order = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=True)
+    name = models.CharField(_("Name"), max_length=255)
+    partner_type = models.CharField(
+        _("Partner Type"), max_length=20, choices=PARTNER_TYPES
+    )
+    logo = models.ImageField(_("Logo"), upload_to="partners/")
+    website_url = models.URLField(_("Website URL"), blank=True, null=True)
+
+    order = models.IntegerField(_("Display Order"), default=0)
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "Partner"
-        verbose_name_plural = "Partners"
+        verbose_name = _("Partner")
+        verbose_name_plural = _("Partners")
         ordering = ["order"]
 
     def __str__(self):
         return f"{self.name} - {self.get_partner_type_display()}"
 
 
-class Hotel(TimeStampedModel):
-    """Hébergements recommandés"""
+class Hotel(TimeStampedModel, TranslatableModel):
+    """Hébergements recommandés - Bilingue"""
 
-    name = models.CharField(max_length=255)
-    description = RichTextField()
-    address = models.TextField()
-    website_url = models.URLField()
+    translations = TranslatedFields(
+        description=RichTextField(_("Description")),
+        address=models.TextField(_("Address")),
+    )
 
-    # Rating
-    stars = models.IntegerField(choices=[(i, f"{i}★") for i in range(1, 6)])
-
-    # Image
-    image = models.ImageField(upload_to="hotels/")
+    name = models.CharField(_("Name"), max_length=255)
+    website_url = models.URLField(_("Website URL"))
+    stars = models.IntegerField(_("Stars"), choices=[(i, f"{i}★") for i in range(1, 6)])
+    image = models.ImageField(_("Image"), upload_to="hotels/")
 
     # Features
-    has_breakfast = models.BooleanField(default=True)
-    has_wifi = models.BooleanField(default=True)
-    has_pool = models.BooleanField(default=False)
-    has_gym = models.BooleanField(default=False)
-    has_spa = models.BooleanField(default=False)
-    has_restaurant = models.BooleanField(default=False)
+    has_breakfast = models.BooleanField(_("Has Breakfast"), default=True)
+    has_wifi = models.BooleanField(_("Has WiFi"), default=True)
+    has_pool = models.BooleanField(_("Has Pool"), default=False)
+    has_gym = models.BooleanField(_("Has Gym"), default=False)
+    has_spa = models.BooleanField(_("Has Spa"), default=False)
+    has_restaurant = models.BooleanField(_("Has Restaurant"), default=False)
 
-    order = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=True)
+    order = models.IntegerField(_("Display Order"), default=0)
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "Hotel"
-        verbose_name_plural = "Hotels"
+        verbose_name = _("Hotel")
+        verbose_name_plural = _("Hotels")
         ordering = ["order"]
 
     def __str__(self):
         return self.name
 
 
-class RoomType(TimeStampedModel):
-    """Types de chambres d'hôtel"""
+class RoomType(TimeStampedModel, TranslatableModel):
+    """Types de chambres d'hôtel - Bilingue"""
+
+    translations = TranslatedFields(
+        name=models.CharField(_("Name"), max_length=255),
+    )
 
     hotel = models.ForeignKey(
-        Hotel, on_delete=models.CASCADE, related_name="room_types"
+        Hotel,
+        on_delete=models.CASCADE,
+        related_name="room_types",
+        verbose_name=_("Hotel"),
     )
-    name = models.CharField(max_length=255)
-    icon_class = models.CharField(max_length=50, default="fas fa-bed")
-    price_ngn = models.DecimalField(max_digits=10, decimal_places=2)
+    icon_class = models.CharField(_("Icon Class"), max_length=50, default="fas fa-bed")
+    price_ngn = models.DecimalField(_("Price (NGN)"), max_digits=10, decimal_places=2)
 
-    order = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=True)
+    order = models.IntegerField(_("Display Order"), default=0)
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "Room Type"
-        verbose_name_plural = "Room Types"
+        verbose_name = _("Room Type")
+        verbose_name_plural = _("Room Types")
         ordering = ["hotel", "order"]
 
     def __str__(self):
-        return f"{self.hotel.name} - {self.name}"
+        return f"{self.hotel.name} - {self.safe_translation_getter('name', any_language=True)}"
 
 
-class LogisticInfo(TimeStampedModel):
-    """Informations logistiques"""
+class LogisticInfo(TimeStampedModel, TranslatableModel):
+    """Informations logistiques - Bilingue"""
 
     LOGISTIC_TYPES = [
-        ("visa", "Visa Information"),
-        ("travel", "Travel Information"),
-        ("transport", "On Ground Transport"),
-        ("accommodation", "Accommodation"),
-        ("informations", "Important Information"),
+        ("visa", _("Visa Information")),
+        ("travel", _("Travel Information")),
+        ("transport", _("On Ground Transport")),
+        ("accommodation", _("Accommodation")),
+        ("informations", _("Important Information")),
     ]
 
-    logistic_type = models.CharField(max_length=20, choices=LOGISTIC_TYPES, unique=True)
-    title = models.CharField(max_length=255)
-    icon_class = models.CharField(max_length=50)
-    description = RichTextField()
-    content = RichTextField()
+    translations = TranslatedFields(
+        title=models.CharField(_("Title"), max_length=255),
+        description=RichTextField(_("Description")),
+        content=RichTextField(_("Content")),
+    )
 
-    is_active = models.BooleanField(default=True)
+    logistic_type = models.CharField(
+        _("Logistic Type"), max_length=20, choices=LOGISTIC_TYPES, unique=True
+    )
+    icon_class = models.CharField(_("Icon Class"), max_length=50)
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "Logistic Information"
-        verbose_name_plural = "Logistic Information"
+        verbose_name = _("Logistic Information")
+        verbose_name_plural = _("Logistic Information")
 
     def __str__(self):
         return f"{self.get_logistic_type_display()}"
 
 
-class Contact(TimeStampedModel):
-    """Contacts de l'organisation"""
+class Contact(TimeStampedModel, TranslatableModel):
+    """Contacts de l'organisation - Bilingue"""
 
     CONTACT_TYPES = [
-        ("ncs", "Nigeria Customs Service"),
-        ("afcfta", "AfCFTA Secretariat"),
-        ("afreximbank", "Afreximbank"),
-        ("wco", "World Customs Organization"),
-        ("other", "Other"),
+        ("ncs", _("Nigeria Customs Service")),
+        ("afcfta", _("AfCFTA Secretariat")),
+        ("afreximbank", _("Afreximbank")),
+        ("wco", _("World Customs Organization")),
+        ("other", _("Other")),
     ]
 
-    contact_type = models.CharField(max_length=20, choices=CONTACT_TYPES)
-    full_name = models.CharField(max_length=255)
-    title = models.CharField(max_length=255)
-    rank = models.CharField(max_length=255, blank=True)
-    organization = models.CharField(max_length=255, blank=True)
-    email = models.EmailField()
-    phone = models.CharField(max_length=50)
+    translations = TranslatedFields(
+        title=models.CharField(_("Title"), max_length=255),
+        organization=models.CharField(_("Organization"), max_length=255, blank=True),
+    )
 
-    order = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=True)
+    contact_type = models.CharField(
+        _("Contact Type"), max_length=20, choices=CONTACT_TYPES
+    )
+    full_name = models.CharField(_("Full Name"), max_length=255)
+    rank = models.CharField(_("Rank"), max_length=255, blank=True)
+    email = models.EmailField(_("Email"))
+    phone = models.CharField(_("Phone"), max_length=50)
+
+    order = models.IntegerField(_("Display Order"), default=0)
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "Contact"
-        verbose_name_plural = "Contacts"
+        verbose_name = _("Contact")
+        verbose_name_plural = _("Contacts")
         ordering = ["contact_type", "order"]
 
     def __str__(self):
@@ -366,60 +429,73 @@ class Registration(TimeStampedModel):
     """Inscriptions des participants"""
 
     # Personal Information
-    fullname = models.CharField(max_length=255)
-    organization = models.CharField(max_length=255)
-    position = models.CharField(max_length=255, blank=True)
-    city = models.CharField(max_length=255, blank=True)
-    country = models.CharField(max_length=255)
+    fullname = models.CharField(_("Full Name"), max_length=255)
+    organization = models.CharField(_("Organization"), max_length=255)
+    position = models.CharField(_("Position"), max_length=255, blank=True)
+    city = models.CharField(_("City"), max_length=255, blank=True)
+    country = models.CharField(_("Country"), max_length=255)
 
     # Contact Details
-    email = models.EmailField()
+    email = models.EmailField(_("Email"))
     phone_regex = RegexValidator(
-        regex=r"^\+?1?\d{9,15}$", message="Format: '+999999999'. 9-15 chiffres."
+        regex=r"^\+?1?\d{9,15}$", message=_("Format: '+999999999'. 9-15 digits.")
     )
-    phone = models.CharField(validators=[phone_regex], max_length=17)
+    phone = models.CharField(_("Phone"), validators=[phone_regex], max_length=17)
 
     # Participation Details
-    arrival_date = models.DateField(blank=True, null=True)
-    departure_date = models.DateField(blank=True, null=True)
-    needs_visa_assistance = models.BooleanField(default=False)
+    arrival_date = models.DateField(_("Arrival Date"), blank=True, null=True)
+    departure_date = models.DateField(_("Departure Date"), blank=True, null=True)
+    needs_visa_assistance = models.BooleanField(
+        _("Needs Visa Assistance"), default=False
+    )
 
     # Networking & Engagement
-    interested_in_panels = models.BooleanField(default=False)
-    interested_in_capacity_building = models.BooleanField(default=False)
-    interested_in_networking = models.BooleanField(default=False)
+    interested_in_panels = models.BooleanField(_("Interested in Panels"), default=False)
+    interested_in_capacity_building = models.BooleanField(
+        _("Interested in Capacity Building"), default=False
+    )
+    interested_in_networking = models.BooleanField(
+        _("Interested in Networking"), default=False
+    )
 
     # Additional Information
-    dietary_restrictions = models.TextField(blank=True)
-    receive_updates = models.BooleanField(default=True)
+    dietary_restrictions = models.TextField(_("Dietary Restrictions"), blank=True)
+    receive_updates = models.BooleanField(_("Receive Updates"), default=True)
 
     # Status
     STATUS_CHOICES = [
-        ("pending", "Pending Review"),
-        ("approved", "Approved"),
-        ("rejected", "Rejected"),
-        ("waitlist", "Waitlist"),
+        ("pending", _("Pending Review")),
+        ("approved", _("Approved")),
+        ("rejected", _("Rejected")),
+        ("waitlist", _("Waitlist")),
     ]
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
+    status = models.CharField(
+        _("Status"), max_length=20, choices=STATUS_CHOICES, default="pending"
+    )
 
     # Registration number
-    registration_number = models.CharField(max_length=50, unique=True, blank=True)
+    registration_number = models.CharField(
+        _("Registration Number"), max_length=50, unique=True, blank=True
+    )
 
     # Admin notes
-    admin_notes = models.TextField(blank=True)
+    admin_notes = models.TextField(_("Admin Notes"), blank=True)
 
     class Meta:
-        verbose_name = "Registration"
-        verbose_name_plural = "Registrations"
+        verbose_name = _("Registration")
+        verbose_name_plural = _("Registrations")
         ordering = ["-created_at"]
 
     def save(self, *args, **kwargs):
         if not self.registration_number:
             # Generate registration number: TCP2025-XXXX
-            last_reg = Registration.objects.order_by("-id").first()
+            last_reg = Registration.objects.order_by("-created_at").first()
             if last_reg and last_reg.registration_number:
-                last_num = int(last_reg.registration_number.split("-")[-1])
-                new_num = last_num + 1
+                try:
+                    last_num = int(last_reg.registration_number.split("-")[-1])
+                    new_num = last_num + 1
+                except:
+                    new_num = 1
             else:
                 new_num = 1
             self.registration_number = f"TCP2025-{new_num:04d}"
@@ -432,65 +508,67 @@ class Registration(TimeStampedModel):
 class ContactMessage(TimeStampedModel):
     """Messages de contact depuis le formulaire"""
 
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=50, blank=True)
-    organization = models.CharField(max_length=255, blank=True)
+    first_name = models.CharField(_("First Name"), max_length=255)
+    last_name = models.CharField(_("Last Name"), max_length=255)
+    email = models.EmailField(_("Email"))
+    phone = models.CharField(_("Phone"), max_length=50, blank=True)
+    organization = models.CharField(_("Organization"), max_length=255, blank=True)
 
     SUBJECT_CHOICES = [
-        ("general", "General Inquiry"),
-        ("registration", "Event Registration"),
-        ("partnership", "Partnership Opportunities"),
-        ("sponsorship", "Sponsorship"),
-        ("media", "Media & Press"),
-        ("technical", "Technical Support"),
-        ("other", "Other"),
+        ("general", _("General Inquiry")),
+        ("registration", _("Event Registration")),
+        ("partnership", _("Partnership Opportunities")),
+        ("sponsorship", _("Sponsorship")),
+        ("media", _("Media & Press")),
+        ("technical", _("Technical Support")),
+        ("other", _("Other")),
     ]
-    subject = models.CharField(max_length=20, choices=SUBJECT_CHOICES)
-    message = models.TextField()
+    subject = models.CharField(_("Subject"), max_length=20, choices=SUBJECT_CHOICES)
+    message = models.TextField(_("Message"))
 
     # Status
-    is_read = models.BooleanField(default=False)
-    is_replied = models.BooleanField(default=False)
-    admin_reply = models.TextField(blank=True)
+    is_read = models.BooleanField(_("Is Read"), default=False)
+    is_replied = models.BooleanField(_("Is Replied"), default=False)
+    admin_reply = models.TextField(_("Admin Reply"), blank=True)
 
     class Meta:
-        verbose_name = "Contact Message"
-        verbose_name_plural = "Contact Messages"
+        verbose_name = _("Contact Message")
+        verbose_name_plural = _("Contact Messages")
         ordering = ["-created_at"]
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} - {self.get_subject_display()}"
 
 
-class FAQ(TimeStampedModel):
-    """Questions fréquemment posées"""
+class FAQ(TimeStampedModel, TranslatableModel):
+    """Questions fréquemment posées - Bilingue"""
 
-    question = models.CharField(max_length=500)
-    answer = RichTextField()
+    translations = TranslatedFields(
+        question=models.CharField(_("Question"), max_length=500),
+        answer=RichTextField(_("Answer")),
+    )
 
-    order = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=True)
+    order = models.IntegerField(_("Display Order"), default=0)
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "FAQ"
-        verbose_name_plural = "FAQs"
+        verbose_name = _("FAQ")
+        verbose_name_plural = _("FAQs")
         ordering = ["order"]
 
     def __str__(self):
-        return self.question
+        return self.safe_translation_getter("question", any_language=True)
 
 
 class Newsletter(TimeStampedModel):
     """Abonnés à la newsletter"""
 
-    email = models.EmailField(unique=True)
-    is_active = models.BooleanField(default=True)
+    email = models.EmailField(_("Email"), unique=True)
+    is_active = models.BooleanField(_("Is Active"), default=True)
 
     class Meta:
-        verbose_name = "Newsletter Subscription"
-        verbose_name_plural = "Newsletter Subscriptions"
+        verbose_name = _("Newsletter Subscription")
+        verbose_name_plural = _("Newsletter Subscriptions")
 
     def __str__(self):
         return self.email
